@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle.min';
-import './App.css';
-import display from './assets/images/Group 2.png';
+import { Link } from 'react-router-dom';
+import './tabs.css';
+import display from '../../assets/images/Group 2.png';
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(0);
   const totalTabs = 5; // Total number of tabs
@@ -52,6 +51,8 @@ const Tabs = () => {
       <div className="tab-navigation">
         <button onClick={() => handleTabChange('up')}>Down</button>
         <button onClick={() => handleTabChange('down')}>Up</button>
+        <button><Link to="/meter">Ok</Link></button>
+    
       </div>
     </div>
   );

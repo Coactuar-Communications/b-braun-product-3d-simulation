@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@300&family=Lato:ital@1&family=Lobster+Two&family=Montserrat&family=Nunito:wght@400;500&family=Open+Sans&family=Poppins&family=Rajdhani:wght@400;700&family=Roboto&family=Saira+Extra+Condensed:wght@500;600;700&family=Secular+One&family=Source+Serif+Pro:ital,wght@0,200;1,400&display=swap');
+body {
+    background-image: url('../../assets/images/Device.bmp');
+    background-repeat: no-repeat;
+}
+
+.display {
+    position: absolute;
+    width: 319px;
+    height: 238px;
+    left: 10.2%;
+    top: 4.4%;
+    /* background-image: url('./assets/images/Group\ 2.png'); */
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+}
+
+.display img {
+    width: 100%;
+}
+
+.heading {
+    position: absolute;
+    /* width: 99px;
+  height: 17px; */
+    left: 31%;
+    top: -5%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 17px;
+    color: #000000;
+    color: #000000;
+}
+
+.heading2 {
+    position: absolute;
+    /* width: 99px;
+  height: 17px; */
+    left: 45%;
+    top: -5%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 17px;
+    color: #000000;
+    color: #000000;
+}
+
+.heading1 {
+    position: absolute;
+    /* width: 99px;
+  height: 17px; */
+    left: 88%;
+    top: 11%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 17px;
+    color: #fff;
+}
+
+
+/* .tab-buttons {
+  display: flex;
+  flex-direction: row;
+} */
+
+.display ul li {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.display ul,
+.tab-content {
+    position: absolute;
+    left: 3%;
+    top: 14%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 28px;
+    color: #fff;
+    /* display: none; */
+}
+
+.row-view {
+    display: flex;
+    flex-direction: row;
+}
+
+.display ul .first {
+    background: #D9D9D9;
+    border-radius: 6px;
+    color: #000000;
+    width: 137%;
+    border: 2px solid #000;
+}
+
+.tab-buttons {
+    /* background-color: white; */
+    display: none;
+}
+
+
+/* .tab-buttons {
+  display: flex;
+  flex-direction: row;
+} */
+
+.tab-buttons button.active {
+    background-color: red;
+}
+
+.tab-content .tab-pane,
+.tab-pane1 {
+    color: white;
+    border-bottom: 1px solid black;
+    width: 138%;
+    padding-left: 10px;
+}
+
+.tab-content1 .tab-pane1 {
+    border-bottom: 0px;
+    border-right: 1px solid black;
+    border-left: 1px solid #000;
+    padding: 10px;
+}
+
+.tab-content .tab-pane.active {
+    /* Styles for active tab content */
+    color: blue;
+    background: #D9D9D9;
+    border-radius: 6px;
+    color: #000000;
+    width: 138%;
+    border: 1px solid #000;
+    padding-left: 10px;
+}
+
+.tab-content1 .tab-pane1.active {
+    color: blue;
+    background: #D9D9D9;
+    border-radius: 6px;
+    color: #000000;
+    width: 138%;
+    /* border:1px solid #000; */
+    padding-left: 10px;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+.display ul,
+.tab-content1 {
+    position: absolute;
+    left: 3%;
+    top: 30%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3.2rem;
+    line-height: 126px;
+    color: #fff;
+}
+
+.meter {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: -9%;
+    top: 27%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3.2rem;
+    line-height: 126px;
+    color: #fff;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.digits {
+    display: flex;
+    align-items: center;
+    border-bottom: 0px;
+    /* padding: 10px; */
+}
+
+.digits span {
+    cursor: pointer;
+    /* margin: 0 5px; */
+    font-size: 3.5rem;
+    border-right: 2px solid #000;
+    /* border-left:2px solid #000; */
+    padding: 10px;
+}
+
+.digits span.active {
+    color: blue;
+    background: #D9D9D9;
+    border-radius: 6px;
+    color: #000000;
+    width: 138%;
+    /* border:1px solid #000; */
+}
+
+.controls button {
+    padding: 5px 10px;
+    font-size: 16px;
+}
