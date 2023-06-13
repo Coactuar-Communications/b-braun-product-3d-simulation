@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './meter.css';
-import display from '../../assets/images/Group 2.png';
+import display from '../../assets/images/Revised Screen with buttons.png';
 const Tabs = () => {
   const [value, setValue] = useState([0, 0, 0, '.', 0, 0]);
   const [activeDigit, setActiveDigit] = useState(0);
@@ -66,7 +66,7 @@ const Tabs = () => {
      
 
         <button className='left' onClick={handleShiftLeft}>{'<'}</button>
-        <button className='decrement' onClick={handleDecrement}>-</button>
+        <button className='decrement down-button1' onClick={handleDecrement}>-</button>
       </div>
       <div className="digits">
         
@@ -81,7 +81,7 @@ const Tabs = () => {
         ))}
       </div>
       <div className="controls">
-        <button className="increment" onClick={handleIncrement}>+</button>
+        <button className="increment up-button1" onClick={handleIncrement}>+</button>
         <button className="shiftright" onClick={handleShiftRight}>{'>'}</button>
       </div>
     </div>

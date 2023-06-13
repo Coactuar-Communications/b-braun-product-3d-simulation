@@ -1,22 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@300&family=Lato:ital@1&family=Lobster+Two&family=Montserrat&family=Nunito:wght@400;500&family=Open+Sans&family=Poppins&family=Rajdhani:wght@400;700&family=Roboto&family=Saira+Extra+Condensed:wght@500;600;700&family=Secular+One&family=Source+Serif+Pro:ital,wght@0,200;1,400&display=swap');
 body {
-    background-image: url('../../assets/images/Device.bmp');
+    background-image: url('../../assets/images/REVISED DEVICE with Syringe 001.jpg');
     background-repeat: no-repeat;
 }
 
 .display {
     position: absolute;
-    width: 319px;
-    height: 238px;
-    left: 10.2%;
-    top: 4.4%;
+    width: 307px;
+    height: 244px;
+    left: 9%;
+    top: 29.2%;
     /* background-image: url('./assets/images/Group\ 2.png'); */
     background-repeat: no-repeat;
     transform: rotate(0deg);
 }
 
 .display img {
-    width: 100%;
+    /* width: 100%; */
+    width: 80%;
 }
 
 .heading {
@@ -120,7 +121,7 @@ body {
 .tab-pane1 {
     color: white;
     border-bottom: 1px solid black;
-    width: 138%;
+    width: 144%;
     padding-left: 10px;
 }
 
@@ -137,7 +138,7 @@ body {
     background: #D9D9D9;
     border-radius: 6px;
     color: #000000;
-    width: 138%;
+    width: 144%;
     border: 1px solid #000;
     padding-left: 10px;
 }
@@ -147,7 +148,7 @@ body {
     background: #D9D9D9;
     border-radius: 6px;
     color: #000000;
-    width: 138%;
+    width: 103%;
     /* border:1px solid #000; */
     padding-left: 10px;
     border-right: 1px solid #000;
@@ -215,4 +216,25 @@ body {
 .controls button {
     padding: 5px 10px;
     font-size: 16px;
+}
+.down-button, .up-button, .ok-button{
+    position: absolute;
+    left: 149%;
+    border-radius: 50%;
+    height: 24%;
+    width: 20%;
+    background-color: transparent;
+    color: transparent;
+    border: 0px;
+}
+.down-button{ 
+    top: 49%; 
+}
+
+.up-button{   
+    top: -8%;
+}
+
+.ok-button{
+    top: 21%;
 }

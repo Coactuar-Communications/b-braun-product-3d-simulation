@@ -49,9 +49,9 @@ const Tabs = () => {
       </div>
 
       <div className="tab-navigation">
-        <button onClick={() => handleTabChange('up')}>Down</button>
-        <button onClick={() => handleTabChange('down')}>Up</button>
-        <button><Link to="/meter">Ok</Link></button>
+        <button className='down-button' onClick={() => handleTabChange('up')}>Down</button>
+        <button className="up-button" onClick={() => handleTabChange('down')}>Up</button>
+        <Link to="/meter"> <button className='ok-button'>Ok</button></Link>
     
       </div>
     </div>
