@@ -7,10 +7,14 @@ body{
 
 .display{
   position: absolute;
-  width: 319px;
+  /* width: 319px;
   height: 238px;
   left: 10.2%;
-  top: 4.4%;
+  top: 4.4%; */
+  width: 246px;
+  height: 254px;
+  left: 9.1%;
+  top: 29.2%;
 
   /* background-image: url('./assets/images/Group\ 2.png'); */
   background-repeat: no-repeat;
@@ -191,6 +195,7 @@ display:none;
   font-size: 3.2rem;
   line-height: 126px;
   color: #fff;
+  text-align: center;
 }
 
 .controls {

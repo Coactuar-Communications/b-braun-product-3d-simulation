@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './meter.css';
 import display from '../../assets/images/Revised Screen with buttons.png';
 const Tabs = () => {
-  const [value, setValue] = useState([0, 0, 0, '.', 0, 0]);
+  const [value, setValue] = useState([0, 0, 0, 0, '.', 0, 0]);
   const [activeDigit, setActiveDigit] = useState(0);
 
   const handleIncrement = () => {
@@ -54,7 +54,20 @@ const Tabs = () => {
     const newActiveDigit = activeDigit === value.length - 1 ? 0 : activeDigit + 1;
     setActiveDigit(newActiveDigit);
   };
-
+  const renderDigit = (digit, index) => {
+    if (digit === 0 && index !== activeDigit) {
+      return <div className={`tab ${activeDigit === index ? 'active' : ''}`}>-</div>;
+    }
+    return (
+      <div
+        className={`tab ${activeDigit === index ? 'active' : ''}`}
+        onClick={() => setActiveDigit(index)}
+      >
+        {/* {digit} */}
+        {digit}
+      </div>
+    );
+  };
   return (
     <div className="display">     
       <img src={display}></img>
@@ -68,8 +81,7 @@ const Tabs = () => {
         <button className='left' onClick={handleShiftLeft}>{'<'}</button>
         <button className='decrement down-button1' onClick={handleDecrement}>-</button>
       </div>
-      <div className="digits">
-        
+      {/* <div className="digits">
         {value.map((digit, index) => (
           <span
           key={index}
@@ -78,6 +90,16 @@ const Tabs = () => {
         >
           {digit}
           </span>
+        ))}
+      </div> */}
+      <div className="digits">
+        {value.map((digit, index) => (
+          <span key={index}
+          className={`tab ${activeDigit === index ? 'active' : ''}`}
+          // onClick={() => setActiveDigit(index)}
+          >
+            {renderDigit(digit, index)}
+            </span>
         ))}
       </div>
       <div className="controls">
