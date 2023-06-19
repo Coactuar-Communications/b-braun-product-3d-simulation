@@ -4,7 +4,7 @@ import on from '../../assets/images/Turn On.png';
 import display from '../../assets/images/Revised Screen with buttons.png';
 import display3 from '../../assets/images/INJECTION RATE SELECTION.png';
 import vid1 from '../../assets/images/Self test mp4.mp4';
-import vid2 from '../../assets/images/Syringe Change.mp4'
+import vid2 from '../../assets/images/Syringe Change.mp4';
 import test from '../../assets/images/Test Mode.png';
 import technical from '../../assets/images/Technical.png';
 import syringe from '../../assets/images/Syringe Change.png';
@@ -35,7 +35,7 @@ const Videoplay = () => {
       
       {activeButton === 2 && <img src={test} alt="Image 2" />}
       {activeButton === 3 && (
-        <video src={vid1} autoPlay muted onEnded={handleVideoEnded}>
+        <video src={vid1} autoPlay  muted onEnded={handleVideoEnded}>
           Your browser does not support the video tag.
         </video>
       )}
