@@ -82,7 +82,7 @@ const Videoplay = () => {
           className={`image-button ${activeButton === 3 ? 'active' : ''}`}
           style={{'position': 'absolute',
           'left': '4%',
-          'top': '49%',
+          'top': '51%',
           'width': '3%',
           
           'borderRadius': '50%', display: disabledButtons.includes(3) ? 'none' : 'block' }}
@@ -97,7 +97,7 @@ const Videoplay = () => {
           // className={`image-button ${activeButton === 3 ? 'active' : ''}`}
           style={{'position': 'absolute',
           'left': '4%',
-          'top': '49%',
+          'top': '51%',
           'backgroundColor': 'transparent',
           'color': 'transparent',
           'border':'0',
@@ -113,8 +113,9 @@ const Videoplay = () => {
           disabled={disabledButtons.includes(4)}
           className={`image-button ${activeButton === 4 ? 'active' : ''}`}
           style={{'position': 'absolute',
-          'left': '33%',
-          'top': '36%',
+          'left': '32%',
+          'top': '38%',
+        
           'width': '3%',
           'borderRadius': '50%', display: disabledButtons.includes(4) ? 'none' : 'block' }}
         >
@@ -125,8 +126,8 @@ const Videoplay = () => {
           disabled={disabledButtons.includes(5)}
           className={`image-button ${activeButton === 5 ? 'active' : ''}`}
           style={{'position': 'absolute',
-          'left': '33%',
-          'top': '36%',
+          'left': '32%',
+          'top': '38%',
           'width': '3%',
           'borderRadius': '50%', display: disabledButtons.includes(5) ? 'none' : 'block' }}
         >
@@ -138,8 +139,8 @@ const Videoplay = () => {
           disabled={disabledButtons.includes(6)}
           className={`image-button ${activeButton === 5 ? 'active' : ''}`}
           style={{'position': 'absolute',
-          'left': '33%',
-          'top': '36%',
+          'left': '32%',
+          'top': '38%',
           'width': '3%',
           'borderRadius': '50%', display: disabledButtons.includes(6) ? 'none' : 'block' }}
         >
