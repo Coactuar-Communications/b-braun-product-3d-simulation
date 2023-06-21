@@ -8,6 +8,8 @@ import vid2 from '../../assets/images/Syringe Change.mp4';
 import test from '../../assets/images/Test Mode.png';
 import technical from '../../assets/images/Technical.png';
 import syringe from '../../assets/images/Syringe Change.png';
+import background from '../../assets/images/REVISED DEVICE with Syringe 001.jpg';
+import backvid from '../../assets/images/Lights Animation.mp4'
 import "./videoplay.css";
 import { Link } from "react-router-dom";
 
@@ -16,13 +18,14 @@ const Videoplay = () => {
   const [activeButton, setActiveButton] = useState(1);
   // const [activeButton, setactiveButton] = useState(null);
   const [disabledButtons, setDisabledButtons] = useState([]);
-
+  const [backgroundImage, setBackgroundImage] = useState({background});
   const handleButtonClick = (buttonNumber) => {
     setActiveButton(buttonNumber);
     setDisabledButtons((prevDisabledButtons) => [...prevDisabledButtons, buttonNumber]);
   };
   const handleVideoEnded = () => {
     setActiveButton(2);
+    setBackgroundImage({background});
   };
   const handleVideoEnded2 = () => {
     window.location.replace('/Tabs');
@@ -30,15 +33,20 @@ const Videoplay = () => {
 
   return (
 <>
+{activeButton === 3 && (
+        <video src={backvid} autoPlay controls muted onEnded={handleVideoEnded} style={{'width':'100%','overflow':'hidden'}}>
+          Your browser does not support the video tag.
+        </video>
+      )}
     <div className="image-container display">
       {activeButton === 1 && <img src={bg} alt="Image 1" />}
       
       {activeButton === 2 && <img src={test} alt="Image 2" />}
-      {activeButton === 3 && (
+      {/* {activeButton === 3 && (
         <video src={vid1} autoPlay  muted onEnded={handleVideoEnded}>
           Your browser does not support the video tag.
         </video>
-      )}
+      )} */}
       {activeButton === 4 && <img src={syringe} alt="Image 4" />}
       {activeButton === 5 && <img src={technical} alt="Image 5" />}
       {activeButton === 6 && <img src={on} alt="Image 6" />}

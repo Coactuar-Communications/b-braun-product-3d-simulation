@@ -225,7 +225,7 @@ body {
 }
 .down-button, .up-button, .ok-button{
     position: absolute;
-    left: 149%;
+    left: 142%;
     border-radius: 50%;
     height: 24%;
     width: 20%;

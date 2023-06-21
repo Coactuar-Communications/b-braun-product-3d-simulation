@@ -162,7 +162,7 @@ body {
 
 
 .tab{
-    width:26px;
+    width:27px;
 }
 
 .digits span.active {
@@ -196,8 +196,8 @@ body {
 }
 
 .up-button1{   
-    top: -91%;
-    left: 176%;
+    top: -96%;
+    left: 179%;
 }
 
 .ok-button1{
@@ -207,9 +207,9 @@ body {
 
 .left{
     top: -12%;
-    left: 140%;
+    left: 143%;
 }
 .shiftright{
-    left: 210%;
+    left: 215%;
     top: -13%;
 }

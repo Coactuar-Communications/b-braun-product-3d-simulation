@@ -144,7 +144,7 @@ body {
     text-align: center;
 } */
 
-.controls {
+/* .controls {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,8 +154,8 @@ body {
     display: flex;
     align-items: center;
     border-bottom: 0px;
-    /* padding: 10px; */
-}
+   
+} */
 
 .digits span {
     cursor: pointer;
@@ -169,10 +169,10 @@ body {
 }
 
 
-
+/* 
 .tab{
     width:26px;
-}
+} */
 
 .digits span.active {
     color: blue;
