@@ -34,7 +34,7 @@ const Videoplay = () => {
   return (
 <>
 {activeButton === 3 && (
-        <video src={backvid} autoPlay controls muted onEnded={handleVideoEnded} style={{'width':'100%','overflow':'hidden'}}>
+        <video src={backvid} autoPlay muted onEnded={handleVideoEnded} style={{'width':'100%','overflow':'hidden'}}>
           Your browser does not support the video tag.
         </video>
       )}
