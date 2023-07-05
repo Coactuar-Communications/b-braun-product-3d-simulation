@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'RotisSerif';
+    src: url('RotisSerif.eot');
+    src: local('RotisSerif'),
+        url('RotisSerif.eot?#iefix') format('embedded-opentype'),
+        url('RotisSerif.woff2') format('woff2'),
+        url('RotisSerif.woff') format('woff'),
+        url('RotisSerif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RotisSerif';
+    src: url('RotisSerif_1.eot');
+    src: local('Rotis Serif 55'), local('RotisSerif'),
+        url('RotisSerif_1.eot?#iefix') format('embedded-opentype'),
+        url('RotisSerif_1.woff2') format('woff2'),
+        url('RotisSerif_1.woff') format('woff'),
+        url('RotisSerif_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RotisSerif';
+    src: url('RotisSerif-Italic.eot');
+    src: local('Rotis Serif Italic 56'), local('RotisSerif-Italic'),
+        url('RotisSerif-Italic.eot?#iefix') format('embedded-opentype'),
+        url('RotisSerif-Italic.woff2') format('woff2'),
+        url('RotisSerif-Italic.woff') format('woff'),
+        url('RotisSerif-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RotisSerif';
+    src: url('RotisSerif-Bold.eot');
+    src: local('Rotis Serif Bold 65'), local('RotisSerif-Bold'),
+        url('RotisSerif-Bold.eot?#iefix') format('embedded-opentype'),
+        url('RotisSerif-Bold.woff2') format('woff2'),
+        url('RotisSerif-Bold.woff') format('woff'),
+        url('RotisSerif-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

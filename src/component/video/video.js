@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import bg from '../../assets/images/Settings.png';
 import on from '../../assets/images/Turn On.png';
 import display from '../../assets/images/Revised Screen with buttons.png';
@@ -8,37 +8,79 @@ import vid2 from '../../assets/images/Syringe Change.mp4';
 import test from '../../assets/images/Test Mode.png';
 import technical from '../../assets/images/Technical.png';
 import syringe from '../../assets/images/Syringe Change.png';
-import background from '../../assets/images/REVISED DEVICE with Syringe 001.jpg';
-import backvid from '../../assets/images/Lights Animation.mp4'
+import background from '../../assets/images/REVISED DEVICE.jpg';
+import newbg from '../../assets/images/bg.png';
+import backvid from '../../assets/images/Lights Animation.mp4';
+import syringeChange from '../../assets/images/Syringe animation.mp4';
+import beepaudio from '../../assets/images/Device Sound .mp3'
 import "./videoplay.css";
 import { Link } from "react-router-dom";
-
+import powerOnaudio from '../../assets/voice/Page 4/Turn on the power button.mp3';
+// import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
+// import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Videoplay = () => {
   const [activeButton, setActiveButton] = useState(1);
   // const [activeButton, setactiveButton] = useState(null);
   const [disabledButtons, setDisabledButtons] = useState([]);
-  const [backgroundImage, setBackgroundImage] = useState({background});
+  const [backgroundImage, setBackgroundImage] = useState({newbg});
+  const [backgroundImage2, setBackgroundImage2] = useState({newbg});
+
+  // const tooltipRef = useRef(null);
+
+  // useEffect(() => {
+  //   if (tooltipRef.current) {
+  //     tooltipRef.current.style.opacity = 1; // Show the tooltip on component mount
+  //   }
+  // }, []);
+
   const handleButtonClick = (buttonNumber) => {
     setActiveButton(buttonNumber);
     setDisabledButtons((prevDisabledButtons) => [...prevDisabledButtons, buttonNumber]);
+   
   };
+
   const handleVideoEnded = () => {
     setActiveButton(2);
-    setBackgroundImage({background});
+    setBackgroundImage({newbg});
+    const audioEl = document.getElementsByClassName("audio-element")[0]
+    audioEl.play();
+// document.getElementById("tooltip").innerHTML = 'Press OK';
+
+  };
+  const handleVideoEnded3 = () => {
+    // setActiveButton(7);
+    setBackgroundImage2({newbg});
   };
   const handleVideoEnded2 = () => {
     window.location.replace('/Tabs');
+    
   };
 
+
   return (
-<>
+<div className="container-fluid">
+<center> <h3 className="text-dark pt-2" id='tooltip'></h3></center>
+        
+        {activeButton === 6 &&
+      <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>   
+    }
+    {activeButton === 6 &&
+     <audio className="audio-element" autoPlay>
+     <source src={powerOnaudio}></source>
+   </audio>  
+    }
 {activeButton === 3 && (
         <video src={backvid} autoPlay muted onEnded={handleVideoEnded} style={{'width':'100%','overflow':'hidden'}}>
           Your browser does not support the video tag.
         </video>
       )}
-    <div className="image-container display">
+       {activeButton === 7 && (
+        <video src={syringeChange} autoPlay muted onEnded={handleVideoEnded2} style={{'width':'100%','overflow':'hidden'}}>
+        Your browser does not support the video tag.
+      </video>
+      )}
+    <div className="image-container display displayVid">
       {activeButton === 1 && <img src={bg} alt="Image 1" />}
       
       {activeButton === 2 && <img src={test} alt="Image 2" />}
@@ -49,12 +91,8 @@ const Videoplay = () => {
       )} */}
       {activeButton === 4 && <img src={syringe} alt="Image 4" />}
       {activeButton === 5 && <img src={technical} alt="Image 5" />}
-      {activeButton === 6 && <img src={on} alt="Image 6" />}
-      {activeButton === 7 && (
-        <video src={vid2} autoPlay muted onEnded={handleVideoEnded2}>
-          Your browser does not support the video tag.
-        </video>
-      )}
+      {activeButton === 6 && <img src={on} /> }
+     
 
       
     </div>
@@ -84,6 +122,10 @@ const Videoplay = () => {
         >
           Switch Image 2
         </button>
+        <audio className="audio-element">
+          <source src={beepaudio}></source>
+        </audio>
+       
         <button
           onClick={() => handleButtonClick(3)}
           disabled={disabledButtons.includes(3)}
@@ -97,7 +139,7 @@ const Videoplay = () => {
          
         >
 
-<button
+<a
           onClick={() => handleButtonClick('video')}
           disabled={disabledButtons.includes('video')}
           className={`media-button ${activeButton === 'video' ? 'active' : ''}`}
@@ -113,7 +155,7 @@ const Videoplay = () => {
           'borderRadius': '50%', display: disabledButtons.includes('video') ? 'none' : 'block' }}
         >
           {/* Switch Video */}
-        </button>
+        </a>
           Switch Image 3
         </button>
         <button
@@ -157,18 +199,18 @@ const Videoplay = () => {
         <button
           onClick={() => handleButtonClick(7)}
           disabled={disabledButtons.includes(7)}
-          className={`image-button ${activeButton === 3 ? 'active' : ''}`}
+          className={`image-button ${activeButton === 7 ? 'active' : ''}`}
           style={{'position': 'absolute',
           'left': '4%',
-          'top': '85%',
-          'width':'100%',
+          'top': '60%',
+
+          'width': '8%',
           
-         
-           display: disabledButtons.includes(7) ? 'none' : 'block' }}
+          'borderRadius': '50%', display: disabledButtons.includes(7) ? 'none' : 'block' }}
          
         >
 
-<button
+<a
           onClick={() => handleButtonClick('video')}
           disabled={disabledButtons.includes('video')}
           className={`media-button ${activeButton === 'video' ? 'active' : ''}`}
@@ -177,18 +219,37 @@ const Videoplay = () => {
           style={{'position': 'absolute',
           'left': '4%',
           'top': '60%',
+
+          // 'backgroundColor': 'transparent',
+          // 'color': 'transparent',
+          // 'border':'0',
+          // 'width': '3%',
+         'textDecoration':'none',
+         'color':'black',
           'padding':'10px',
-          'border':'2px dashed black',
-         
-          display: disabledButtons.includes('video') ? 'none' : 'block' }}
+          'border':'2px dashed black', display: disabledButtons.includes('video') ? 'none' : 'block' }}
         >
+         <b>Inser Syringe</b>  
           {/* Switch Video */}
-         <b> Insert Syringe </b>
+        </a>
+         
         </button>
-        </button>
+      
+
+
+ 
+   
+           {/* {activeButton === 4 &&
+      <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>
+    } */}
+     {/* {activeButton === 5 &&
+      <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>
+    } */}
     </div>
-    </>
+    </div>
   );
 };
 
 export default Videoplay;
+
+

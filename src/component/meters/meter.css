@@ -1,16 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@300&family=Lato:ital@1&family=Lobster+Two&family=Montserrat&family=Nunito:wght@400;500&family=Open+Sans&family=Poppins&family=Rajdhani:wght@400;700&family=Roboto&family=Saira+Extra+Condensed:wght@500;600;700&family=Secular+One&family=Source+Serif+Pro:ital,wght@0,200;1,400&display=swap');
 body {
-    background-image: url('../../assets/images/REVISED DEVICE with Syringe 001.jpg');
+    background-image: url('../../assets/images/REVISED DEVICE.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
-
+.back-button{
+    position: absolute;
+    top: 18%;
+    left: 235%;
+    padding: 6%;
+    border-radius: 50%;
+    color: transparent;
+    background-color: transparent;
+    border:0;
+  }
 .display {
     /* width: 246px;
     height: 244px;
     left: 9%;
     top: 29.2%; */
-    margin-top: 14.5%;
+    margin-top: 14.1%;
     width: 246px;
     height: 254px;
     left: 9.1%;
@@ -20,10 +30,18 @@ body {
     background-repeat: no-repeat;
     transform: rotate(0deg);
 }
-
+.display2{
+    margin-top: 10% !important;
+    margin-left: 9% !important;
+}
 .display img {
     width: 100%;
 }
+
+/* .display3{
+    margin-top: 14.1% !important;
+    margin-left: 9% !important;
+} */
 
 .heading {
     position: absolute;
@@ -60,7 +78,7 @@ body {
     /* width: 99px;
   height: 17px; */
   left: 83%;
-  top: 7%;
+  top: 15%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -68,6 +86,21 @@ body {
     line-height: 17px;
     color: #fff;
 }
+
+.heading11 {
+    position: absolute;
+    /* width: 99px;
+  height: 17px; */
+  left: 7%;
+  top: 15%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 17px;
+    color: #fff;
+}
+
 
 
 /* .tab-buttons {
@@ -124,7 +157,7 @@ body {
     display: flex;
     align-items: center;
     position: absolute;
-    left: 10%;
+    left: 13%;
     top: 27%;
     font-family: 'Inter';
     font-style: normal;
@@ -158,19 +191,34 @@ body {
    
 
 }
-
-
+.start{
+    border-radius: 50%;
+    padding:6px 2px 6px 2px;
+    font-size:12px;
+}
+.startinfusion{
+    padding:5px;
+    position: relative;
+    top: -38px;
+    border-left:4px solid white;
+    border-right:4px solid white;
+}
 
 .tab{
     width:27px;
 }
+.tab1{
+    width:33px;
+}
+
 
 .digits span.active {
     color: blue;
     background: #D9D9D9;
     border-radius: 6px;
     color: #000000;
-    width: 68%;
+    /* width: 68%; */
+    width:36%;
     /* border: 1px solid #000;
     /* border:1px solid #000; */
 }
@@ -186,18 +234,21 @@ body {
     border-radius: 50%;
     height: 53%;
     width: 26%;
-    background-color: transparent;
-    color: transparent;
+    /* background-color: transparent;
+    color: transparent; */
     border: 0px;
 }
 .down-button1{ 
-    top: 69%;
-    left: 177%;
+    /* top: 69%;
+    left: 186%; */
+    top: 90%;
+    left: 196%;
 }
 
 .up-button1{   
-    top: -96%;
-    left: 179%;
+    top: -87%;
+    left: 196%;
+   
 }
 
 .ok-button1{
@@ -206,10 +257,33 @@ body {
 }
 
 .left{
-    top: -12%;
-    left: 143%;
+    /* top: -12%;
+    left: 147%; */
+    top: 1%;
+    left: 154%;
 }
 .shiftright{
-    left: 215%;
-    top: -13%;
+    /* left: 224%;
+    top: -13%; */
+    left: 235%;
+    top: 3%;
 }
+
+.value1-part {
+    font-weight: bold;
+    /* Add other CSS properties as desired */
+  }
+  
+  .value1-unit {
+    /* Add CSS properties for the 'h' and 'min' units */
+  }
+
+  .tab1:nth-child(6){
+font-size:16px;
+color: black;
+/* background-color: white; */
+  }
+
+  .tab1:nth-child(3){
+    font-size:16px;
+      }

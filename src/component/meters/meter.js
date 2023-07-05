@@ -1,115 +1,130 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './meter.css';
-import display from '../../assets/images/Revised Screen with buttons.png';
-const Tabs = () => {
-  const [value, setValue] = useState([0, 0, 0, 0, '.', 0, 0]);
-  const [activeDigit, setActiveDigit] = useState(0);
+import display from '../../assets/images/Group 2.png';
+import startInfusion from '../../assets/voice/Page 8/Press okay Button.mp3';
 
-  const handleIncrement = () => {
-    const updatedValue = [...value];
-    if (activeDigit !== -1) {
-      if (updatedValue[activeDigit] < 9) {
-        updatedValue[activeDigit] += 1;
-      } else {
-        updatedValue[activeDigit] = 0;
-        let previousDigit = activeDigit - 1;
-        while (previousDigit >= 0 && updatedValue[previousDigit] === 9) {
-          updatedValue[previousDigit] = 0;
-          previousDigit--;
-        }
-        if (previousDigit >= 0) {
-          updatedValue[previousDigit] += 1;
-        }
-      }
+const Meter = () => {
+  const location = useLocation();
+  const selectedNumber = location.state?.selectedNumber;
+  const selectedNumber1 = location.state?.selectedNumber1;
+  const selectedNumber2 = location.state?.selectedNumber2;
+
+  const history = useNavigate();
+
+  const [activeTab, setActiveTab] = useState(0);
+  const totalMeter = 3; // Total number of Meter
+  const tabContent = [
+    { label: <span style={{ wordSpacing: '24px' }}>Rate {selectedNumber !== undefined ? selectedNumber : ''}ml/h</span>, value: selectedNumber !== 0 ? selectedNumber : '', page: '/Rate' },
+    { label: <span style={{ wordSpacing: '24px' }}>Volume {selectedNumber2 !== undefined ? selectedNumber2 : ''}ml</span>, value: selectedNumber2 !== 0 ? selectedNumber2 : '', page: '/Volume' },
+    // { label: 'Volume' + selectedNumber2 + ' ml', value: selectedNumber2, page: '/Volume' },
+    { label: <span style={{ wordSpacing: '24px' }}>Time {selectedNumber1 !== undefined ? selectedNumber1 : ''}h:mm</span>, value: selectedNumber1 !== 0 ? selectedNumber1 : '', page: '/Time' },
+    // { label: 'Time' + selectedNumber1 + ' h:min', value: selectedNumber1, page: '/Time' },
+  ];
+
+  const handleTabChange = (direction) => {
+    if (direction === 'up') {
+      setActiveTab((prevTab) => (prevTab + 1) % totalMeter);
+    } else if (direction === 'down') {
+      setActiveTab((prevTab) => (prevTab - 1 + totalMeter) % totalMeter);
     }
-    setValue(updatedValue);
   };
 
-  const handleDecrement = () => {
-    const updatedValue = [...value];
-    if (activeDigit !== -1) {
-      if (updatedValue[activeDigit] > 0) {
-        updatedValue[activeDigit] -= 1;
-      } else {
-        updatedValue[activeDigit] = 9;
-        let previousDigit = activeDigit - 1;
-        while (previousDigit >= 0 && updatedValue[previousDigit] === 0) {
-          updatedValue[previousDigit] = 9;
-          previousDigit--;
-        }
-        if (previousDigit >= 0) {
-          updatedValue[previousDigit] -= 1;
-        }
-      }
-    }
-    setValue(updatedValue);
+  const handleOK = () => {
+    const page = tabContent[activeTab].page;
+    // Update the URL with the active tab information
+    window.history.pushState({ activeTab }, '', page);
+    // Navigate to the selected page
+    // You can replace this line with the appropriate navigation logic in your application
+    console.log(`Navigating to ${page}`);
   };
 
-  const handleShiftLeft = () => {
-    const newActiveDigit = activeDigit === 0 ? value.length - 1 : activeDigit - 1;
-    setActiveDigit(newActiveDigit);
+  const handleGoBack = () => {
+    // Go back to the previous page
+    history(-1);
   };
 
-  const handleShiftRight = () => {
-    const newActiveDigit = activeDigit === value.length - 1 ? 0 : activeDigit + 1;
-    setActiveDigit(newActiveDigit);
-  };
-  const renderDigit = (digit, index) => {
-    if (digit === 0 && index !== activeDigit) {
-      return <div className={`tab ${activeDigit === index ? 'active' : ''}`}>-</div>;
-    }
-    return (
-      <div
-        className={`tab ${activeDigit === index ? 'active' : ''}`}
-        onClick={() => setActiveDigit(index)}
-      >
-        {/* {digit} */}
-        {digit}
-      </div>
+  useEffect(() => {
+    // Update the active tab based on the URL when the component mounts
+    const activeTabFromURL = tabContent.findIndex(
+      (tab) => tab.page === window.location.pathname
     );
-  };
-  return (
-    <div className="display">     
-      <img src={display}></img>
-      <center>  <p className='heading2'>Rate</p></center>
-        <center>  <p className='heading1'>ml/h</p></center>
-    <div className="meter">
-       
-      <div className="controls">
-     
+    if (activeTabFromURL !== -1) {
+      setActiveTab(activeTabFromURL);
+    }
+  }, []);
 
-        <button className='left' onClick={handleShiftLeft}>{'<'}</button>
-        <button className='decrement down-button1' onClick={handleDecrement}>-</button>
-      </div>
-      {/* <div className="digits">
-        {value.map((digit, index) => (
-          <span
-          key={index}
-          className={`tab ${activeDigit === index ? 'active' : ''}`}
-          onClick={() => setActiveDigit(index)}
-        >
-          {digit}
-          </span>
-        ))}
-      </div> */}
-      <div className="digits">
-        {value.map((digit, index) => (
-          <span key={index}
-          className={`tab ${activeDigit === index ? 'active' : ''}`}
-          // onClick={() => setActiveDigit(index)}
+  useEffect(() => {
+    // Update the URL with the active tab information when it changes
+    const handlePopState = (event) => {
+      const activeTabFromURL = event.state?.activeTab;
+      if (activeTabFromURL !== undefined) {
+        setActiveTab(activeTabFromURL);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
+
+  return (
+    <>
+     <center> <h3 className="text-dark" id='tooltip'>Press the start button to start the infusion</h3></center>
+        <center><h4 className="text-dark" id='tooltip'>Optional Setting - Press OK button to enter a volume or time preselection</h4> </center>
+    <div className="display display3">
+      <img src={display} alt="Display" />
+      <center>
+        <p className="heading">Overview</p>
+      </center>
+      <ul className="tab-buttons">
+        {tabContent.map((tab, index) => (
+          <li
+            key={index}
+            className={activeTab === index ? 'active' : ''}
+            onClick={() => setActiveTab(index)}
           >
-            {renderDigit(digit, index)}
-            </span>
+            {tab.label}
+            {tab.value !== null && (
+              <span className="selected-number">{tab.value} ml</span>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      <div className="tab-content">
+        {tabContent.map((content, index) => (
+          <div
+            key={index}
+            className={`tab-pane ${activeTab === index ? 'active' : ''}`}
+          >
+            {content.label}
+          </div>
         ))}
       </div>
-      <div className="controls">
-        <button className="increment up-button1" onClick={handleIncrement}>+</button>
-        <button className="shiftright" onClick={handleShiftRight}>{'>'}</button>
+
+      <div className="tab-navigation">
+        <button className="down-button" onClick={() => handleTabChange('up')}>
+          Down
+        </button>
+        <button className="up-button" onClick={() => handleTabChange('down')}>
+          Up
+        </button>
+        <Link to={tabContent[activeTab].page}>
+          <button className="ok-button" onClick={handleOK}>
+            OK
+          </button>
+        </Link>
+        <button className="back-button" onClick={handleGoBack}>
+          Back
+        </button>
+        <audio className="audio-element" autoPlay>
+          <source src={startInfusion}></source>
+        </audio>
       </div>
     </div>
-    </div>
+    </>
   );
 };
 
-
-export default Tabs;
+export default Meter;

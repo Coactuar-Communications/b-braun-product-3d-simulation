@@ -52,8 +52,8 @@ table {
 }
 
 body{
-  background-image: url('./assets/images/Device.bmp');
-  background-repeat: no-repeat;
+  /* background-image: url('./assets/images/Device.bmp'); */
+  /* background-repeat: no-repeat; */
 }
 
 .display{
@@ -62,7 +62,7 @@ body{
   height: 238px;
   left: 10.2%;
   top: 4.4%; */
-  margin-top: 14.5%;
+  margin-top: 14.1%;
   width: 246px;
   height: 254px;
   left: 9.1%;
@@ -289,4 +289,12 @@ display:none;
 .controls button {
   padding: 5px 10px;
   font-size: 16px;
+}
+
+.back-button{
+  position: absolute;
+  top: 18%;
+  left: 235%;
+  padding: 6%;
+  border-radius: 50%;
 }
