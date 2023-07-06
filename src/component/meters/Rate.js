@@ -12,6 +12,7 @@ const Rate = () => {
   const navigate = useNavigate ();
   const history = useNavigate();
   useEffect(() => {
+    const preselectedValue = localStorage.getItem("rate");
     const number = parseFloat(value.join(''));
     setSelectedNumber(number);
   }, [value]);
@@ -70,6 +71,7 @@ const Rate = () => {
   };
 
   const handleOK = () => {
+    localStorage.setItem("rate", parseFloat(value.join('')));
     // Redirect to Meter page and pass selectedNumber state
     navigate('/Meter', { state: { selectedNumber: parseFloat(value.join('')) } });
   };

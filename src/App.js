@@ -7,6 +7,11 @@ import Select from "./component/select/select";
 import Meter from "./component/meters/Meter";
 import Volume from "./component/meters/Volume";
 import Time from "./component/meters/Time";
+import Category from "./component/tabs/Category";
+import General from "./component/tabs/General";
+import Overview from "./component/tabs/Overview"; 
+import Ward from "./component/tabs/Ward";
+import InfusionCalculator from "./component/meters/InfusionCalculator";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -24,6 +29,15 @@ function App() {
         <Route path="/Time" element={<Time />} />
 
         <Route path="/Tabs" element={<Tabs />} />
+        <Route path="/Category" element={<Category />} />
+
+        <Route path="/General" element={<General />} />
+
+        <Route path="/Overview" element={<Overview />} />
+
+        <Route path="/Ward" element={<Ward />} />
+
+        <Route path="/InfusionCalculator" element={<InfusionCalculator />} />
 
       </Routes>
     </BrowserRouter>

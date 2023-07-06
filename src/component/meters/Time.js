@@ -4,9 +4,10 @@ import './meter.css';
 import display from '../../assets/images/Revised Screen with buttons.png';
 
 const Time = () => {
-  const [value1, setValue1] = useState([0, 0, 'h', 0,0,'min']);
+  const [value1, setValue1] = useState([0, 0, '.', 0,0,'h']);
   const [activeDigit1, setActiveDigit1] = useState(3);
   const [selectedNumber1, setSelectedNumber1] = useState('');
+  const [calculationResult, setCalculationResult] = useState(0);
 
   const navigate = useNavigate ();
 
@@ -33,6 +34,7 @@ const Time = () => {
       }
     }
     setValue1(updatedvalue1);
+    calculateResult();
   };
 
   const handleDecrement = () => {
@@ -53,6 +55,7 @@ const Time = () => {
       }
     }
     setValue1(updatedvalue1);
+    calculateResult();
   };
 
   const handleShiftLeft = () => {
@@ -66,6 +69,7 @@ const Time = () => {
   };
 
   const handleOK = () => {
+    localStorage.setItem("time", parseFloat(value1.join('')));
     // Redirect to Meter page and pass selectedNumber state
     navigate('/Meter', { state: { selectedNumber1: parseFloat(value1.join('')) } });
   };
@@ -83,8 +87,19 @@ const Time = () => {
     );
   };
 
+  const calculateResult = () => {
+    const rate = localStorage.getItem("rate");; // Placeholder for the volume value (replace with actual volume)
+    const time = parseFloat(value1.join('')) + 0.01; // Get the rate from the user-selected value
+    const timeInHrs = time / 60;
+    console.log("Rate: " + rate)
+    console.log("Time: " + time)
+    const result = rate * timeInHrs;
+    console.log(result);
+    setCalculationResult(result);
+  };
+
   return (
-    <div className="display">
+    <div className="display displayTime">
       <img src={display} alt="Display" />
 
       <center>
@@ -92,13 +107,14 @@ const Time = () => {
       </center>
       <center>
         <p className='heading11'>{selectedNumber1}</p>
-        <p className="heading1">ml/h</p>
+        {/* <p className="heading1">ml/h</p> */}
+        <p className="heading1">{calculationResult.toFixed(2)}</p> {/* Display the calculation result */}
       </center>
 
       <div className="meter">
         <div className="controls">
-          <button className="left" onClick={handleShiftLeft}>{'<'}</button>
-          <button className="decrement down-button1" onClick={handleDecrement}>-</button>
+          <button className="left lefttime" onClick={handleShiftLeft}>{'<'}</button>
+          <button className="decrement down-button1 down-buttontime" onClick={handleDecrement}>-</button>
         </div>
         <div className="digits">
           {value1.map((digit, index) => (
@@ -108,8 +124,8 @@ const Time = () => {
           ))}
         </div>
         <div className="controls">
-          <button className="increment up-button1" onClick={handleIncrement}>+</button>
-          <button className="shiftright" onClick={handleShiftRight}>{'>'}</button>
+          <button className="increment up-button1 up-buttontime" onClick={handleIncrement}>+</button>
+          <button className="shiftright shiftrighttime" onClick={handleShiftRight}>{'>'}</button>
         </div>
       </div>
       <center>

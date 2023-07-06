@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    height:100vh;
 }
 .tab-content>.tab-pane{
     display:block !important
@@ -38,6 +39,10 @@
         margin-left: 8.6%; */
     }
 
+    .displayVol{
+        margin-top: 14%;
+    }
+
 
 .display img {
     width: 100%;
@@ -64,7 +69,20 @@
     color: #000000;
     color: #000000;
 }
-
+.headingOverview{
+    position: absolute;
+    /* width: 99px;
+  height: 17px; */
+  left: 38%;
+  top: 3%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+    color: #000000;
+    color: #000000;
+}
 .heading2 {
     position: absolute;
     /* width: 99px;
@@ -203,8 +221,8 @@
     width:26px;
 } */
 #tooltip{
-    position:static;
-    z-index:2;
+    /* position:static;
+    z-index:2; */
 }
 .digits span.active {
     color: blue;
@@ -226,10 +244,14 @@
     
     border-radius: 50%;
     height: 53%;
-    width: 26%;
+    width: 44%;
     background-color: transparent;
     color: transparent;
     border: 0px;
+}
+
+.mt-6{
+    margin-top: 13%;
 }
 .down-button1{ 
     top: 69%;

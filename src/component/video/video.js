@@ -59,24 +59,28 @@ const Videoplay = () => {
 
 
   return (
-<div className="container-fluid">
-<center> <h3 className="text-dark" id='tooltip'></h3></center>
-        
-        {activeButton === 6 &&
-      <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>   
+    <>
+    {activeButton === 6 &&
+      <center > <h3 className="text-dark" id='tooltip'>Press Power Button</h3> </center>   
     }
+   
+<div className="container-fluid">
+
+<center> <h3 className="text-dark" id='tooltip' style={{position:"absolute",zIndex:2}}></h3></center>
+        
+   
     {activeButton === 6 &&
      <audio className="audio-element" autoPlay>
      <source src={powerOnaudio}></source>
    </audio>  
     }
 {activeButton === 3 && (
-        <video src={backvid} autoPlay muted onEnded={handleVideoEnded} style={{'width':'100%','overflow':'hidden'}}>
+        <video src={backvid} autoPlay  onEnded={handleVideoEnded} style={{'width':'100%','overflow':'hidden'}}>
           Your browser does not support the video tag.
         </video>
       )}
        {activeButton === 7 && (
-        <video src={syringeChange} autoPlay muted onEnded={handleVideoEnded2} style={{'width':'100%','overflow':'hidden'}}>
+        <video src={syringeChange} autoPlay  onEnded={handleVideoEnded2} style={{'width':'100%','overflow':'hidden'}}>
         Your browser does not support the video tag.
       </video>
       )}
@@ -199,7 +203,7 @@ const Videoplay = () => {
         <button
           onClick={() => handleButtonClick(7)}
           disabled={disabledButtons.includes(7)}
-          className={`image-button ${activeButton === 7 ? 'active' : ''}`}
+          className={`mt-6 image-button ${activeButton === 7 ? 'active' : ''}`}
           style={{'position': 'absolute',
           'left': '4%',
           'top': '60%',
@@ -229,13 +233,13 @@ const Videoplay = () => {
           'padding':'10px',
           'border':'2px dashed black', display: disabledButtons.includes('video') ? 'none' : 'block' }}
         >
-         <b>Inser Syringe</b>  
+         <b>Insert Syringe</b>  
           {/* Switch Video */}
         </a>
          
         </button>
       
-
+        
 
  
    
@@ -246,7 +250,9 @@ const Videoplay = () => {
       <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>
     } */}
     </div>
+  
     </div>
+    </>
   );
 };
 

@@ -57,7 +57,7 @@ const Tabs = () => {
       <div className="tab-navigation">
         <button className='down-button' onClick={() => handleTabChange('up')}>Down</button>
         <button className="up-button" onClick={() => handleTabChange('down')}>Up</button>
-        <Link to="/Rate"> <button className='ok-button'>Ok</button></Link>
+        <Link to="/Ward"> <button className='ok-button'>Ok</button></Link>
     
       </div>
       <audio className="audio-element" autoPlay>

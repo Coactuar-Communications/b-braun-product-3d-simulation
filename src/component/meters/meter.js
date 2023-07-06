@@ -3,22 +3,37 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './meter.css';
 import display from '../../assets/images/Group 2.png';
 import startInfusion from '../../assets/voice/Page 8/Press okay Button.mp3';
+import video from '../../assets/images/video.mp4';
 
 const Meter = () => {
-  const location = useLocation();
-  const selectedNumber = location.state?.selectedNumber;
-  const selectedNumber1 = location.state?.selectedNumber1;
-  const selectedNumber2 = location.state?.selectedNumber2;
+  const [videoVisible, setVideoVisible] = useState(false);
+  // const location = useLocation();
+  // const selectedNumber = location.state?.selectedNumber;
+  // const selectedNumber1 = location.state?.selectedNumber1;
+  // const selectedNumber2 = location.state?.selectedNumber2;
+
+
+  let selectedNumber;
+  let selectedNumber1;
+  let selectedNumber2;
+
+  selectedNumber = localStorage.getItem("rate");
+  selectedNumber1 = localStorage.getItem("time");
+  selectedNumber2 = localStorage.getItem("volume");
 
   const history = useNavigate();
-
   const [activeTab, setActiveTab] = useState(0);
   const totalMeter = 3; // Total number of Meter
+
+  useEffect(() => {
+    
+  }, []);
+
   const tabContent = [
     { label: <span style={{ wordSpacing: '24px' }}>Rate {selectedNumber !== undefined ? selectedNumber : ''}ml/h</span>, value: selectedNumber !== 0 ? selectedNumber : '', page: '/Rate' },
     { label: <span style={{ wordSpacing: '24px' }}>Volume {selectedNumber2 !== undefined ? selectedNumber2 : ''}ml</span>, value: selectedNumber2 !== 0 ? selectedNumber2 : '', page: '/Volume' },
     // { label: 'Volume' + selectedNumber2 + ' ml', value: selectedNumber2, page: '/Volume' },
-    { label: <span style={{ wordSpacing: '24px' }}>Time {selectedNumber1 !== undefined ? selectedNumber1 : ''}h:mm</span>, value: selectedNumber1 !== 0 ? selectedNumber1 : '', page: '/Time' },
+    { label: <span style={{ wordSpacing: '24px' }}>Time {selectedNumber1 !== undefined ? selectedNumber1 : ''}h:min</span>, value: selectedNumber1 !== 0 ? selectedNumber1 : '', page: '/Time' },
     // { label: 'Time' + selectedNumber1 + ' h:min', value: selectedNumber1, page: '/Time' },
   ];
 
@@ -45,6 +60,12 @@ const Meter = () => {
   };
 
   useEffect(() => {
+    // selectedNumber = localStorage.getItem("rate");
+    // selectedNumber1 = localStorage.getItem("time");
+    // selectedNumber2 = localStorage.getItem("volume");
+
+    console.log(selectedNumber);
+
     // Update the active tab based on the URL when the component mounts
     const activeTabFromURL = tabContent.findIndex(
       (tab) => tab.page === window.location.pathname
@@ -72,10 +93,15 @@ const Meter = () => {
     <>
      <center> <h3 className="text-dark" id='tooltip'>Press the start button to start the infusion</h3></center>
         <center><h4 className="text-dark" id='tooltip'>Optional Setting - Press OK button to enter a volume or time preselection</h4> </center>
-    <div className="display display3">
-      <img src={display} alt="Display" />
+        {videoVisible ? (
+          <video src={video} alt="Video" className="media vid1" autoPlay loop/>
+        ) :
+        ( <div className="display display3">
+   
+          <img src={display} alt="Display" className="media" />
+       
       <center>
-        <p className="heading">Overview</p>
+        <p className="headingOverview">Overview</p>
       </center>
       <ul className="tab-buttons">
         {tabContent.map((tab, index) => (
@@ -104,25 +130,27 @@ const Meter = () => {
       </div>
 
       <div className="tab-navigation">
-        <button className="down-button" onClick={() => handleTabChange('up')}>
+        <button className="down-button down-buttonm" onClick={() => handleTabChange('up')}>
           Down
         </button>
-        <button className="up-button" onClick={() => handleTabChange('down')}>
+        <button className="up-button up-buttonm" onClick={() => handleTabChange('down')}>
           Up
         </button>
         <Link to={tabContent[activeTab].page}>
-          <button className="ok-button" onClick={handleOK}>
+          <button className="ok-button ok-buttonm" onClick={handleOK}>
             OK
           </button>
         </Link>
-        <button className="back-button" onClick={handleGoBack}>
+        <button className="back-button back-buttonm" onClick={handleGoBack}>
           Back
         </button>
+        <button onClick={() => setVideoVisible(true)} className='start-button1'>Start</button>
         <audio className="audio-element" autoPlay>
           <source src={startInfusion}></source>
         </audio>
       </div>
     </div>
+     )}
     </>
   );
 };

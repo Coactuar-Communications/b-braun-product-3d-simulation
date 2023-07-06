@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate, useLocation  } from 'react-router-dom';
 import './meter.css';
 import display from '../../assets/images/Revised Screen with buttons.png';
 
@@ -7,8 +7,8 @@ const Rate = () => {
   const [value2, setValue2] = useState([0, 0, 0, 0, '.', 0, 0]);
   const [activeDigit2, setActiveDigit2] = useState(3);
   const [selectedNumber2, setSelectedNumber2] = useState('');
-
-
+  const [calculationResult, setCalculationResult] = useState(''); // New state variable for the calculation result
+  const location = useLocation();
   const navigate = useNavigate ();
   const history = useNavigate();
   const handleGoBack = () => {
@@ -38,6 +38,7 @@ const Rate = () => {
       }
     }
     setValue2(updatedvalue2);
+    calculateResult();
   };
 
   const handleDecrement = () => {
@@ -58,6 +59,7 @@ const Rate = () => {
       }
     }
     setValue2(updatedvalue2);
+    calculateResult();
   };
 
   const handleShiftLeft = () => {
@@ -71,6 +73,7 @@ const Rate = () => {
   };
 
   const handleOK = () => {
+    localStorage.setItem("volume", parseFloat(value2.join('')));
     // Redirect to Meter page and pass selectedNumber state
     navigate('/Meter', { state: { selectedNumber2: parseFloat(value2.join('')) } });
   };
@@ -88,8 +91,25 @@ const Rate = () => {
     );
   };
 
+  const calculateResult = () => {
+    const rate = localStorage.getItem("rate");; // Placeholder for the volume value (replace with actual volume)
+    const volume = parseFloat(value2.join('')) + 1; // Get the rate from the user-selected value
+    console.log("Volume: " + volume)
+    console.log("Rate: " + rate)
+    const result = volume / rate;
+    const timeResult = formatTime(result);
+    console.log(result);
+    setCalculationResult(timeResult);
+  };
+
+  const formatTime = (timeInHours) => {
+    const hours = Math.floor(timeInHours);
+    const minutes = Math.round((timeInHours - hours) * 60);
+    return `${hours}:${minutes < 10 ? '0' : ''}${minutes} h:min`;
+  };
+
   return (
-    <div className="display">
+    <div className="display displayVol">
       <img src={display} alt="Display" />
 
       <center>
@@ -97,9 +117,9 @@ const Rate = () => {
       </center>
       <center>
         <p className='heading11'>{selectedNumber2}</p>
-        <p className="heading1">ml</p>
+        {/* <p className="heading1"></p></p>ml</p> */}
+        <p className="heading1">{calculationResult}</p> {/* Display the calculation result */}
       </center>
-
       <div className="meter">
         <div className="controls">
           <button className="left" onClick={handleShiftLeft}>{'<'}</button>
