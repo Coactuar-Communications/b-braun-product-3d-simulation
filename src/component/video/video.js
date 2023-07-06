@@ -60,7 +60,7 @@ const Videoplay = () => {
 
   return (
 <div className="container-fluid">
-<center> <h3 className="text-dark pt-2" id='tooltip'></h3></center>
+<center> <h3 className="text-dark" id='tooltip'></h3></center>
         
         {activeButton === 6 &&
       <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>   

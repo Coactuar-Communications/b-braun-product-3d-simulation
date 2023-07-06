@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "../Fonts/Rotis Sans Serif Std 75 Extra Bold.otf";
+import perfusor from "../../assets/images/Perfusor_compact_plus_HighResolutionFile.tif"
 import {
     MDBBtn,
     MDBContainer,
@@ -60,6 +61,7 @@ function Select() {
         {/* <MDBCardImage src='B_Braun_logo.png' alt="login form" className='rounded-start w-100 logo'/> */}
     <h1 className="text-white">Infusomat®
  compact<sup>plus</sup> P</h1>
+<img src={perfusor}></img>
           <button className=" btnlogin btn btn-sm btn-light">Select</button>
         </MDBCol>
     
