@@ -4,7 +4,7 @@ import Rate from "./component/meters/Rate";
 import Videoplay from "./component/video/video";
 import Login from "./component/login/Login";
 import Select from "./component/select/select";
-import Meter from "./component/meters/Meter";
+import Meter from "./component/meters/meter";
 import Volume from "./component/meters/Volume";
 import Time from "./component/meters/Time";
 import Category from "./component/tabs/Category";
