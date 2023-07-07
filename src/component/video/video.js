@@ -78,7 +78,7 @@ const Videoplay = () => {
         </video>
       )}
        {activeButton === 7 && (
-        <video src={syringeChange} autoPlay controls onEnded={handleVideoEnded2} style={{'width':'100%','overflow':'hidden'}}>
+        <video src={syringeChange} autoPlay onEnded={handleVideoEnded2} style={{'width':'100%','overflow':'hidden'}}>
         Your browser does not support the video tag.
       </video>
       )}

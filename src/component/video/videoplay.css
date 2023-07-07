@@ -99,17 +99,26 @@
 }
 
 .heading1 {
-    position: absolute;
+    /* position: absolute; */
     /* width: 99px;
   height: 17px; */
-  left: 83%;
+  /* left: 83%;
   top: 15%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 17px;
     line-height: 17px;
+    color: #fff; */
     color: #fff;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    position: absolute;
+    top: 11%;
+
 }
 
 .heading11 {
@@ -254,6 +263,18 @@ margin-top:12%;
     border: 0px;
 }
 
+.down-buttontime, .up-buttontime, .ok-button1,.lefttime, .shiftrighttime{
+    position: absolute;
+    
+    border-radius: 50%;
+    height: 53%;
+    width: 44%;
+    background-color: transparent;
+    color: transparent;
+    border: 0px;
+    left:20%;
+}
+
 .mt-6{
     margin-top: 13%;
 }
@@ -276,9 +297,33 @@ margin-top:12%;
     top: -12%;
     left: 147%;
 }
-.shiftright{
+.shiftright {
     left: 224%;
     top: -13%;
+}
+
+.down-buttontime{ 
+    left: 167%;
+    top: 84%;
+}
+
+.up-buttontime{   
+    left: 165%;
+    top: -77%;
+}
+
+.ok-buttontime{
+    top: 32%; 
+    left: 121%;
+}
+
+.lefttime{
+    left: 128%;
+    top: 5%;
+}
+.shiftrighttime {
+    left: 202%;
+    top: 4%;
 }
 
 

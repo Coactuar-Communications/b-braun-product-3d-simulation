@@ -31,7 +31,8 @@ body {
     transform: rotate(0deg);
 }
 .display2{
-    margin-top: 9.5% !important;
+    /* margin-top: 9.5% !important; */
+    margin-top: 9.3%!important;
     margin-left: 9% !important;
 }
 /* .display2{
@@ -304,14 +305,18 @@ margin-top: 13.9% !important;
 }
 
 .start-button1{
-    position: absolute;
+
     /* left: 337%; */
-    left: 349%;
-    top: 12%;
-    padding: 19px;
-    color: transparent;
-    background-color: transparent;
+    /* left: 349%;
+    top: 12%; */
+    
+    background-color: initial;
     border: 0;
+    color: transparent;
+    left: 336%;
+    padding: 19px;
+    position: absolute;
+    top: 5%;
 }
 
 .value1-part {
