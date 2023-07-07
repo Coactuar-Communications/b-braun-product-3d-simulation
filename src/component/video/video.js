@@ -60,9 +60,7 @@ const Videoplay = () => {
 
   return (
     <>
-    {activeButton === 6 &&
-      <center > <h3 className="text-dark" id='tooltip'>Press Power Button</h3> </center>   
-    }
+   
    
 <div className="container-fluid">
 
@@ -80,7 +78,7 @@ const Videoplay = () => {
         </video>
       )}
        {activeButton === 7 && (
-        <video src={syringeChange} autoPlay  onEnded={handleVideoEnded2} style={{'width':'100%','overflow':'hidden'}}>
+        <video src={syringeChange} autoPlay controls onEnded={handleVideoEnded2} style={{'width':'100%','overflow':'hidden'}}>
         Your browser does not support the video tag.
       </video>
       )}
@@ -136,7 +134,7 @@ const Videoplay = () => {
           className={`image-button ${activeButton === 3 ? 'active' : ''}`}
           style={{'position': 'absolute',
           'left': '4%',
-          'top': '51%',
+          'top': '53%',
           'width': '3%',
           
           'borderRadius': '50%', display: disabledButtons.includes(3) ? 'none' : 'block' }}
@@ -151,7 +149,7 @@ const Videoplay = () => {
           // className={`image-button ${activeButton === 3 ? 'active' : ''}`}
           style={{'position': 'absolute',
           'left': '4%',
-          'top': '51%',
+          'top': '53%',
           'backgroundColor': 'transparent',
           'color': 'transparent',
           'border':'0',
@@ -250,7 +248,9 @@ const Videoplay = () => {
       <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>
     } */}
     </div>
-  
+    {activeButton === 6 &&
+      <center > <h3 className="text-dark mt-10" id='tooltip'>Press Power Button</h3> </center>   
+    }
     </div>
     </>
   );

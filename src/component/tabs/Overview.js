@@ -60,7 +60,7 @@ const Overview = () => {
         <Link to="/Rate"> <button className='ok-button'>Ok</button></Link>
         <center>
         <p className="bg-warning text-dark startinfusion">
-          <span className="bg-light text-success start"> Ok </span> Confirm
+          <span className="bg-light text-success start  border-success"> Ok </span> Confirm
         </p>
       </center>
       </div>

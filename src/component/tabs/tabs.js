@@ -25,7 +25,8 @@ const Tabs = () => {
   };
 
   return (
-    <div className='container-fluid'>
+    <>
+    <div className='container-fluid bg-syringe'>
         <center> <h3 className="text-dark" id='tooltip'>Select type of syringe</h3></center>
         <center><h4 className="text-dark" id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center>
     <div className="display display1">
@@ -57,7 +58,7 @@ const Tabs = () => {
       <div className="tab-navigation">
         <button className='down-button' onClick={() => handleTabChange('up')}>Down</button>
         <button className="up-button" onClick={() => handleTabChange('down')}>Up</button>
-        <Link to="/Ward"> <button className='ok-button'>Ok</button></Link>
+        <Link to="/Rate"> <button className='ok-button'>Ok</button></Link>
     
       </div>
       <audio className="audio-element" autoPlay>
@@ -65,6 +66,7 @@ const Tabs = () => {
         </audio>
     </div>
     </div>
+    </>
   );
 };
 

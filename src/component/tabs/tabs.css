@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@300&family=Lato:ital@1&family=Lobster+Two&family=Montserrat&family=Nunito:wght@400;500&family=Open+Sans&family=Poppins&family=Rajdhani:wght@400;700&family=Roboto&family=Saira+Extra+Condensed:wght@500;600;700&family=Secular+One&family=Source+Serif+Pro:ital,wght@0,200;1,400&display=swap');
 body {
-    background-image: url('../../assets/images/REVISED DEVICE.jpg');
+    background-image: url('../../assets/images/REVISED DEVICE with Syringe 0011.jpg');
     background-repeat: no-repeat;
     overflow: hidden;
 }
-
+.bg-syringe{
+    background-image: url('../../assets/images/REVISED DEVICE with Syringe 0011.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height:100vh;
+}
+svg{
+   fill:'#03b289';
+}
 .display1 {
     position: absolute;
     /* width: 307px;
