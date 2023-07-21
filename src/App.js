@@ -8,6 +8,7 @@ import Meter from "./component/meters/meter";
 import Volume from "./component/meters/Volume";
 import Time from "./component/meters/Time";
 import Category from "./component/tabs/Category";
+import Menu from "./component/tabs/Menu";
 import General from "./component/tabs/General";
 import Overview from "./component/tabs/Overview"; 
 import Ward from "./component/tabs/Ward";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/Overview" element={<Overview />} />
 
         <Route path="/Ward" element={<Ward />} />
+        <Route path="/Menu" element={<Menu />} />
 
         <Route path="/InfusionCalculator" element={<InfusionCalculator />} />
 

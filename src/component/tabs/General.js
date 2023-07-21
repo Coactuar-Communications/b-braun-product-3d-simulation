@@ -7,11 +7,11 @@ import selectType from '../../assets/voice/Page 7/Select type.mp3';
 
 const General = () => {
     const [activeTab, setActiveTab] = useState(0);
-    const totalTabs = 1; // Total number of tabs
+    const totalTabs = 3; // Total number of tabs
     const tabContent = [
-   
-     
-      "Insulin"
+   "Heparin",
+      "Insulin",
+      "Nutricomp Energy"
     ];
   
     const handleTabChange = (direction) => {

@@ -14,6 +14,12 @@ body {
 svg{
    fill:'#03b289';
 }
+
+.menu-button{
+    position: absolute;
+    top: -6%;
+    left: 228%;
+}
 .display1 {
     position: absolute;
     /* width: 307px;

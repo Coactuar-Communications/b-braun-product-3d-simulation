@@ -300,3 +300,28 @@ display:none;
   padding: 6%;
   border-radius: 50%;
 }
+#mobile-portrait {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 999999;
+  display: none;
+}
+.center-device {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(2.5);
+  transform: translate(-50%, -50%) scale(2.5);
+  height: 50vh;
+  max-height: 250px;
+}
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 815px) and (orientation: portrait) {
+  #mobile-portrait {
+      display: block !important;
+  }
+}

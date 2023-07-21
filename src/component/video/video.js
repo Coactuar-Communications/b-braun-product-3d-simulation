@@ -16,6 +16,8 @@ import beepaudio from '../../assets/images/Device Sound .mp3'
 import "./videoplay.css";
 import { Link } from "react-router-dom";
 import powerOnaudio from '../../assets/voice/Page 4/Turn on the power button.mp3';
+import RotateScreen from '../RotateScreen';
+
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
@@ -33,7 +35,18 @@ const Videoplay = () => {
   //     tooltipRef.current.style.opacity = 1; // Show the tooltip on component mount
   //   }
   // }, []);
+  const [isRotated, setIsRotated] = useState(false);
+  const handleOrientationChange = () => {
+    const { orientation } = window;
+    setIsRotated(orientation === 90 || orientation === -90);
+  };
 
+  useEffect(() => {
+    window.addEventListener("orientationchange", handleOrientationChange);
+    return () => {
+      window.removeEventListener("orientationchange", handleOrientationChange);
+    };
+  }, []);
   const handleButtonClick = (buttonNumber) => {
     setActiveButton(buttonNumber);
     setDisabledButtons((prevDisabledButtons) => [...prevDisabledButtons, buttonNumber]);
@@ -63,7 +76,7 @@ const Videoplay = () => {
    
    
 <div className="container-fluid">
-
+<RotateScreen></RotateScreen>
 <center> <h3 className="text-dark" id='tooltip' style={{position:"absolute",zIndex:2}}></h3></center>
         
    
@@ -220,7 +233,7 @@ const Videoplay = () => {
           // className={`image-button ${activeButton === 3 ? 'active' : ''}`}
           style={{'position': 'absolute',
           'left': '4%',
-          'top': '60%',
+          'top': '55%',
 
           // 'backgroundColor': 'transparent',
           // 'color': 'transparent',

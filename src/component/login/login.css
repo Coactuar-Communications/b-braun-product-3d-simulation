@@ -91,4 +91,8 @@
   .btnlogin {
     color: white;
   }
-  
+  @media only screen and (min-device-width: 0px) and (max-device-width: 815px){
+    .container{
+      width: 100%;
+    }
+  }

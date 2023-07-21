@@ -54,7 +54,7 @@ function Select() {
         <h1 className="text-white mb-0">Perfusor® compact<sup>plus</sup>
 
 </h1>
-<img className="mb-3" src={perfusor} width={400}></img>
+<img className="mb-3" src={perfusor} width={"100%"}></img>
 
         <button className=" btnlogin btn btn-sm btn-light"onClick={handleSubmit}>Select</button>
         </MDBCol>
@@ -63,7 +63,7 @@ function Select() {
         {/* <MDBCardImage src='B_Braun_logo.png' alt="login form" className='rounded-start w-100 logo'/> */}
     <h1 className="text-white mb-0">Infusomat®
  compact<sup>plus</sup> P</h1>
- <img className="mb-3" src={infusor} width={400}></img>
+ <img className="mb-3" src={infusor} width={"100%"}></img>
           <button className=" btnlogin btn btn-sm btn-light">Select</button>
         </MDBCol>
     
