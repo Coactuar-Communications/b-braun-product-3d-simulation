@@ -12,8 +12,13 @@ import Menu from "./component/tabs/Menu";
 import General from "./component/tabs/General";
 import Overview from "./component/tabs/Overview"; 
 import Ward from "./component/tabs/Ward";
+import IntensiveCategory from "./component/tabs/IntensiveCategory";
+import Intensive from "./component/tabs/Intensive";
+import Intermediate from "./component/tabs/Intermediate";
 import InfusionCalculator from "./component/meters/InfusionCalculator";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import InterCategory from "./component/tabs/InterCategory";
+// import Intensive from "./component/tabs/Intensive";
 
 function App() {
   return (
@@ -30,11 +35,17 @@ function App() {
         <Route path="/Time" element={<Time />} />
 
         <Route path="/Tabs" element={<Tabs />} />
-        <Route path="/Category" element={<Category />} />
+        <Route path="/Category/:categoryName" element={<Category />} />
+        <Route path="/IntensiveCategory" element={<IntensiveCategory />} />
+        <Route path="/InterCategory" element={<InterCategory />} />
 
-        <Route path="/General" element={<General />} />
 
-        <Route path="/Overview" element={<Overview />} />
+
+        <Route path="/subcategory/:categoryName/:subcategoryName" element={<General />} />
+        <Route path="/Intensive" element={<Intensive />} />
+        <Route path="/Intermediate" element={<Intermediate />} />
+
+        <Route path="/Overview/:categoryName/:subcategoryName/:drugName" element={<Overview />} />
 
         <Route path="/Ward" element={<Ward />} />
         <Route path="/Menu" element={<Menu />} />

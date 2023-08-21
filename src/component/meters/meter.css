@@ -11,8 +11,8 @@ body {
     left: 221%;
     padding: 6%;
     border-radius: 50%;
-    color: transparent;
-    background-color: transparent;
+    color: black;
+    background-color: black;
     border:0;
   }
 .display {
@@ -32,8 +32,10 @@ body {
 }
 .display2{
     /* margin-top: 9.5% !important; */
-    margin-top: 9.3%!important;
-    margin-left: 9% !important;
+    /* margin-top: 9.3%!important;
+    margin-left: 9% !important; */
+    margin-top: 8.6%!important;
+    margin-left: 0% !important;
 }
 /* .display2{
 margin-top: 13.9% !important;
@@ -47,8 +49,10 @@ margin-top: 13.9% !important;
 }
 
 .display3{
-    margin-top: 9.4% !important;
-    margin-left: 9% !important;
+    /* margin-top: 9.4% !important;
+    margin-left: 9% !important; */
+    margin-top: 8.6%!important;
+    margin-left: 0% !important;
 }
 
 .heading {
@@ -262,8 +266,8 @@ margin-top: 13.9% !important;
     border-radius: 50%;
     height: 53%;
     width: 26%;
-    background-color: transparent;
-    color: transparent;
+    background-color: black;
+    color: black;
     border: 0px;
 }
 .down-button1{ 
@@ -299,8 +303,8 @@ margin-top: 13.9% !important;
 
 .vid1{
     position: relative;
-    width: 299px;
-    margin-top: 9%;
+    width: 240px;
+    margin-top: 8.8%;
     margin-left: 9%;
 }
 
@@ -312,7 +316,7 @@ margin-top: 13.9% !important;
     
     background-color: initial;
     border: 0;
-    color: transparent;
+    color: black;
     left: 336%;
     padding: 19px;
     position: absolute;

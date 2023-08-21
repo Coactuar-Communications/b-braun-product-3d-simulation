@@ -47,7 +47,7 @@ function Select() {
     </div>
     <div>
 
-    <MDBCard>
+    <MDBCard style={{padding:"0px"}}>
       <MDBRow className='g-0 mt-5'>
     
         <MDBCol md='6' className="text-center border-2">

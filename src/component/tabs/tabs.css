@@ -28,7 +28,7 @@ svg{
     top: 29.2%; */
     width: 246px;
     height: 254px;
-    left: 0 !important;
+    left: 129px !important;
     /* top: 29.7%; */
     /* margin-top: 9.5% !important; */
     margin-top: 9% !important;
@@ -240,12 +240,12 @@ svg{
     padding: 5px 10px;
     font-size: 16px;
 }
-.down-button, .up-button, .ok-button{
+.down-button, .up-button, .ok-button, .left, .shiftright{
     position: absolute;
     left: 142%;
     border-radius: 50%;
-    height: 24%;
-    width: 20%;
+    height: 24% !important;
+    width: 20% !important;
     background-color: transparent;
     color: transparent;
     border: 0px;
@@ -281,4 +281,81 @@ svg{
 
 .ok-buttonm{
     top: 32%;
+}
+
+.tab-content {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds the max-height */
+  }
+  .tab-content .tab-pane {
+    display: none; /* Hide all tab panes by default */
+  }
+  
+  .tab-content .tab-pane.active {
+    display: block; /* Show the active tab pane */
+  }
+
+  /* Add this to your CSS */
+
+.special-tab {
+    text-align: center;
+    color: #ffffffae !important; /* or any other lighter color */
+    position: relative;
+    padding: 0 0px; /* Add padding to create space for arrows */
+  }
+  
+
+  
+  .special-tab::before,
+  .special-tab::after {
+    content: 'ᐊ'; /* Left arrow (U+2190) */
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.5;
+    color:#00655a;
+    background-color: white !important;
+    border-radius: 50%;
+    padding:0px 9px;
+  }
+  .special-tab::before {
+    content: 'ᐊ'; /* Right arrow (U+2192) */
+    left: 10px; /* Adjust this value to increase or decrease the gap */
+  } 
+  .special-tab::after {
+    content: '\1405'; /* Right arrow (U+2192) */
+    right: 10px; /* Adjust this value to increase or decrease the gap */
+  }
+  
+  .tab-content .special-tab.active{
+    background-color: transparent !important;
+    border: 1px solid #D9D9D9 !important;
+  }
+
+  .left{
+    /* top: -12%;
+    left: 147%; */
+    top: 19% !important;
+    left: 116% !important;
+}
+
+.left-shift-button{
+    
+    /* top: 7% !important;
+    left: 152% !important; */
+
+}
+
+.shiftright{
+    /* left: 224%;
+    top: -13%; */
+    left: 169% !important;
+    top: 19% !important;
+}
+
+.right-shift-button{
+    left: 229%;
+    top: 7%;
 }

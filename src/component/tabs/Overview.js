@@ -1,20 +1,46 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './tabs.css';
 import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
 import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
+import drugsData from '../../data/drugsData';
 
 const Overview = () => {
   const [activeTab, setActiveTab] = useState(0);
   const totalTabs = 4; // Total number of tabs
-  const tabContent = [
-    "General Ward",
-    "Standard Patient Profile",
-    "Insulin",
-    "2000 IU / 40.00ml",
 
+  const { categoryName, subcategoryName, drugName } = useParams();
+  const selectedCategory = drugsData.find(category => category.category === categoryName);
+
+  if (!selectedCategory) {
+    return <div>Category not found.</div>;
+  }
+
+  const selectedSubcategory = selectedCategory.subcategories.find(subcategory => subcategory.name === subcategoryName);
+
+  if (!selectedSubcategory) {
+    return <div>Subcategory not found.</div>;
+  }
+
+  const selectedDrug = selectedSubcategory.drugs.find(drug => drug.name === drugName);
+
+  if (!selectedDrug) {
+    return <div>Drug not found.</div>;
+  }
+
+  console.log(selectedCategory.category);
+  console.log(selectedDrug.name);
+  console.log(selectedDrug.mlValue);
+  console.log(selectedDrug.iuValue);
+
+  const tabContent = [
+    selectedCategory.category,
+    "Standard Patient Profile",
+    selectedDrug.name,
+    selectedDrug.mlValue == '' ? `${selectedDrug.iuValue}` : `${selectedDrug.iuValue} IU / ${selectedDrug.mlValue} ml`,
   ];
+
 
   const handleTabChange = (direction) => {
     if (direction === 'up') {
