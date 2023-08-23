@@ -74,22 +74,16 @@ const Category = () => {
           </div>
         ))} */}
 
-        {selectedCategory.subcategories.map((subcategory, index) => (
-          <div>
-          <div
-            key={index}
-            className={`tab-pane ${activeTab === index ? 'active' : ''}`}
-          >
-            {console.log(subcategory.name)}
-            {subcategory.name}
-          </div>
-          {/* // <li key={subcategory.name}>
-          //   <Link to={`/subcategory/${selectedCategory.category}/${subcategory.name}`}>
-          //     {subcategory.name}
-          //   </Link>
-          // </li> */}
-          </div>
-        ))}
+          {selectedCategory.subcategories.map((subcategory, index) => (
+            <li
+              key={index}
+              className={`tab-pane ${activeTab === index ? 'active' : ''}`}
+            >
+              {subcategory.name}
+            </li>
+          ))}
+
+        
       </div>
 
       <div className="tab-navigation">

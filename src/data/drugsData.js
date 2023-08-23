@@ -79,7 +79,6 @@ const drugsData = [
             { name: 'TUV', mlValue: 0, iuValue: 0 },
             { name: 'Vasopressin', mlValue: 1, iuValue: 20 },
             { name: 'Vecuronium', mlValue: 1, iuValue: 20 },
-          
           ],
         },
         {
