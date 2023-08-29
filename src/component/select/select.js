@@ -36,7 +36,7 @@ function Select() {
         {/* <img src="Rectangle 5.png" alt="" /> */}
       {isSubmit ? (
         // <div className="ui message success">Signed in successfully</div>
-        navigate('/Video')
+        navigate('/PowerOn')
       ) : (
         <pre></pre>
       )}

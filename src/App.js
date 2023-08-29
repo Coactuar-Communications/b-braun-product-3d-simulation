@@ -1,7 +1,7 @@
 import "./assets/images/Device.bmp";
 import Tabs from "./component/tabs/tabs";
 import Rate from "./component/meters/Rate";
-import Videoplay from "./component/video/video";
+
 import Login from "./component/login/Login";
 import Select from "./component/select/select";
 import Meter from "./component/meters/meter";
@@ -18,6 +18,8 @@ import Intermediate from "./component/tabs/Intermediate";
 import InfusionCalculator from "./component/meters/InfusionCalculator";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InterCategory from "./component/tabs/InterCategory";
+import PowerOn from "./component/PowerOn/powerOn";
+import ChangeInfusionRate from "./component/ChangeInfusionRate/changeInfusionRate";
 // import Intensive from "./component/tabs/Intensive";
 
 function App() {
@@ -28,7 +30,7 @@ function App() {
 
       <Route path="/select" element={<Select />} />
 
-        <Route path="/Video" element={<Videoplay />} />
+        <Route path="/PowerOn" element={<PowerOn />} />
         <Route path="/Meter" element={<Meter />} />
         <Route path="/Rate" element={<Rate />} />
         <Route path="/Volume" element={<Volume />} />
@@ -51,6 +53,8 @@ function App() {
         <Route path="/Menu" element={<Menu />} />
 
         <Route path="/InfusionCalculator" element={<InfusionCalculator />} />
+
+        <Route path="/ChangeInfusionRate" element={<ChangeInfusionRate />} />
 
       </Routes>
     </BrowserRouter>
