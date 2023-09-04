@@ -4,6 +4,7 @@ import './meter.css';
 import display from '../../assets/images/Group 2.png';
 import startInfusion from '../../assets/voice/Page 8/Press okay Button.mp3';
 import video from '../../assets/images/video.mp4';
+import Sidebar from "../sidebar/Sidebar";
 
 const Meter = () => {
   const [videoVisible, setVideoVisible] = useState(false);
@@ -23,12 +24,16 @@ const Meter = () => {
 
   const history = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
+  const [toggle, setToggle] = useState(false);
+  const [selectedEntry, setSelectedEntry] = useState(null);
   const totalMeter = 3; // Total number of Meter
 
   useEffect(() => {
     
   }, []);
-
+  const handleToggle = () => {
+    setToggle((pre) => !pre);
+  };
   const tabContent = [
     { label: <span style={{ wordSpacing: '24px' }}>Rate {selectedNumber !== undefined ? selectedNumber : ''}ml/h</span>, value: selectedNumber !== 0 ? selectedNumber : '', page: '/Rate' },
     { label: <span style={{ wordSpacing: '24px' }}>Volume {selectedNumber2 !== undefined ? selectedNumber2 : ''}ml</span>, value: selectedNumber2 !== 0 ? selectedNumber2 : '', page: '/Volume' },
@@ -149,8 +154,11 @@ const Meter = () => {
           <source src={startInfusion}></source>
         </audio>
       </div>
+      
     </div>
      )}
+           <button onClick={handleToggle}>Table Of Content</button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
     </>
   );
 };

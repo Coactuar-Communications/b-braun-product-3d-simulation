@@ -138,6 +138,7 @@ const PowerOn = () => {
               left: "4%",
               top: "49%",
               width: "3%",
+              height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(1) ? "none" : "block",
             }}
@@ -153,6 +154,7 @@ const PowerOn = () => {
               left: "44%",
               top: "26%",
               width: "3%",
+              height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(2) ? "none" : "block",
             }}
@@ -172,7 +174,7 @@ const PowerOn = () => {
               left: "4%",
               top: "53%",
               width: "3%",
-
+              height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(3) ? "none" : "block",
             }}
@@ -208,9 +210,9 @@ const PowerOn = () => {
             className={`image-button ${activeButton === 4 ? "active" : ""}`}
             style={{
               position: "absolute",
-              left: "32%",
-              top: "38%",
-
+              left: "33%",
+    top: "35%",
+              height:"9%",
               width: "3%",
               borderRadius: "50%",
               display: disabledButtons.includes(4) ? "none" : "block",
@@ -227,6 +229,7 @@ const PowerOn = () => {
               left: "32%",
               top: "38%",
               width: "3%",
+              height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(5) ? "none" : "block",
             }}
@@ -243,6 +246,7 @@ const PowerOn = () => {
               left: "32%",
               top: "38%",
               width: "3%",
+              height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(6) ? "none" : "block",
             }}
@@ -261,7 +265,7 @@ const PowerOn = () => {
               top: "60%",
 
               width: "8%",
-
+              height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(7) ? "none" : "block",
             }}
@@ -277,7 +281,7 @@ const PowerOn = () => {
               style={{
                 position: "absolute",
                 left: "4%",
-                top: "55%",
+                top: "-17%",
 
                 // 'backgroundColor': 'transparent',
                 // 'color': 'transparent',
@@ -321,7 +325,7 @@ const PowerOn = () => {
           </center>
         )}
 
-        <button onClick={handleToggle}>Click Me</button>
+        <button onClick={handleToggle}>Table Of Content</button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
       </div>
     </>

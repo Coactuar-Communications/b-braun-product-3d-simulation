@@ -5,9 +5,12 @@ import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.
 import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import RotateScreen from '../RotateScreen';
+import Sidebar from "../sidebar/Sidebar";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [toggle, setToggle] = useState(false);
+  const [selectedEntry, setSelectedEntry] = useState(null);
   const totalTabs = 5; // Total number of tabs
   const tabContent = [
     "B. Braun OMNIFIX 50ml",
@@ -23,6 +26,9 @@ const Tabs = () => {
     } else if (direction === 'down') {
       setActiveTab((prevTab) => (prevTab - 1 + totalTabs) % totalTabs);
     }
+  };
+  const handleToggle = () => {
+    setToggle((pre) => !pre);
   };
 
   return (
@@ -67,7 +73,10 @@ const Tabs = () => {
           <source src={selectType}></source>
         </audio>
     </div>
+    <button onClick={handleToggle}>Table Of Content</button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
     </div>
+  
     </>
   );
 };

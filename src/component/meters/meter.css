@@ -11,8 +11,8 @@ body {
     left: 221%;
     padding: 6%;
     border-radius: 50%;
-    color: black;
-    background-color: black;
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     border:0;
   }
 .display {
@@ -266,8 +266,8 @@ margin-top: 13.9% !important;
     border-radius: 50%;
     height: 53%;
     width: 26%;
-    background-color: black;
-    color: black;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
     border: 0px;
 }
 .down-button1{ 
@@ -316,7 +316,7 @@ margin-top: 13.9% !important;
     
     background-color: initial;
     border: 0;
-    color: black;
+    color: rgba(0, 0, 0, 0);
     left: 336%;
     padding: 19px;
     position: absolute;

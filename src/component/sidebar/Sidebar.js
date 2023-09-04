@@ -4,12 +4,12 @@ import './Sidebar.css';
 const Sidebar = ({ close, selectedEntry, setSelectedEntry }) => {
   const tableOfContentsEntries = [
     { title: "Power On", url: "/PowerOn" },
-    { title: "Loading the syringe", url: "/entry2" },
-    { title: "Programming an infusion", url: "/entry2" },
-    { title: "Main Menu", url: "/entry2" },
-    { title: "Drug Database", url: "/entry2" },
-    { title: "Changing the infusion Rate", url: "/entry2" },
-    { title: "Administering a Bolus", url: "/entry2" },
+    { title: "Loading the syringe", url: "/PowerOn" },
+    { title: "Programming an infusion", url: "/Meter" },
+    { title: "Main Menu", url: "/menu" },
+    { title: "Drug Database", url: "/ward" },
+    { title: "Changing the infusion Rate", url: "/rate" },
+    { title: "Administering a Bolus", url: "/bolus" },
     { title: "Changing the syringe", url: "/entry2" },
     { title: "Pre-Alarm", url: "/entry2" },
     { title: "Operating Alarm", url: "/entry2" },
@@ -26,9 +26,9 @@ const Sidebar = ({ close, selectedEntry, setSelectedEntry }) => {
   return (
     <aside className="sidebar">
       <div onClick={() => close()}>
-        <IoMdCloseCircle color="#05b18b" size={50} />
+        <IoMdCloseCircle color="#097159" size={50} />
       </div>
-      <div style={{ marginTop: "100px" }}>
+      <div style={{ marginTop: "12vmin" }}>
         <ul>
           {tableOfContentsEntries.map((entry, index) => (
             <li

@@ -3,11 +3,14 @@ import { useNavigate  } from 'react-router-dom';
 import './meter.css';
 import display from '../../assets/images/Revised Screen with buttons.png';
 import buttons from '../../assets/voice/Page 8/Use the buttons.mp3';
+import Sidebar from "../sidebar/Sidebar";
 
 const Rate = () => {
   const [value, setValue] = useState([0, 0, 0, 0, '.', 0, 0]);
   const [activeDigit, setActiveDigit] = useState(3);
   const [selectedNumber, setSelectedNumber] = useState('');
+  const [toggle, setToggle] = useState(false);
+  const [selectedEntry, setSelectedEntry] = useState(null);
 
   const navigate = useNavigate ();
   const history = useNavigate();
@@ -59,7 +62,9 @@ const Rate = () => {
     }
     setValue(updatedValue);
   };
-
+  const handleToggle = () => {
+    setToggle((pre) => !pre);
+  };
   const handleShiftLeft = () => {
     const newActiveDigit = activeDigit === 0 ? value.length - 1 : activeDigit - 1;
     setActiveDigit(newActiveDigit);
@@ -137,7 +142,10 @@ const Rate = () => {
           Back
         </button>
       </center>
+     
     </div>
+    <button onClick={handleToggle}>Table Of Content</button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
     </>
   );
 };

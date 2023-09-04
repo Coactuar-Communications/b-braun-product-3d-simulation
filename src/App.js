@@ -20,6 +20,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InterCategory from "./component/tabs/InterCategory";
 import PowerOn from "./component/PowerOn/powerOn";
 import ChangeInfusionRate from "./component/ChangeInfusionRate/changeInfusionRate";
+import Bolus from "./component/Bolus/bolus";
 // import Intensive from "./component/tabs/Intensive";
 
 function App() {
@@ -55,6 +56,8 @@ function App() {
         <Route path="/InfusionCalculator" element={<InfusionCalculator />} />
 
         <Route path="/ChangeInfusionRate" element={<ChangeInfusionRate />} />
+
+        <Route path="/Bolus" element={<Bolus />} />
 
       </Routes>
     </BrowserRouter>

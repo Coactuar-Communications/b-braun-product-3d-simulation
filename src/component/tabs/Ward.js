@@ -5,6 +5,7 @@ import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.
 import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import drugsData from '../../data/drugsData';
+import Sidebar from "../sidebar/Sidebar";
 
 const Ward = () => {
     // const [activeTab, setActiveTab] = useState(0);
@@ -15,6 +16,8 @@ const Ward = () => {
     // ];
 
     const [activeTab, setActiveTab] = useState(0);
+    const [toggle, setToggle] = useState(false);
+    const [selectedEntry, setSelectedEntry] = useState(null);
     const totalTabs = 3; // Total number of tabs
     const tabContent = [
       "General Ward",
@@ -30,7 +33,9 @@ const Ward = () => {
         setActiveTab((prevTab) => (prevTab - 1 + totalTabs) % totalTabs);
       }
     };
-
+    const handleToggle = () => {
+      setToggle((pre) => !pre);
+    };
     const getLinkDestination = () => {
       switch (activeTab) {
         case 0:
@@ -93,6 +98,8 @@ const Ward = () => {
             <source src={selectType}></source>
           </audio> */}
       </div>
+      <button onClick={handleToggle}>Table Of Content</button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
       </div>
     );
   };
