@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import powerOnaudio from "../../assets/voice/Page 4/Turn on the power button.mp3";
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
+import { NextButton } from "../NextButton/nextButton";
 
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -327,6 +328,7 @@ const PowerOn = () => {
 
         <button onClick={handleToggle}>Table Of Content</button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"InsertSyringe"}></NextButton>
       </div>
     </>
   );

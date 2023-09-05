@@ -6,6 +6,7 @@ import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import RotateScreen from '../RotateScreen';
 import Sidebar from "../sidebar/Sidebar";
+import { NextButton } from '../NextButton/nextButton';
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -75,6 +76,7 @@ const Tabs = () => {
     </div>
     <button onClick={handleToggle}>Table Of Content</button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"menu"}></NextButton>
     </div>
   
     </>

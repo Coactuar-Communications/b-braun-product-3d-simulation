@@ -21,6 +21,9 @@ import InterCategory from "./component/tabs/InterCategory";
 import PowerOn from "./component/PowerOn/powerOn";
 import ChangeInfusionRate from "./component/ChangeInfusionRate/changeInfusionRate";
 import Bolus from "./component/Bolus/bolus";
+import InsertSyringe from "./component/InsertSyringe/insertSyringe";
+import ChangeSyringe from "./component/ChangeSyringe/changeSyringe";
+import Standby from "./component/Standby/standby";
 // import Intensive from "./component/tabs/Intensive";
 
 function App() {
@@ -58,6 +61,12 @@ function App() {
         <Route path="/ChangeInfusionRate" element={<ChangeInfusionRate />} />
 
         <Route path="/Bolus" element={<Bolus />} />
+
+        <Route path="/InsertSyringe" element={<InsertSyringe />} />
+
+        <Route path="/ChangeSyringe" element={<ChangeSyringe />} />
+
+        <Route path="/Standby" element={<Standby />} />
 
       </Routes>
     </BrowserRouter>

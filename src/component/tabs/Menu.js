@@ -5,6 +5,7 @@ import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.
 import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import Sidebar from "../sidebar/Sidebar";
+import { NextButton } from '../NextButton/nextButton';
 
 const Menu = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -90,6 +91,7 @@ const Menu = () => {
       
       <button onClick={handleToggle}>Table Of Content</button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"ward"}></NextButton>
     </div>
   );
 };

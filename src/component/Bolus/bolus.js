@@ -15,7 +15,7 @@ import syringeChange from "../../assets/images/LOADING THE SYRINGE REVISED.mp4";
 import beepaudio from "../../assets/images/Device Sound .mp3";
 import "./bolus.css";
 import volumeBolus from "../../assets/images/Volume Bolus.mp4";
-import manualBolus from "../../assets/images/Manual Bolus.mp4"
+import manualBolus from "../../assets/images/Manual Bolus.mp4";
 
 import { Link } from "react-router-dom";
 // import powerOnaudio from "../../assets/voice/Page 4/Turn on the power button.mp3";
@@ -23,6 +23,7 @@ import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
 import infusionVideo from "../../assets/images/video.mp4";
 import bolusImage from "../../assets/images/BOLUS.png";
+import { NextButton } from "../NextButton/nextButton";
 
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -51,11 +52,13 @@ const Bolus = () => {
 
   useEffect(() => {
     window.addEventListener("orientationchange", handleOrientationChange);
+    console.log(activeButton);
     return () => {
       window.removeEventListener("orientationchange", handleOrientationChange);
     };
   }, []);
   const handleButtonClick = (buttonNumber) => {
+    console.log("button pressed");
     setActiveButton(buttonNumber);
     setDisabledButtons((prevDisabledButtons) => [
       ...prevDisabledButtons,
@@ -97,7 +100,7 @@ const Bolus = () => {
           </video>
         )}
 
-{activeButton === 8 && (
+        {activeButton === 8 && (
           <video
             src={manualBolus}
             autoPlay
@@ -116,65 +119,33 @@ const Bolus = () => {
           ></h3>
         </center>
 
-        {activeButton === 6 && (
-          <audio className="audio-element" autoPlay>
-            {/* <source src={powerOnaudio}></source> */}
-          </audio>
-        )}
-        {activeButton === 3 && (
-          <video
-            src={backvid}
-            autoPlay
-            onEnded={handleVideoEnded}
-            style={{ width: "100%", overflow: "hidden" }}
-          >
-            Your browser does not support the video tag.
-          </video>
-        )}
-    
         <div className="image-container display displayVid">
-          {activeButton === 1 && <video src={infusionVideo} autoPlay loop></video>}
+          {activeButton === 1 && (
+            <video src={infusionVideo} autoPlay loop></video>
+          )}
 
-          {activeButton === 2 && <img src={test} alt="Image 2" />}
-          {/* {activeButton === 3 && (
-        <video src={vid1} autoPlay  muted onEnded={handleVideoEnded}>
-          Your browser does not support the video tag.
-        </video>
-      )} */}
           {activeButton === 4 && <img src={syringe} alt="Image 4" />}
-          {activeButton === 5 && <video
-            src={syringeChange}
-            autoPlay
-            onEnded={handleVideoEnded2}
-            style={{ width: "100%", overflow: "hidden" }}
-          >
-            Your browser does not support the video tag.
-          </video>}
-          {activeButton === 6 && <img src={bolusImage} />}
+          {activeButton === 2 && <img src={bolusImage} />}
         </div>
         <div className="button-container">
-        
-
           <button
-            onClick={() => handleButtonClick(6)}
-            disabled={disabledButtons.includes(6)}
-            className={`image-button ${activeButton === 5 ? "active" : ""}`}
+            onClick={() => handleButtonClick(2)}
+            className={`image-button ${activeButton === 1 ? "active" : ""}`}
             style={{
               position: "absolute",
               left: "57%",
               top: "26%",
               width: "3%",
               borderRadius: "50%",
-              display: disabledButtons.includes(6) ? "none" : "block",
+              display: activeButton === 1 ? "block" : "none",
             }}
           >
             Switch Image 6
           </button>
           <button
             onClick={() => handleButtonClick(7)}
-            disabled={disabledButtons.includes(7)}
             className={`mt-6 image-button ${
-              activeButton === 7 ? "active" : ""
+              activeButton === 2 ? "active" : ""
             }`}
             style={{
               position: "absolute",
@@ -184,17 +155,15 @@ const Bolus = () => {
               width: "5%",
 
               borderRadius: "50%",
-              display: disabledButtons.includes(7) ? "none" : "block",
+              display: disabledButtons.includes(2) ? "block" : "none",
             }}
           >
-            
+            Hi
           </button>
 
           <button
-            onClick={() => handleButtonClick(8)}
-            disabled={disabledButtons.includes(8)}
             className={`mt-6 image-button ${
-              activeButton === 8 ? "active" : ""
+              activeButton === 2 ? "active" : ""
             }`}
             style={{
               position: "absolute",
@@ -204,13 +173,11 @@ const Bolus = () => {
               width: "8%",
 
               borderRadius: "50%",
-              display: disabledButtons.includes(8) ? "none" : "block",
+              display: activeButton === 2 ? "block" : "none",
             }}
           >
-       
-              <b>bolus</b>
-              {/* Switch Video */}
-           
+            <b>bolus</b>
+            {/* Switch Video */}
           </button>
 
           {/* {activeButton === 4 &&
@@ -238,10 +205,17 @@ const Bolus = () => {
             </h3>{" "}
           </center>
         )}
-<div>
-        <button onClick={handleToggle}>Table Of Content</button>
-        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <div>
+          <button onClick={handleToggle}>Table Of Content</button>
+          {toggle && (
+            <Sidebar
+              close={() => setToggle(false)}
+              selectedEntry={selectedEntry}
+              setSelectedEntry={setSelectedEntry}
+            />
+          )}
         </div>
+        <NextButton url={"ChangeSyringe"}></NextButton>
       </div>
     </>
   );

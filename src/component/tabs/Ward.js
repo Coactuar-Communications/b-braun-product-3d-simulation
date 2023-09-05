@@ -6,6 +6,7 @@ import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import drugsData from '../../data/drugsData';
 import Sidebar from "../sidebar/Sidebar";
+import { NextButton } from '../NextButton/nextButton';
 
 const Ward = () => {
     // const [activeTab, setActiveTab] = useState(0);
@@ -100,6 +101,7 @@ const Ward = () => {
       </div>
       <button onClick={handleToggle}>Table Of Content</button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"ChangeInfusionRate"}></NextButton>
       </div>
     );
   };

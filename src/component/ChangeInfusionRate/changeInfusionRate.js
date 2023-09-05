@@ -20,6 +20,7 @@ import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
 import changeInfusionRateVideo from "../../assets/images/changeInfusionRate.mp4";
 import runningInfusion from "../../assets/images/video.mp4";
+import { NextButton } from "../NextButton/nextButton";
 
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -191,6 +192,7 @@ const ChangeInfusionRate = () => {
 
         <button onClick={handleToggle}>Table Of Content</button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"bolus"}></NextButton>
       </div>
     </>
   );
