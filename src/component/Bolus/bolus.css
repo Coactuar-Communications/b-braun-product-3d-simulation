@@ -5,6 +5,10 @@
     background-size: cover;
     overflow: hidden;
     height:100vh;
+    /* position: relative; */
+    /* width: 100%; */
+    overflow: hidden;
+    /* padding-top: 100%; */
 }
 .tab-content>.tab-pane{
     display:block !important
@@ -59,7 +63,8 @@
     position: absolute;
     /* width: 99px;
   height: 17px; */
-    left: 31%;
+    /* left: 31%; */
+    left: 29%;
     top: 2%;
     font-family: 'Inter';
     font-style: normal;
@@ -99,7 +104,7 @@
 }
 
 .heading1 {
-    /* position: absolute; */
+    /* position: absolute;
     /* width: 99px;
   height: 17px; */
   /* left: 83%;
@@ -192,7 +197,7 @@ margin-top:12%;
 /* .meter {
     display: flex;
     align-items: center;
-    position: absolute;
+   position: absolute;
     left: 10%;
     top: 27%;
     font-family: 'Inter';
@@ -486,7 +491,7 @@ a:hover{
   
   button{
     padding: 10px;
-    font-size: 20px;
+    font-size: 2.5vmin;
     border: #05b18b solid 1px;
     background: #097159;
     border-radius: 10px;

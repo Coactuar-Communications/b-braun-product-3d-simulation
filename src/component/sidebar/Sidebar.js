@@ -14,7 +14,7 @@ const Sidebar = ({ close, selectedEntry, setSelectedEntry }) => {
     { title: "Pre-Alarm", url: "/entry2" },
     { title: "Operating Alarm", url: "/entry2" },
     { title: "Standby", url: "/Standby" },
-    { title: "Turning Off", url: "/entry2" },
+    { title: "Turning Off", url: "/shutdown" },
     // Add more entries
   ];
 

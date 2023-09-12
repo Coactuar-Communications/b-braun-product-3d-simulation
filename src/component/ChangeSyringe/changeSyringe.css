@@ -99,7 +99,7 @@
 }
 
 .heading1 {
-    /* position: absolute; */
+    position: absolute;
     /* width: 99px;
   height: 17px; */
   /* left: 83%;
@@ -470,7 +470,7 @@ padding: 39PX 32px;
   
   button{
     padding: 1em;
-    font-size: 20px;
+    font-size: 2.5vmin;
     border: #05b18b solid 1px;
     background: white;
     cursor: pointer;

@@ -9,6 +9,8 @@ export const NextButton = ({ url }) => {
     }
 
     return(
-        <button onClick={redirectToUrl}>Next</button>
+        <button onClick={redirectToUrl}
+       id="nextButton"
+        >Next</button>
     )
 }

@@ -101,6 +101,7 @@ const ChangeInfusionRate = () => {
           </audio>
         )}
         {activeButton === 3 && (
+           <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
           <video
             src={backvid}
             autoPlay
@@ -109,8 +110,30 @@ const ChangeInfusionRate = () => {
           >
             Your browser does not support the video tag.
           </video>
+          <button
+      onClick={handleToggle}
+      style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}
+    >
+      Table Of Content
+    </button>
+    <NextButton
+      url={"bolus"}
+      style={{
+        position: 'absolute',
+        top: '10px',
+        left: '110px', // Adjust the left position as needed
+        zIndex: 1,
+      }}
+    />
+          </div>
         )}
         {activeButton === 7 && (
+          <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
           <video
             src={changeInfusionRateVideo}
             autoPlay
@@ -118,8 +141,33 @@ const ChangeInfusionRate = () => {
           >
             Your browser does not support the video tag.
           </video>
+          <span   style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+    
+    >
+
+      Table Of Content
+    </button>
+
+    <NextButton
+      url={"Bolus"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+   </span>
+          </div>
         )}
-        <div className="image-container display displayVid">
+        <div className="image-container display-full displayVid-full">
           {activeButton === 1 && <video src={runningInfusion} autoPlay>
           Your browser does not support the video tag.
         </video> }
@@ -134,11 +182,10 @@ const ChangeInfusionRate = () => {
             }`}
             style={{
               position: "absolute",
-              left: "4%",
-              top: "60%",
-
-              width: "8%",
-
+              left: "33%",
+    // top: "35%",
+              height:"9%",
+              width: "3%",
               borderRadius: "50%",
               display: disabledButtons.includes(7) ? "none" : "block",
             }}
@@ -153,17 +200,12 @@ const ChangeInfusionRate = () => {
               // className={`image-button ${activeButton === 3 ? 'active' : ''}`}
               style={{
                 position: "absolute",
-                left: "4%",
-                top: "55%",
-
-                // 'backgroundColor': 'transparent',
-                // 'color': 'transparent',
-                // 'border':'0',
-                // 'width': '3%',
-                textDecoration: "none",
-                color: "black",
-                padding: "10px",
-                border: "2px dashed black",
+                left: "33%",
+      top: "35%",
+                height:"9%",
+                width: "3%",
+                borderRadius: "50%",
+                color:"transparent",
                 display: disabledButtons.includes("video") ? "none" : "block",
               }}
             >
@@ -174,7 +216,9 @@ const ChangeInfusionRate = () => {
         {activeButton === 6 && (
           <center>
             {" "}
-            <h3 className="text-dark mt-5" id="tooltip">
+            {/* <h3 className="text-dark mt-5" id="tooltip"> */}
+            <h3 className="text-dark" id="tooltip">
+
               Press{" "}
               <svg
                 style={{ fill: "#05b18b" }}

@@ -90,6 +90,7 @@ const Bolus = () => {
       <div className="container-fluid">
         <RotateScreen></RotateScreen>
         {activeButton === 7 && (
+           <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
           <video
             src={volumeBolus}
             autoPlay
@@ -98,9 +99,33 @@ const Bolus = () => {
           >
             Your browser does not support the video tag.
           </video>
+          <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      Table Of Content
+    </button>
+    <NextButton
+      url={"ChangeSyringe"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+          </div>
         )}
 
         {activeButton === 8 && (
+           <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
           <video
             src={manualBolus}
             autoPlay
@@ -109,6 +134,29 @@ const Bolus = () => {
           >
             Your browser does not support the video tag.
           </video>
+          <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      Table Of Content
+    </button>
+    <NextButton
+      url={"ChangeSyringe"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+          </div>
         )}
         <center>
           {" "}
@@ -119,7 +167,7 @@ const Bolus = () => {
           ></h3>
         </center>
 
-        <div className="image-container display displayVid">
+        <div className="image-container display-full displayVid-full">
           {activeButton === 1 && (
             <video src={infusionVideo} autoPlay loop></video>
           )}
@@ -190,7 +238,9 @@ const Bolus = () => {
         {activeButton === 6 && (
           <center>
             {" "}
-            <h3 className="text-dark mt-5" id="tooltip">
+            {/* <h3 className="text-dark mt-5" id="tooltip"> */}
+            <h3 className="text-dark" id="tooltip">
+
               {/* Press{" "}
               <svg
                 style={{ fill: "#05b18b" }}
@@ -206,7 +256,7 @@ const Bolus = () => {
           </center>
         )}
         <div>
-          <button onClick={handleToggle}>Table Of Content</button>
+          {/* <button onClick={handleToggle}>Table Of Content</button> */}
           {toggle && (
             <Sidebar
               close={() => setToggle(false)}
@@ -214,8 +264,9 @@ const Bolus = () => {
               setSelectedEntry={setSelectedEntry}
             />
           )}
+        {/* <NextButton url={"ChangeSyringe"}></NextButton> */}
+
         </div>
-        <NextButton url={"ChangeSyringe"}></NextButton>
       </div>
     </>
   );

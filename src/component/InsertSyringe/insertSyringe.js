@@ -92,6 +92,7 @@ const InsertSyringe = () => {
         </center>
 
         {activeButton === 7 && (
+           <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
           <video
             src={syringeChange}
             autoPlay
@@ -100,6 +101,29 @@ const InsertSyringe = () => {
           >
             Your browser does not support the video tag.
           </video>
+          <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      Table Of Content
+    </button>
+    <NextButton
+      url={"Tabs"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+          </div>
         )}
         <div className="image-container display displayVid">
           {activeButton === 1 && <img src={syringe} alt="Image 4" />}
@@ -116,7 +140,7 @@ const InsertSyringe = () => {
               left: "4%",
               top: "60%",
 
-              width: "8%",
+              width: "25%",
               height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(7) ? "none" : "block",
@@ -161,7 +185,9 @@ const InsertSyringe = () => {
         {activeButton === 6 && (
           <center>
             {" "}
-            <h3 className="text-dark mt-5" id="tooltip">
+            {/* <h3 className="text-dark mt-5" id="tooltip"> */}
+            <h3 className="text-dark" id="tooltip">
+
               Press{" "}
               <svg
                 style={{ fill: "#05b18b" }}

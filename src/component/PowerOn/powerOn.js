@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import bg from "../../assets/images/Settings.png";
-import on from "../../assets/images/Turn On.png";
+import bg from "../../assets/images/Settings-full.png";
+import on from "../../assets/images/Turn On-full.png";
 import display from "../../assets/images/Revised Screen with buttons.png";
 import display3 from "../../assets/images/INJECTION RATE SELECTION.png";
 import vid1 from "../../assets/images/Self test mp4.mp4";
 import vid2 from "../../assets/images/Syringe Change.mp4";
-import test from "../../assets/images/Test Mode.png";
-import technical from "../../assets/images/Technical.png";
-import syringe from "../../assets/images/Syringe Change.png";
+import test from "../../assets/images/Test Mode-full.png";
+import technical from "../../assets/images/Technical-full.png";
+import syringe from "../../assets/images/Syringe Change-full.png";
 import background from "../../assets/images/REVISED DEVICE.jpg";
 import newbg from "../../assets/images/bg.png";
 import backvid from "../../assets/images/REVISED SELFTEST.mp4";
@@ -96,18 +96,45 @@ const PowerOn = () => {
             <source src={powerOnaudio}></source>
           </audio>
         )}
-        {activeButton === 3 && (
-          <video
-            src={backvid}
-            autoPlay
-            onEnded={handleVideoEnded}
-            style={{ width: "100%", overflow: "hidden" }}
-          >
-            Your browser does not support the video tag.
-          </video>
-        )}
+   {activeButton === 3 && (
+  <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+    <video
+      // id="myVideo"
+      src={backvid}
+      autoPlay
+      onEnded={handleVideoEnded}
+      style={{ width: '100%' }}
+    >
+      Your browser does not support the video tag.
+    </video>
+    <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+    <button
+      onClick={handleToggle}
+  
+    >
+      Table Of Content
+    </button>
+    <NextButton
+      url={"Tabs"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+  </div>
+)}
         {activeButton === 7 && (
-          <video
+            <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+            <video
+        
             src={syringeChange}
             autoPlay
             onEnded={handleVideoEnded2}
@@ -115,8 +142,32 @@ const PowerOn = () => {
           >
             Your browser does not support the video tag.
           </video>
+          <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      Table Of Content
+    </button>
+    <NextButton
+      url={"Tabs"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+  </div> 
         )}
-        <div className="image-container display displayVid">
+        <div className="image-container display-full displayVid-full">
+          
           {activeButton === 1 && <img src={bg} alt="Image 1" />}
 
           {activeButton === 2 && <img src={test} alt="Image 2" />}
@@ -128,6 +179,28 @@ const PowerOn = () => {
           {activeButton === 4 && <img src={syringe} alt="Image 4" />}
           {activeButton === 5 && <img src={technical} alt="Image 5" />}
           {activeButton === 6 && <img src={on} />}
+          <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+      
+    >
+      Table Of Content
+    </button>
+    <NextButton
+      url={"Tabs"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
         </div>
         <div className="button-container">
           <button
@@ -137,14 +210,14 @@ const PowerOn = () => {
             style={{
               position: "absolute",
               left: "4%",
-              top: "49%",
-              width: "3%",
-              height:"9%",
+              top: "43%",
+              width: "5%",
+              height:"11%",
               borderRadius: "50%",
               display: disabledButtons.includes(1) ? "none" : "block",
             }}
           >
-            Switch Image 1
+            On1
           </button>
           <button
             onClick={() => handleButtonClick(2)}
@@ -172,10 +245,12 @@ const PowerOn = () => {
             className={`image-button ${activeButton === 3 ? "active" : ""}`}
             style={{
               position: "absolute",
+              // left: "4%",
+              // top: "53%",
               left: "4%",
-              top: "53%",
-              width: "3%",
-              height:"9%",
+              top: "43%",
+              width: "5%",
+              height:"11%",
               borderRadius: "50%",
               display: disabledButtons.includes(3) ? "none" : "block",
             }}
@@ -190,8 +265,12 @@ const PowerOn = () => {
               // className={`image-button ${activeButton === 3 ? 'active' : ''}`}
               style={{
                 position: "absolute",
+                // left: "4%",
+                // top: "44%",
                 left: "4%",
-                top: "53%",
+              top: "44%",
+                width: "5%",
+              height:"11%",
                 backgroundColor: "transparent",
                 color: "transparent",
                 border: "0",
@@ -203,7 +282,7 @@ const PowerOn = () => {
             >
               {/* Switch Video */}
             </a>
-            Switch Image 3
+            On2
           </button>
           <button
             onClick={() => handleButtonClick(4)}
@@ -219,7 +298,7 @@ const PowerOn = () => {
               display: disabledButtons.includes(4) ? "none" : "block",
             }}
           >
-            Switch Image 4
+            Ok3
           </button>
           <button
             onClick={() => handleButtonClick(5)}
@@ -227,15 +306,17 @@ const PowerOn = () => {
             className={`image-button ${activeButton === 5 ? "active" : ""}`}
             style={{
               position: "absolute",
-              left: "32%",
-              top: "38%",
+              // left: "32%",
+              // top: "38%",
+              left: "33%",
+              top: "35%",
               width: "3%",
               height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(5) ? "none" : "block",
             }}
           >
-            Switch Image 5
+            Ok2
           </button>
 
           <button
@@ -244,15 +325,17 @@ const PowerOn = () => {
             className={`image-button ${activeButton === 5 ? "active" : ""}`}
             style={{
               position: "absolute",
-              left: "32%",
-              top: "38%",
+              // left: "32%",
+              // top: "38%",
+              left: "33%",
+              top: "35%",
               width: "3%",
               height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(6) ? "none" : "block",
             }}
           >
-            Switch Image 6
+            Ok1
           </button>
           <button
             onClick={() => handleButtonClick(7)}
@@ -265,7 +348,7 @@ const PowerOn = () => {
               left: "4%",
               top: "60%",
 
-              width: "8%",
+              width: "25%",
               height:"9%",
               borderRadius: "50%",
               display: disabledButtons.includes(7) ? "none" : "block",
@@ -310,7 +393,9 @@ const PowerOn = () => {
         {activeButton === 6 && (
           <center>
             {" "}
-            <h3 className="text-dark mt-5" id="tooltip">
+            {/* <h3 className="text-dark mt-5" id="tooltip"> */}
+            <h3 className="text-dark" id="tooltip">
+
               Press{" "}
               <svg
                 style={{ fill: "#05b18b" }}
@@ -326,9 +411,9 @@ const PowerOn = () => {
           </center>
         )}
 
-        <button onClick={handleToggle}>Table Of Content</button>
+        {/* <button onClick={handleToggle}>Table Of Content</button> */}
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
-        <NextButton url={"InsertSyringe"}></NextButton>
+        {/* <NextButton url={"InsertSyringe"}></NextButton> */}
       </div>
     </>
   );

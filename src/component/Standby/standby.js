@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import powerOnaudio from "../../assets/voice/Page 4/Turn on the power button.mp3";
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
-
+import { NextButton } from "../NextButton/nextButton";
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
@@ -92,6 +92,7 @@ const Standby = () => {
         </center>
 
         {activeButton === 3 && (
+          <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
           <video
             src={standbyVideo}
             autoPlay
@@ -100,8 +101,32 @@ const Standby = () => {
           >
             Your browser does not support the video tag.
           </video>
+          <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      Table Of Content
+    </button>
+    <NextButton
+      url={"TurnOff"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+          </div>
         )}
         {activeButton === 5 && (
+           <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
           <video
             src={standbyTimer}
             autoPlay
@@ -110,9 +135,32 @@ const Standby = () => {
           >
             Your browser does not support the video tag.
           </video>
+          <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      Table Of Content
+    </button>
+    <NextButton
+      url={"TurnOff"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+          </div>
         )}
 
-        <div className="image-container display displayVid">
+        <div className="image-container display-full displayVid-full">
           {activeButton === 1 && (
             <video
               src={infusionVideo}
@@ -197,7 +245,9 @@ const Standby = () => {
         {activeButton === 6 && (
           <center>
             {" "}
-            <h3 className="text-dark mt-5" id="tooltip">
+            {/* <h3 className="text-dark mt-5" id="tooltip"> */}
+            <h3 className="text-dark" id="tooltip">
+
               Press{" "}
               <svg
                 style={{ fill: "#05b18b" }}
@@ -212,7 +262,7 @@ const Standby = () => {
             </h3>{" "}
           </center>
         )}
-
+{/* 
         <button onClick={handleToggle}>Table Of Content</button>
         {toggle && (
           <Sidebar
@@ -220,7 +270,11 @@ const Standby = () => {
             selectedEntry={selectedEntry}
             setSelectedEntry={setSelectedEntry}
           />
-        )}
+        )} */}
+
+<button onClick={handleToggle}>Table Of Content</button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"TurnOff"}></NextButton>
       </div>
     </>
   );

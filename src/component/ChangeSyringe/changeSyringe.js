@@ -6,7 +6,7 @@ import infusionVideo from "../../assets/images/video.mp4";
 import "./changeSyringe.css";
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
-
+import { NextButton } from "../NextButton/nextButton";
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
@@ -79,6 +79,8 @@ const ChangeSyringe = () => {
         </center>
 
         {activeButton === 7 && (
+           <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+
           <video
             src={changeSyringe}
             autoPlay
@@ -87,8 +89,33 @@ const ChangeSyringe = () => {
           >
             Your browser does not support the video tag.
           </video>
+          <span   style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+    
+    >
+
+      Table Of Content
+    </button>
+
+    <NextButton
+      url={"PreAlarm"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+   </span>
+          </div>
         )}
-        <div className="image-container display displayVid">
+        <div className="image-container display-full displayVid-full">
           {activeButton === 1 && (
             <video
               src={infusionVideo}
@@ -156,7 +183,9 @@ const ChangeSyringe = () => {
         {activeButton === 6 && (
           <center>
             {" "}
-            <h3 className="text-dark mt-5" id="tooltip">
+            {/* <h3 className="text-dark mt-5" id="tooltip"> */}
+            <h3 className="text-dark" id="tooltip">
+
               Press{" "}
               <svg
                 style={{ fill: "#05b18b" }}
@@ -172,14 +201,18 @@ const ChangeSyringe = () => {
           </center>
         )}
 
-        <button onClick={handleToggle}>Table Of Content</button>
+        {/* <button onClick={handleToggle}>Table Of Content</button>
         {toggle && (
           <Sidebar
             close={() => setToggle(false)}
             selectedEntry={selectedEntry}
             setSelectedEntry={setSelectedEntry}
           />
-        )}
+        )} */}
+
+<button onClick={handleToggle}>Table Of Content</button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"PreAlarm"}></NextButton>
       </div>
     </>
   );

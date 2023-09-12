@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './tabs.css';
 import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
-import display from '../../assets/images/Group 2.png';
+// import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import drugsData from '../../data/drugsData';
 
@@ -111,10 +111,10 @@ const General = () => {
   
     return (
       <div className='container-fluid'>
-          <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >Select type of syringe</h3></center>
-          <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center>
+          {/* <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >Select type of syringe</h3></center>
+          <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center> */}
       <div className="display display1">
-         <img src={display}></img>
+         {/* <img src={display}></img> */}
          <center>  <p className='heading'>{selectedCategory.category}</p></center>
            <ul className="tab-buttons">
           {[...Array(totalTabs)].map((_, index) => (

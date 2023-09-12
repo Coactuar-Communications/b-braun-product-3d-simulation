@@ -1,0 +1,165 @@
+/* mobile.css */
+
+/* Styles for screens with a maximum width of 768px (typical for mobile portrait mode) */
+@media only screen and (min-device-width: 0px) and (max-device-width: 800px) and (orientation: landscape) {
+    /* Adjust the styling of your components for mobile here */
+    .container-fluid {
+      /* Modify container styles for mobile */
+      padding: 10px;
+    }
+    
+    /* Adjust the styles for tab buttons */
+    .tab-buttons {
+      /* Center align the tabs horizontally */
+      text-align: center;
+    }
+  
+    .display ul, .tab-content {
+        position: absolute;
+        /* left: 3%;
+        top: 14%; */
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2vmin;
+        line-height: 11px !important;
+        color: #fff;
+        width: 96%;
+        /* display: none; */
+    }
+    .display1{
+        margin-top: 12.6% !important;
+
+    }
+
+    .display1t{
+      margin-top: 4.5% !important;  
+    }
+
+    .heading{
+        left: 27%;
+    top: 0% !important;
+    font-size: 2.5vmin;
+    line-height: 13px !important;
+    }
+    .displayVid {
+      margin-top: 12.6%;
+      /* margin-top: 13.8%; */
+  }
+  .display3 {
+
+    margin-top: 5.6%!important;
+ 
+}
+
+.digits p span{
+  font-size: 5vmin !important;
+}
+
+.tab {
+  width: 17px;
+}
+.meter {
+
+  left: 5%;
+  top: 14%;
+ 
+  font-size: 2vmin;
+  /* line-height: 66px; */
+  line-height: 46px;
+
+}
+
+.startinfusion{
+  padding:5px;
+  /* position: relative; */
+  /* top: -38px; */
+  font-size: 2vmin;
+    /* margin-top: 78%; */
+}
+.startinfusion span{
+  font-size: 2vmin;
+}
+
+.heading2{
+  left: 41%;
+    top: -6%;
+ 
+    font-size: 3vmin;
+}
+    /* Add any other mobile-specific styles as needed */
+  }
+
+  @media only screen and (min-device-width: 801px) and (max-device-width: 920px) and (orientation: landscape) {
+    .display1t {
+      margin-top: 7.5% !important;
+  }
+    .display ul, .tab-content {
+
+    
+      font-size: 2vmin;
+      line-height: 17px !important;
+    
+      /* display: none; */
+  }
+  .display1{
+      margin-top: 13.6% !important;
+
+  }
+  .display3 {
+    /* margin-top: 8.6%!important; */
+    margin-top: 7.5%!important;
+
+}
+
+  .heading{
+      left: 27%;
+  top: 0% !important;
+  font-size: 2.5vmin;
+  line-height: 13px !important;
+  }
+  .displayVid {
+    margin-top: 12.6%;
+    /* margin-top: 13.8%; */
+}
+
+.digits span{
+  font-size: 5vmin !important;
+}
+
+.tab {
+  width: 17px;
+}
+.meter {
+
+  left: 5%;
+  /* top: 14%; */
+  top: 20%;
+  font-size: 2vmin;
+  /* line-height: 66px; */
+  line-height: 46px;
+
+}
+.heading2{
+  left: 41%;
+    top: -6%;
+ 
+    font-size: 3vmin;
+}
+
+.heading1{
+  font-size: 3vmin;
+
+    line-height: 0px;
+    position: absolute;
+    top: 9%;
+}
+.startinfusion{
+  padding:5px;
+  position: relative;
+  top: -38px;
+  font-size: 3vmin;
+    margin-top: 78%;
+}
+  }
+  

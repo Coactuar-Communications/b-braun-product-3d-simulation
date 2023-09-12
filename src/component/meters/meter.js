@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './meter.css';
-import display from '../../assets/images/Group 2.png';
+// import display from '../../assets/images/Group 2.png';
 import startInfusion from '../../assets/voice/Page 8/Press okay Button.mp3';
 import video from '../../assets/images/video.mp4';
 import Sidebar from "../sidebar/Sidebar";
+import RotateScreen from '../RotateScreen';
 
 const Meter = () => {
   const [videoVisible, setVideoVisible] = useState(false);
@@ -96,6 +97,7 @@ const Meter = () => {
 
   return (
     <>
+    <RotateScreen></RotateScreen>
      <center> <h3 className="text-dark" id='tooltip'>Press the start button to start the infusion</h3></center>
         <center><h4 className="text-dark" id='tooltip'>Optional Setting - Press OK button to enter a volume or time preselection</h4> </center>
         {videoVisible ? (
@@ -103,7 +105,7 @@ const Meter = () => {
         ) :
         ( <div className="display display3">
    
-          <img src={display} alt="Display" className="media" />
+          {/* <img src={display} alt="Display" className="media" /> */}
        
       <center>
         <p className="headingOverview">Overview</p>

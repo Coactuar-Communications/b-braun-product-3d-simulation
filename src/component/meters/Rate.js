@@ -4,7 +4,7 @@ import './meter.css';
 import display from '../../assets/images/Revised Screen with buttons.png';
 import buttons from '../../assets/voice/Page 8/Use the buttons.mp3';
 import Sidebar from "../sidebar/Sidebar";
-
+import RotateScreen from '../RotateScreen';
 const Rate = () => {
   const [value, setValue] = useState([0, 0, 0, 0, '.', 0, 0]);
   const [activeDigit, setActiveDigit] = useState(3);
@@ -96,13 +96,14 @@ const Rate = () => {
 
   return (
     <>
+    <RotateScreen></RotateScreen>
      <center> <h3 className="text-dark" id='tooltip'>Enter the delivery rate  </h3></center>
      <center> <h4 className="text-dark" id='tooltip'>Use the arrow buttons to enter the required rate </h4></center>
      <audio className="audio-element" autoPlay>
      <source src={buttons}></source>
    </audio>  
     <div className="display display2">
-      <img src={display} alt="Display" />
+      {/* <img src={display} alt="Display" /> */}
 
       <center>
         <p className="heading2">Rate</p>

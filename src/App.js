@@ -25,6 +25,7 @@ import InsertSyringe from "./component/InsertSyringe/insertSyringe";
 import ChangeSyringe from "./component/ChangeSyringe/changeSyringe";
 import Standby from "./component/Standby/standby";
 // import Intensive from "./component/tabs/Intensive";
+import Shutdown from "./component/Shutdown/shutdown";
 
 function App() {
   return (
@@ -67,6 +68,8 @@ function App() {
         <Route path="/ChangeSyringe" element={<ChangeSyringe />} />
 
         <Route path="/Standby" element={<Standby />} />
+
+        <Route path="/Shutdown" element={<Shutdown />} />
 
       </Routes>
     </BrowserRouter>

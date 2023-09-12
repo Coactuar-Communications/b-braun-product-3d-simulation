@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './tabs.css';
 import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
-import display from '../../assets/images/Group 2.png';
+// import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import drugsData from '../../data/drugsData';
 import Sidebar from "../sidebar/Sidebar";
@@ -52,10 +52,10 @@ const Ward = () => {
     };
     return (
       <div className='container-fluid'>
-          <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >.</h3></center>
-          <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>.</h4> </center>
+          {/* <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >.</h3></center>
+          <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>.</h4> </center> */}
       <div className="display display1">
-         <img src={display}></img>
+         {/* <img src={display}></img> */}
          <center>  <p className='heading pl-2'>Ward</p></center>
          <ul className="tab-buttons">
           {[...Array(totalTabs)].map((_, index) => (
