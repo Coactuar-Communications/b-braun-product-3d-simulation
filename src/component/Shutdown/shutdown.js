@@ -10,6 +10,7 @@ import { NextButton } from "../NextButton/nextButton";
 import shudownVideo from "../../assets/images/SHUT DOWN.mp4";
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
+import { BsListUl } from 'react-icons/bs';
 
 const Shutdown = () => {
   const [activeButton, setActiveButton] = useState(1);
@@ -68,7 +69,7 @@ const Shutdown = () => {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid ">
         <RotateScreen></RotateScreen>
         <center>
           {" "}
@@ -101,13 +102,35 @@ const Shutdown = () => {
     
     >
 
-      Table Of Content
+      <BsListUl />
     </button>
 
    </span>
           </div>
         )}
         <div className="image-container display-full displayVid-full">
+        <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      <BsListUl />
+    </button>
+    <NextButton
+      url={"ChangeSyringe"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
           {activeButton === 1 && (
             <video
               src={infusionVideo}
@@ -133,6 +156,7 @@ const Shutdown = () => {
               width: "8%",
               height: "9%",
               borderRadius: "50%",
+              zIndex:2,
               display: disabledButtons.includes(7) ? "none" : "block",
             }}
           >
@@ -193,7 +217,7 @@ const Shutdown = () => {
           </center>
         )}
 
-        {/* <button onClick={handleToggle}>Table Of Content</button>
+        {/* <button onClick={handleToggle}><BsListUl /></button>
         {toggle && (
           <Sidebar
             close={() => setToggle(false)}
@@ -202,7 +226,7 @@ const Shutdown = () => {
           />
         )} */}
 
-<button onClick={handleToggle}>Table Of Content</button>
+<button onClick={handleToggle}><BsListUl /></button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
       </div>
     </>

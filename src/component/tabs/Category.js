@@ -6,6 +6,7 @@ import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import drugsData from '../../data/drugsData';
 import Sidebar from "../sidebar/Sidebar";
+import { BsListUl } from 'react-icons/bs';
 
 const Category = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -52,7 +53,7 @@ const Category = () => {
   };
 
   return (
-    <div className='container-fluid'>
+    <div className="container-fluid bg-syringe">
 
         {/* <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >Select type of syringe</h3></center>
         <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center> */}
@@ -102,7 +103,7 @@ const Category = () => {
           <source src={selectType}></source>
         </audio> */}
     </div>
-    <button onClick={handleToggle}>Table Of Content</button>
+    <button onClick={handleToggle}><BsListUl /></button>
         {toggle && (
           <Sidebar
             close={() => setToggle(false)}

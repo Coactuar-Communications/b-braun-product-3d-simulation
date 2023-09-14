@@ -7,6 +7,7 @@ import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import RotateScreen from '../RotateScreen';
 import Sidebar from "../sidebar/Sidebar";
 import { NextButton } from '../NextButton/nextButton';
+import { BsListUl } from 'react-icons/bs';
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -36,6 +37,28 @@ const Tabs = () => {
     <>
     <RotateScreen></RotateScreen>
     <div className='container-fluid bg-syringe'>
+    <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      <BsListUl />
+    </button>
+    <NextButton
+      url={"Menu2"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
         <center> <h3 className="text-dark" id='tooltip'>Select type of syringe</h3></center>
         <center><h4 className="text-dark" id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center>
     <div className="display display1t">
@@ -68,15 +91,15 @@ const Tabs = () => {
         <button className='down-button' onClick={() => handleTabChange('up')}>Down</button>
         <button className="up-button" onClick={() => handleTabChange('down')}>Up</button>
         <Link to="/Rate"> <button className='ok-button'>Ok</button></Link>
-    <Link to="/Menu" className='menu-button'>Menu</Link>
+    <Link to="/Menu2" className='menu-button'>Menu</Link>
       </div>
       <audio className="audio-element" autoPlay>
           <source src={selectType}></source>
         </audio>
     </div>
-    <button onClick={handleToggle}>Table Of Content</button>
+    {/* <button onClick={handleToggle}><BsListUl /></button> */}
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
-        <NextButton url={"menu"}></NextButton>
+        {/* <NextButton url={"menu"}></NextButton> */}
     </div>
   
     </>

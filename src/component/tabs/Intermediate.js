@@ -5,6 +5,7 @@ import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.
 // import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 // import React, { useState, useRef } from 'react';
+import { BsListUl } from 'react-icons/bs';
 
 const Intermediate = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -97,7 +98,7 @@ const handleTabChange = (action) => {
   // ... (return and rendering)
 
   return (
-    <div className='container-fluid'>
+    <div className="container-fluid bg-syringe">
   <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >Select type of syringe</h3></center>
         <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center>
       <div className='display display1'>

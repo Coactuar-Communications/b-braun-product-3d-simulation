@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import './tabs.css';
 import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
 // import display from '../../assets/images/Group 2.png';
-import selectType from '../../assets/voice/Page 7/Select type.mp3';
+import selectSetting from '../../assets/voice/Page 9/Select setting and confirm.mp3';
 import Sidebar from "../sidebar/Sidebar";
 import { NextButton } from '../NextButton/nextButton';
 import RotateScreen from '../RotateScreen';
 import './mobile.css';
-const Menu = () => {
+import { BsListUl } from 'react-icons/bs';
+
+const Menu = ({ showDrugDatabaseText }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [toggle, setToggle] = useState(false);
   const [selectedEntry, setSelectedEntry] = useState(null);
@@ -46,16 +48,17 @@ const Menu = () => {
   };
 
   return (
-    <div className='container-fluid'>
+    <div className="container-fluid bg-syringe">
     <RotateScreen></RotateScreen>
 
-      {/* <center>
-        <h3 className="visibility-hidden" style={{ color: 'transparent' }}>Select type of syringe</h3>
+      <center>
+      <h3 className="visibility-hidden" >Select setting and confirm with OK</h3>
+
       </center>
       <center>
         <h4 className="" style={{ color: 'transparent' }} id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4>
-      </center> */}
-      <div className="display display1 display1m">
+      </center>
+      <div className="display display1 display1t">
         {/* <img src={display} alt="Display" /> */}
         <center>
           <p className='heading'>Main Menu</p>
@@ -91,8 +94,10 @@ const Menu = () => {
           </Link>
         </div>
       </div>
-      
-      <button onClick={handleToggle}>Table Of Content</button>
+      <audio className="audio-element" autoPlay>
+          <source src={selectSetting}></source>
+        </audio>
+      <button onClick={handleToggle}><BsListUl /></button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
         <NextButton url={"ward"}></NextButton>
     </div>

@@ -19,6 +19,7 @@ import powerOnaudio from "../../assets/voice/Page 4/Turn on the power button.mp3
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
 import { NextButton } from "../NextButton/nextButton";
+import { BsListUl } from 'react-icons/bs';
 
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -71,7 +72,7 @@ const InsertSyringe = () => {
     setBackgroundImage2({ newbg });
   };
   const handleVideoEnded2 = () => {
-    // window.location.replace("/Tabs");
+    window.location.replace("/Tabs");
   };
 
   const handleToggle = () => {
@@ -80,8 +81,13 @@ const InsertSyringe = () => {
 
   return (
     <>
-      <div className="container-fluid">
-        <RotateScreen></RotateScreen>
+<RotateScreen></RotateScreen>
+    <div className="container-fluid bg-change-syringe">
+    {activeButton !== 7 ? <center> <h3 className="text-dark" id='tooltip'>Press the Insert Syringe button to insert the syringe</h3></center> : <div/>}
+
+    
+     
+        
         <center>
           {" "}
           <h3
@@ -111,7 +117,7 @@ const InsertSyringe = () => {
       onClick={handleToggle}
      
     >
-      Table Of Content
+      <BsListUl />
     </button>
     <NextButton
       url={"Tabs"}
@@ -125,7 +131,7 @@ const InsertSyringe = () => {
     </span>
           </div>
         )}
-        <div className="image-container display displayVid">
+        <div className="image-container display-full displayVid-full">
           {activeButton === 1 && <img src={syringe} alt="Image 4" />}
         </div>
         <div className="button-container">
@@ -203,7 +209,7 @@ const InsertSyringe = () => {
           </center>
         )}
 
-        <button onClick={handleToggle}>Table Of Content</button>
+        <button onClick={handleToggle}><BsListUl /></button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
         <NextButton url={"Tabs"}></NextButton>
       </div>

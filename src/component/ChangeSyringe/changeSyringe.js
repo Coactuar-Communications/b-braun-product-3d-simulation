@@ -7,6 +7,7 @@ import "./changeSyringe.css";
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
 import { NextButton } from "../NextButton/nextButton";
+import { BsListUl } from 'react-icons/bs';
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
@@ -100,7 +101,7 @@ const ChangeSyringe = () => {
     
     >
 
-      Table Of Content
+      <BsListUl />
     </button>
 
     <NextButton
@@ -116,6 +117,30 @@ const ChangeSyringe = () => {
           </div>
         )}
         <div className="image-container display-full displayVid-full">
+        <span   style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+    
+    >
+
+      <BsListUl />
+    </button>
+
+    <NextButton
+      url={"PreAlarm"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+   </span>    
           {activeButton === 1 && (
             <video
               src={infusionVideo}
@@ -201,7 +226,7 @@ const ChangeSyringe = () => {
           </center>
         )}
 
-        {/* <button onClick={handleToggle}>Table Of Content</button>
+        {/* <button onClick={handleToggle}><BsListUl /></button>
         {toggle && (
           <Sidebar
             close={() => setToggle(false)}
@@ -210,7 +235,7 @@ const ChangeSyringe = () => {
           />
         )} */}
 
-<button onClick={handleToggle}>Table Of Content</button>
+{/* <button onClick={handleToggle}><BsListUl /></button> */}
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
         <NextButton url={"PreAlarm"}></NextButton>
       </div>

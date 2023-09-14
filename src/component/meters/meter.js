@@ -6,7 +6,7 @@ import startInfusion from '../../assets/voice/Page 8/Press okay Button.mp3';
 import video from '../../assets/images/video.mp4';
 import Sidebar from "../sidebar/Sidebar";
 import RotateScreen from '../RotateScreen';
-
+import { BsListUl } from 'react-icons/bs';
 const Meter = () => {
   const [videoVisible, setVideoVisible] = useState(false);
   // const location = useLocation();
@@ -98,10 +98,30 @@ const Meter = () => {
   return (
     <>
     <RotateScreen></RotateScreen>
+    <div className="container-fluid bg-syringe ">
+      {videoVisible !== true ? <div>
      <center> <h3 className="text-dark" id='tooltip'>Press the start button to start the infusion</h3></center>
         <center><h4 className="text-dark" id='tooltip'>Optional Setting - Press OK button to enter a volume or time preselection</h4> </center>
+        </div> : <div/>}
         {videoVisible ? (
-          <video src={video} alt="Video" className="media vid1" autoPlay loop/>
+        <div className="image-container display-full displayVid-full">
+          
+          <video src={video} alt="Video" className="media" autoPlay loop/>
+
+          <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      <BsListUl />
+    </button>
+    </span>
+          </div>
         ) :
         ( <div className="display display3">
    
@@ -159,8 +179,9 @@ const Meter = () => {
       
     </div>
      )}
-           <button onClick={handleToggle}>Table Of Content</button>
+           <button onClick={handleToggle}><BsListUl /></button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+    </div>
     </>
   );
 };

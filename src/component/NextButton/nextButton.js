@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { GrLinkNext } from 'react-icons/gr'
 
 export const NextButton = ({ url }) => {
     const navigate = useNavigate();
@@ -11,6 +12,6 @@ export const NextButton = ({ url }) => {
     return(
         <button onClick={redirectToUrl}
        id="nextButton"
-        >Next</button>
+        ><GrLinkNext/></button>
     )
 }

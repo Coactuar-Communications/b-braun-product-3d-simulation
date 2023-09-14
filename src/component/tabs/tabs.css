@@ -11,6 +11,14 @@ body {
     overflow: hidden;
     height:100vh;
 }
+
+.bg-change-syringe{
+    background-image: url('../../assets/images/Syringe Change-full.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height:100vh;
+}
 svg{
    fill:'#03b289';
 }
@@ -63,14 +71,16 @@ svg{
     /* width: 99px;
   height: 17px; */
     left: 31%;
-    top: -5%;
+    top: 3%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 17px;
-    line-height: 17px;
+        font-size: 2.2vmin;
+
+
+    line-height: 126%;
     color: #000000;
-    color: #000000;
+ 
 }
 
 .heading2 {
@@ -78,14 +88,16 @@ svg{
     /* width: 99px;
   height: 17px; */
     left: 45%;
-    top: -5%;
+    top: 3%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 17px;
-    line-height: 17px;
+        font-size: 2.2vmin;
+
+
+    line-height: 5%;
     color: #000000;
-    color: #000000;
+  
 }
 
 .heading1 {
@@ -97,8 +109,11 @@ svg{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 17px;
-    line-height: 17px;
+    font-size: 2vmin;
+
+
+
+    line-height: 126%;
     color: #fff;
 }
 
@@ -255,9 +270,9 @@ svg{
     padding: 5px 10px;
     font-size: 16px;
 }
-.down-button, .up-button, .ok-button, .left, .shiftright{
+.down-button, .up-button, .ok-button{
     position: absolute;
-    left: 142%;
+    left: 148%;
     border-radius: 50%;
     height: 24% !important;
     width: 20% !important;
@@ -285,7 +300,7 @@ svg{
 }
 
 .down-buttonm{ 
-    top: 69% ;
+    top: 46%;
 }
 
 
@@ -295,7 +310,7 @@ svg{
 }
 
 .ok-buttonm{
-    top: 32%;
+    top: 21%;
 }
 
 .tab-content {
@@ -349,12 +364,12 @@ svg{
     border: 1px solid #D9D9D9 !important;
   }
 
-  .left{
-    /* top: -12%;
-    left: 147%; */
+  /* .left{
+    top: -12%;
+    left: 147%;
     top: 19% !important;
     left: 116% !important;
-}
+} */
 
 .left-shift-button{
     
@@ -366,11 +381,11 @@ svg{
 .shiftright{
     /* left: 224%;
     top: -13%; */
-    left: 169% !important;
-    top: 19% !important;
+    /* left: 169% !important;
+    top: 19% !important; */
 }
 
-.right-shift-button{
+/* .right-shift-button{
     left: 229%;
     top: 7%;
-}
+} */

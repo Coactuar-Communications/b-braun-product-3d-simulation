@@ -5,6 +5,7 @@ import display from '../../assets/images/Revised Screen with buttons.png';
 import buttons from '../../assets/voice/Page 8/Use the buttons.mp3';
 import Sidebar from "../sidebar/Sidebar";
 import RotateScreen from '../RotateScreen';
+import { BsListUl } from 'react-icons/bs';
 const Rate = () => {
   const [value, setValue] = useState([0, 0, 0, 0, '.', 0, 0]);
   const [activeDigit, setActiveDigit] = useState(3);
@@ -96,7 +97,9 @@ const Rate = () => {
 
   return (
     <>
+
     <RotateScreen></RotateScreen>
+    <div className="container-fluid bg-syringe">
      <center> <h3 className="text-dark" id='tooltip'>Enter the delivery rate  </h3></center>
      <center> <h4 className="text-dark" id='tooltip'>Use the arrow buttons to enter the required rate </h4></center>
      <audio className="audio-element" autoPlay>
@@ -136,7 +139,7 @@ const Rate = () => {
         </p>
       </center>
       <center>
-        <button className="ok-button" onClick={handleOK}>
+        <button className="ok-button ok-vr" onClick={handleOK}>
           OK
         </button>
         <button className="back-button" onClick={handleGoBack}>
@@ -145,8 +148,9 @@ const Rate = () => {
       </center>
      
     </div>
-    <button onClick={handleToggle}>Table Of Content</button>
+    <button onClick={handleToggle}><BsListUl /></button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+   </div>
     </>
   );
 };

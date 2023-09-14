@@ -19,9 +19,9 @@ import powerOnaudio from "../../assets/voice/Page 4/Turn on the power button.mp3
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
 import changeInfusionRateVideo from "../../assets/images/changeInfusionRate.mp4";
-import runningInfusion from "../../assets/images/video.mp4";
+import runningInfusion from "../../assets/images/ADJUST INFUSION 32.mp4";
 import { NextButton } from "../NextButton/nextButton";
-
+import { BsListUl } from 'react-icons/bs';
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
@@ -79,13 +79,12 @@ const ChangeInfusionRate = () => {
 
   return (
     <>
-    {activeButton != 7 && (
-          <center> <h3 className="text-dark" id='tooltip'>Adjust infusion rate during therapy by pressing the OK button</h3></center>
-        )}
+   
        
 
       <div className="container-fluid">
         <RotateScreen></RotateScreen>
+        
         <center>
           {" "}
           <h3
@@ -101,7 +100,7 @@ const ChangeInfusionRate = () => {
           </audio>
         )}
         {activeButton === 3 && (
-           <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
           <video
             src={backvid}
             autoPlay
@@ -110,30 +109,32 @@ const ChangeInfusionRate = () => {
           >
             Your browser does not support the video tag.
           </video>
-          <button
-      onClick={handleToggle}
-      style={{
+          <span style={{
         position: 'absolute',
         // top: '10px',
         left: '10px',
         zIndex: 1,
-      }}
+      }}>
+          <button
+      onClick={handleToggle}
+      
     >
-      Table Of Content
+      <BsListUl />
     </button>
     <NextButton
-      url={"bolus"}
-      style={{
-        position: 'absolute',
-        top: '10px',
-        left: '110px', // Adjust the left position as needed
-        zIndex: 1,
-      }}
+      url={"Tabs"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
     />
+    </span>
           </div>
         )}
         {activeButton === 7 && (
-          <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+         <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
           <video
             src={changeInfusionRateVideo}
             autoPlay
@@ -152,7 +153,7 @@ const ChangeInfusionRate = () => {
     
     >
 
-      Table Of Content
+      <BsListUl />
     </button>
 
     <NextButton
@@ -168,26 +169,57 @@ const ChangeInfusionRate = () => {
           </div>
         )}
         <div className="image-container display-full displayVid-full">
-          {activeButton === 1 && <video src={runningInfusion} autoPlay>
+        {/* {activeButton != 7 && (
+          <center> <h3 className="text-dark" id='tooltip'>Adjust infusion rate during therapy by pressing the OK button</h3></center>
+        )} */}
+          {activeButton === 1 && 
+           <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+          <video src={runningInfusion} autoPlay>
           Your browser does not support the video tag.
-        </video> }
+        </video>
+        <span   style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+    
+    >
 
+      <BsListUl />
+    </button>
+
+    <NextButton
+      url={"Bolus"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+   </span>    
+</div> }
         </div>
         <div className="button-container">
           <button
             onClick={() => handleButtonClick(7)}
             disabled={disabledButtons.includes(7)}
-            className={`mt-6 image-button ${
+            className={` image-button ${
               activeButton === 7 ? "active" : ""
             }`}
-            style={{
-              position: "absolute",
-              left: "33%",
-    // top: "35%",
-              height:"9%",
-              width: "3%",
-              borderRadius: "50%",
-              display: disabledButtons.includes(7) ? "none" : "block",
+         
+              style={{
+                position: "absolute",
+                left: "33%",
+      top: "35%",
+                height:"9%",
+                width: "3%",
+                borderRadius: "50%",
+                display: disabledButtons.includes(7) ? "none" : "block",
+         
             }}
           >
             <a
@@ -234,9 +266,9 @@ const ChangeInfusionRate = () => {
           </center>
         )}
 
-        <button onClick={handleToggle}>Table Of Content</button>
+        {/* <button onClick={handleToggle}><BsListUl /></button> */}
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
-        <NextButton url={"bolus"}></NextButton>
+        {/* <NextButton url={"bolus"}></NextButton> */}
       </div>
     </>
   );

@@ -86,12 +86,12 @@ transform: rotate(0deg);
   height: 17px; */
   /* left: 31%; */
   left: 29%;
-  top: -5%;
+  top: 3%;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 17px;
-  line-height: 17px;
+      font-size: 2.2vmin;
+  line-height: 126%;
   color: #000000;
 
 
@@ -108,8 +108,10 @@ color: #000000;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 17px;
-  line-height: 17px;
+      font-size: 2.2vmin;
+
+
+  line-height: 5%;
   color: #000000;
 
 
@@ -126,8 +128,9 @@ color: #000000;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 17px;
-  line-height: 17px;
+      font-size: 2vmin;
+
+  line-height: 126%;
   color: #fff;
 
 
@@ -149,7 +152,7 @@ color: #000000;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 2vmin;
    line-height: 28px;
   color: #fff;
   width:90%;
@@ -233,7 +236,7 @@ display:none;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 3.2rem;
+    font-size: 2vmin;
     line-height: 126px;
     color: #fff;
     
@@ -272,7 +275,7 @@ display:none;
 .digits span {
   cursor: pointer;
   /* margin: 0 5px; */
-  font-size: 3.5rem;
+  font-size: 5vmin;
   border-right:2px solid #000;
   /* border-left:2px solid #000; */
   padding: 10px;

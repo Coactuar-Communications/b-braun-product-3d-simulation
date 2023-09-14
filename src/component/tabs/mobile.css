@@ -7,7 +7,17 @@
       /* Modify container styles for mobile */
       padding: 10px;
     }
-    
+    .shiftright{
+      left: 194%;
+      top: 3%;
+    }
+    .ok-vr{
+      top:3%
+    }
+    .left{
+      top: 1%;
+      left: 130%;
+    }
     /* Adjust the styles for tab buttons */
     .tab-buttons {
       /* Center align the tabs horizontally */
@@ -16,8 +26,9 @@
   
     .display ul, .tab-content {
         position: absolute;
-        /* left: 3%;
-        top: 14%; */
+        /* left: 3%;*/
+        top: 14%; 
+
         font-family: 'Inter';
         font-style: normal;
         font-weight: 600;
@@ -30,6 +41,10 @@
     .display1{
         margin-top: 12.6% !important;
 
+    }
+
+    .display2{
+      margin-top: 7.3%!important;
     }
 
     .display1t{
@@ -46,6 +61,20 @@
       margin-top: 12.6%;
       /* margin-top: 13.8%; */
   }
+
+  .heading2{
+    left: 45%;
+    top: -8% !important;
+    font-size: 3vmin;
+  }
+
+  .heading1{
+    top: -2% !important;
+  }
+
+  .digits span{
+
+  }
   .display3 {
 
     margin-top: 5.6%!important;
@@ -56,17 +85,16 @@
   font-size: 5vmin !important;
 }
 
-.tab {
-  width: 17px;
+.tab,.tab1 {
+  width: 13px;
 }
 .meter {
 
   left: 5%;
-  top: 14%;
- 
+  top: 7%;
   font-size: 2vmin;
   /* line-height: 66px; */
-  line-height: 46px;
+  line-height: 33px;
 
 }
 
@@ -81,16 +109,46 @@
   font-size: 2vmin;
 }
 
-.heading2{
-  left: 41%;
-    top: -6%;
- 
-    font-size: 3vmin;
-}
-    /* Add any other mobile-specific styles as needed */
-  }
 
-  @media only screen and (min-device-width: 801px) and (max-device-width: 920px) and (orientation: landscape) {
+  .up-button1 {
+    top: -87%;
+    /* left: 196%; */
+    left: 159%;
+}
+
+.down-button1 {
+  top: 90%;
+  left: 161%;
+}
+#lefttime{
+    
+  top: 7%;
+  left: 152%;
+
+}
+
+#up-buttontime{
+  top: -84%;
+  left: 191%;
+}
+
+#down-buttontime{
+  top: 92%;
+  left: 191%;
+}
+
+#shiftrighttime{
+  left: 229%;
+  top: 7%;
+}
+
+.ok-overv{
+  top: 1%;
+}
+}
+
+
+  @media only screen and (min-device-width: 801px) and (max-device-width:1181px) and (orientation: landscape) {
     .display1t {
       margin-top: 7.5% !important;
   }
@@ -112,11 +170,19 @@
 
 }
 
+.shiftright{
+  left: 194%;
+  top: 3%;
+}
+.left{
+  top: 1%;
+  left: 125%;
+}
   .heading{
       left: 27%;
   top: 0% !important;
   font-size: 2.5vmin;
-  line-height: 13px !important;
+  line-height: 24px !important;
   }
   .displayVid {
     margin-top: 12.6%;
@@ -127,14 +193,14 @@
   font-size: 5vmin !important;
 }
 
-.tab {
+.tab, .tab1{
   width: 17px;
 }
 .meter {
 
   left: 5%;
   /* top: 14%; */
-  top: 20%;
+  top: 18%;
   font-size: 2vmin;
   /* line-height: 66px; */
   line-height: 46px;
@@ -142,13 +208,14 @@
 }
 .heading2{
   left: 41%;
-    top: -6%;
+    top: 0%;
  
     font-size: 3vmin;
 }
 
 .heading1{
-  font-size: 3vmin;
+  font-size: 2vmin;
+
 
     line-height: 0px;
     position: absolute;
@@ -160,6 +227,41 @@
   top: -38px;
   font-size: 3vmin;
     margin-top: 78%;
+}
+
+.up-button1 {
+  top: -87%;
+  /* left: 196%; */
+  left: 159%;
+}
+.down-button1 {
+  top: 90%;
+  left: 161%;
+}
+.ok-vr{
+  top:13%
+}
+
+#lefttime{
+    
+  top: 7%;
+  left: 152%;
+
+}
+
+#up-buttontime{
+  top: -84%;
+  left: 191%;
+}
+
+#down-buttontime{
+  top: 92%;
+  left: 191%;
+}
+
+#shiftrighttime{
+  left: 229%;
+  top: 7%;
 }
   }
   

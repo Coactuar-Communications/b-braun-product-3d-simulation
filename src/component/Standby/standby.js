@@ -21,6 +21,7 @@ import Sidebar from "../sidebar/Sidebar";
 import { NextButton } from "../NextButton/nextButton";
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
+import { BsListUl } from 'react-icons/bs';
 
 const Standby = () => {
   const [activeButton, setActiveButton] = useState(1);
@@ -81,6 +82,9 @@ const Standby = () => {
   return (
     <>
       <div className="container-fluid">
+      {activeButton === 2 && <center>
+      <h3 className="visibility-hidden" >Press the left arrow button to change the standby time</h3>
+      </center>}
         <RotateScreen></RotateScreen>
         <center>
           {" "}
@@ -111,7 +115,7 @@ const Standby = () => {
       onClick={handleToggle}
      
     >
-      Table Of Content
+      <BsListUl />
     </button>
     <NextButton
       url={"TurnOff"}
@@ -145,10 +149,10 @@ const Standby = () => {
       onClick={handleToggle}
      
     >
-      Table Of Content
+      <BsListUl />
     </button>
     <NextButton
-      url={"TurnOff"}
+      url={"Shutdown"}
       // style={{
       //   // position: 'absolute',
       //   top: '10px',
@@ -161,6 +165,29 @@ const Standby = () => {
         )}
 
         <div className="image-container display-full displayVid-full">
+        <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      <BsListUl />
+    </button>
+    <NextButton
+      url={"Shutdown"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+          
           {activeButton === 1 && (
             <video
               src={infusionVideo}
@@ -187,9 +214,9 @@ const Standby = () => {
             style={{
               position: "absolute",
               left: "4%",
-              top: "53%",
-              width: "3%",
-              height: "9%",
+              top: "43%",
+              width: "5%",
+              height:"11%",
               borderRadius: "50%",
               display: disabledButtons.includes(3) ? "none" : "block",
             }}
@@ -225,10 +252,12 @@ const Standby = () => {
             className={`image-button ${activeButton === 5 ? "active" : ""}`}
             style={{
               position: "absolute",
-              left: "32%",
-              top: "38%",
+              left: "27%",
+    top: "42%",
+    height:"11%",
+
+              height:"9%",
               width: "3%",
-              height: "9%",
               borderRadius: "50%",
               display: disabledButtons.includes(5) ? "none" : "block",
             }}
@@ -263,7 +292,7 @@ const Standby = () => {
           </center>
         )}
 {/* 
-        <button onClick={handleToggle}>Table Of Content</button>
+        <button onClick={handleToggle}><BsListUl /></button>
         {toggle && (
           <Sidebar
             close={() => setToggle(false)}
@@ -272,9 +301,9 @@ const Standby = () => {
           />
         )} */}
 
-<button onClick={handleToggle}>Table Of Content</button>
+{/* <button onClick={handleToggle}><BsListUl /></button> */}
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
-        <NextButton url={"TurnOff"}></NextButton>
+        {/* <NextButton url={"TurnOff"}></NextButton> */}
       </div>
     </>
   );

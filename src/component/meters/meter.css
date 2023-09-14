@@ -40,6 +40,9 @@ body {
 /* .display2{
 margin-top: 13.9% !important;
 } */
+.displayVol{
+    margin-top: 14%;
+}
 
 .displayTime{
     margin-top: 13.6% !important;
@@ -47,6 +50,8 @@ margin-top: 13.9% !important;
 .display img {
     width: 100%;
 }
+
+
 
 .display3{
     /* margin-top: 9.4% !important;
@@ -63,12 +68,14 @@ margin-top: 13.9% !important;
     /* width: 99px;
   height: 17px; */
     left: 31%;
-    top: -5%;
+    top: 4%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
-    line-height: 17px;
+        font-size: 2.2vmin;
+
+
+    line-height: 126%;
     color: #000000;
     color: #000000;
 }
@@ -77,13 +84,17 @@ margin-top: 13.9% !important;
     position: absolute;
     /* width: 99px;
   height: 17px; */
-    left: 45%;
-    top: -5%;
+    /* left: 45%;
+    top: 3%; */
+    left: 42%;
+    top: 4%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 17px;
-    line-height: 17px;
+        font-size: 2.2vmin;
+
+
+    line-height: 5%;
     color: #000000;
     color: #000000;
 }
@@ -93,12 +104,15 @@ margin-top: 13.9% !important;
     /* width: 99px;
   height: 17px; */
   left: 83%;
-  top: 15%;
+  top: 11%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 17px;
-    line-height: 17px;
+    font-size: 2vmin;
+
+
+
+    line-height: 126%;
     color: #fff;
 }
 
@@ -110,9 +124,10 @@ margin-top: 13.9% !important;
   top: 15%;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 600;
-    font-size: 17px;
-    line-height: 17px;
+        font-size: 2.2vmin;
+
+
+    line-height: 126%;
     color: #fff;
 }
 
@@ -136,7 +151,8 @@ margin-top: 13.9% !important;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 2vmin;
+
     line-height: 28px;
     color: #fff;
     /* display: none; */
@@ -172,8 +188,10 @@ margin-top: 13.9% !important;
     display: flex;
     align-items: center;
     position: absolute;
-    left: 13%;
-    top: 27%;
+    /* left: 13%;
+    top: 27%; */
+    left: 10%;
+    top: 21%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -199,7 +217,7 @@ margin-top: 13.9% !important;
 .digits span {
     cursor: pointer;
     /* margin: 0 5px; */
-    font-size: 2.5rem;
+    font-size: 5vmin;
     border-right: 2px solid #000;
     /* border-left: 2px solid #000; */
     padding: 0px;
@@ -267,9 +285,9 @@ margin-top: 13.9% !important;
 .down-button1, .up-button1, .ok-button1,.left, .shiftright{
     position: absolute;
     
-    border-radius: 50%;
+    /* border-radius: 50%; */
     height: 53%;
-    width: 26%;
+    width: 30%;
     background-color: rgba(0, 0, 0, 0);
     color: rgba(0, 0, 0, 0);
     border: 0px;
@@ -277,32 +295,41 @@ margin-top: 13.9% !important;
 .down-button1{ 
     /* top: 69%;
     left: 186%; */
-    top: 90%;
-    left: 196%;
+    /* top: 90%;
+    left: 162%; */
+    top: 77%;
+    left: 174%;
 }
 
 .up-button1{   
     top: -87%;
-    left: 196%;
+    /* left: 196%; */
+    left: 177%;
    
 }
 
 .ok-button1{
     top: 32%; 
-    left: 121%;
+    left: 162%;
 }
 
 .left{
     /* top: -12%;
     left: 147%; */
+    /* top: 1%;
+    left: 154%; */
     top: 1%;
-    left: 154%;
+    left: 136%;
 }
+
 .shiftright{
     /* left: 224%;
     top: -13%; */
-    left: 235%;
+    /* left: 235%;
+    top: 3%; */
+    left: 210%;
     top: 3%;
+
 }
 
 .vid1{
@@ -326,7 +353,20 @@ margin-top: 13.9% !important;
     position: absolute;
     top: 5%;
 }
-
+.headingOverview{
+    position: absolute;
+    /* width: 99px;
+  height: 17px; */
+  left: 38%;
+  top: 3%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.2vmin;
+    line-height: 17px;
+    color: #000000;
+    color: #000000;
+}
 .value1-part {
     font-weight: bold;
     /* Add other CSS properties as desired */

@@ -22,7 +22,7 @@
     top: 29.2%; */
     /* width: 246px;
     height: 254px; */
-    width: 17%;
+    width: 16%;
     height: 35%;
     left: 9.1%;
     margin-top: 11.22%;
@@ -39,9 +39,9 @@
         margin-left: 8.6%; */
     }
 
-    .displayVol{
+    /* .displayVol{
         margin-top: 14%;
-    }
+    } */
 
 
 .display img {
@@ -55,96 +55,13 @@
 }
 
 
-.heading {
-    position: absolute;
-    /* width: 99px;
-  height: 17px; */
-    left: 31%;
-    top: 2%;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 17px;
-    color: #000000;
-    color: #000000;
-}
-.headingOverview{
-    position: absolute;
-    /* width: 99px;
-  height: 17px; */
-  left: 38%;
-  top: 3%;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 17px;
-    color: #000000;
-    color: #000000;
-}
-.heading2 {
-    position: absolute;
-    /* width: 99px;
-  height: 17px; */
-    left: 45%;
-    top: 2%;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000000;
-    color: #000000;
-}
-
-.heading1 {
-    /* position: absolute; */
-    /* width: 99px;
-  height: 17px; */
-  /* left: 83%;
-  top: 15%;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 17px;
-    line-height: 17px;
-    color: #fff; */
-    color: #fff;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 17px;
-    position: absolute;
-    top: 11%;
-
-}
-
-.heading11 {
-    position: absolute;
-    /* width: 99px;
-  height: 17px; */
-  left: 7%;
-  top: 15%;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 17px;
-    line-height: 17px;
-    color: #fff;
-}
-/* .tab-buttons {
-  display: flex;
-  flex-direction: row;
-} */
 
 .display ul li {
     list-style-type: none;
     padding-left: 10px;
 }
 
-.display ul,
+/* .display ul,
 .tab-content {
     position: absolute;
     left: 3%;
@@ -152,12 +69,13 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 2vmin;
+
     line-height: 28px;
     color: #fff;
     width:90%;
-    /* display: none; */
-}
+   
+} */
 
 .row-view {
     display: flex;
@@ -172,7 +90,7 @@
     border: 2px solid #000;
 }
 
-.display ul,
+/* .display ul,
 .tab-content1 {
     position: absolute;
     left: 3%;
@@ -183,7 +101,7 @@
     font-size: 2.2rem;
     line-height: 126px;
     color: #fff;
-}
+} */
 
 .mt-10{
 margin-top:12%;
@@ -220,7 +138,7 @@ margin-top:12%;
 .digits span {
     cursor: pointer;
     /* margin: 0 5px; */
-    font-size: 2.5rem;
+    font-size: 5vmin;
     border-right: 2px solid #000;
     /* border-left: 2px solid #000; */
     padding: 0px;
@@ -252,7 +170,7 @@ margin-top:12%;
     font-size: 16px;
 }
 
-.down-button1, .up-button1, .ok-button1,.left, .shiftright{
+/* .ok-button1{
     position: absolute;
     
     border-radius: 50%;
@@ -273,25 +191,25 @@ margin-top:12%;
     color: transparent;
     border: 0px;
     left:20%;
-}
+} */
 
 .mt-6{
     margin-top: 13%;
 }
-.down-button1{ 
+/* .down-button1{ 
     top: 69%;
     left: 186%;
-}
+} */
 
-.up-button1{   
+/* .up-button1{   
     top: -98%;
     left: 186%;
-}
+} */
 
-.ok-button1{
+/* .ok-button1{
     top: 32%; 
     left: 121%;
-}
+} */
 #mobile-portrait {
     position: fixed;
     top: 0;
@@ -303,7 +221,7 @@ margin-top:12%;
     display: none;
 }
 
-.left{
+/* .left{
     top: -12%;
     left: 147%;
 }
@@ -334,7 +252,7 @@ margin-top:12%;
 .shiftrighttime {
     left: 202%;
     top: 4%;
-}
+} */
 
 
 .background-image-container {

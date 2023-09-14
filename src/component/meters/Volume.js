@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation  } from 'react-router-dom';
 import './meter.css';
 import display from '../../assets/images/Revised Screen with buttons.png';
-
+import RotateScreen from '../RotateScreen';
+import Sidebar from "../sidebar/Sidebar";
+import { BsListUl } from 'react-icons/bs';
 const Rate = () => {
   const [value2, setValue2] = useState([0, 0, 0, 0, '.', 0, 0]);
   const [activeDigit2, setActiveDigit2] = useState(3);
   const [selectedNumber2, setSelectedNumber2] = useState('');
   const [calculationResult, setCalculationResult] = useState(''); // New state variable for the calculation result
+  const [toggle, setToggle] = useState(false);
+  const [selectedEntry, setSelectedEntry] = useState(null);
   const location = useLocation();
   const navigate = useNavigate ();
   const history = useNavigate();
@@ -71,7 +75,9 @@ const Rate = () => {
     const newactiveDigit2 = activeDigit2 === value2.length - 1 ? 0 : activeDigit2 + 1;
     setActiveDigit2(newactiveDigit2);
   };
-
+  const handleToggle = () => {
+    setToggle((pre) => !pre);
+  };
   const handleOK = () => {
     localStorage.setItem("volume", parseFloat(value2.join('')));
     // Redirect to Meter page and pass selectedNumber state
@@ -109,8 +115,13 @@ const Rate = () => {
   };
 
   return (
-    <div className="display displayVol">
-      <img src={display} alt="Display" />
+    <>
+    <RotateScreen></RotateScreen>
+    <div className="container-fluid bg-syringe">
+    <center> <h3 className="text-dark" id='tooltip'>Enter the volume </h3></center>
+    <center> <h4 className="text-dark" id='tooltip'>Use the arrow buttons to enter the required volume </h4></center>
+    <div className="display display2">
+      {/* <img src={display} alt="Display" /> */}
 
       <center>
         <p className="heading2">Volume</p>
@@ -143,7 +154,7 @@ const Rate = () => {
         </p>
       </center>
       <center>
-        <button className="ok-button" onClick={handleOK}>
+        <button className="ok-button ok-vr" onClick={handleOK}>
           OK
         </button>
         <button className="back-button" onClick={handleGoBack}>
@@ -151,6 +162,10 @@ const Rate = () => {
         </button>
       </center>
     </div>
+    <button onClick={handleToggle}><BsListUl /></button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+    </div>
+    </>
   );
 };
 

@@ -9,6 +9,7 @@ import Volume from "./component/meters/Volume";
 import Time from "./component/meters/Time";
 import Category from "./component/tabs/Category";
 import Menu from "./component/tabs/Menu";
+import Menu2 from "./component/Menu2/menu2";
 import General from "./component/tabs/General";
 import Overview from "./component/tabs/Overview"; 
 import Ward from "./component/tabs/Ward";
@@ -26,6 +27,10 @@ import ChangeSyringe from "./component/ChangeSyringe/changeSyringe";
 import Standby from "./component/Standby/standby";
 // import Intensive from "./component/tabs/Intensive";
 import Shutdown from "./component/Shutdown/shutdown";
+import PreAlarm from "./component/Pre-Alarm/preAlarm";
+import OperatingAlarm from "./component/Operating-Alarm/operatingAlarm";
+import DrugDatabase1 from "./component/DrugDatabase/drugDatabase1";
+import DrugDatabase2 from "./component/DrugDatabase/drugDatabase2";
 
 function App() {
   return (
@@ -56,6 +61,7 @@ function App() {
 
         <Route path="/Ward" element={<Ward />} />
         <Route path="/Menu" element={<Menu />} />
+        <Route path="/Menu2" element={<Menu2 />} />
 
         <Route path="/InfusionCalculator" element={<InfusionCalculator />} />
 
@@ -70,6 +76,14 @@ function App() {
         <Route path="/Standby" element={<Standby />} />
 
         <Route path="/Shutdown" element={<Shutdown />} />
+
+        <Route path="/PreAlarm" element={<PreAlarm />} />
+
+        <Route path="/OperatingAlarm" element={<OperatingAlarm />} />
+
+        <Route path="/DrugDatabase1" element={<DrugDatabase1 />} />
+
+        <Route path="/DrugDatabase2" element={<DrugDatabase2 />} />
 
       </Routes>
     </BrowserRouter>

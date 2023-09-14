@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import './meter.css';
 import display from '../../assets/images/Revised Screen with buttons.png';
-
+import RotateScreen from '../RotateScreen';
+import Sidebar from "../sidebar/Sidebar";
+import { BsListUl } from 'react-icons/bs';
 const Time = () => {
   const [value1, setValue1] = useState([0, 0, '.', 0,0,'h']);
   const [activeDigit1, setActiveDigit1] = useState(3);
   const [selectedNumber1, setSelectedNumber1] = useState('');
   const [calculationResult, setCalculationResult] = useState(0);
-
+  const [toggle, setToggle] = useState(false);
+  const [selectedEntry, setSelectedEntry] = useState(null);
   const navigate = useNavigate ();
 
   useEffect(() => {
@@ -86,7 +89,9 @@ const Time = () => {
       </div>
     );
   };
-
+  const handleToggle = () => {
+    setToggle((pre) => !pre);
+  };
   const calculateResult = () => {
     const rate = localStorage.getItem("rate");; // Placeholder for the volume value (replace with actual volume)
     const time = parseFloat(value1.join('')) + 0.01; // Get the rate from the user-selected value
@@ -99,22 +104,27 @@ const Time = () => {
   };
 
   return (
-    <div className="display displayTime">
-      <img src={display} alt="Display" />
+    <>
+    <RotateScreen></RotateScreen>
+    <div className="container-fluid bg-syringe">
+    <center> <h3 className="text-dark" id='tooltip'>Enter the time  </h3></center>
+    <center> <h4 className="text-dark" id='tooltip'>Use the arrow buttons to enter the required time </h4></center>
+    <div className="display display2">
+      {/* <img src={display} alt="Display" /> */}
 
       <center>
         <p className="heading2">Time</p>
       </center>
       <center>
-        <p className='heading11'>{selectedNumber1}</p>
+        <p className='heading1' style={{left:"7%"}}>{selectedNumber1}</p>
         {/* <p className="heading1">ml/h</p> */}
         <p className="heading1">{calculationResult.toFixed(2)}</p> {/* Display the calculation result */}
       </center>
 
       <div className="meter">
         <div className="controls">
-          <button className="left lefttime" onClick={handleShiftLeft}>{'<'}</button>
-          <button className="decrement down-button1 down-buttontime" onClick={handleDecrement}>-</button>
+          <button id="lefttime" className="left " onClick={handleShiftLeft}>{'<'}</button>
+          <button id="down-buttontime" className="decrement down-button1 " onClick={handleDecrement}>-</button>
         </div>
         <div className="digits">
           {value1.map((digit, index) => (
@@ -124,8 +134,8 @@ const Time = () => {
           ))}
         </div>
         <div className="controls">
-          <button className="increment up-button1 up-buttontime" onClick={handleIncrement}>+</button>
-          <button className="shiftright shiftrighttime" onClick={handleShiftRight}>{'>'}</button>
+          <button id="up-buttontime" className="increment up-button1 " onClick={handleIncrement}>+</button>
+          <button id="shiftrighttime" className="shiftright " onClick={handleShiftRight}>{'>'}</button>
         </div>
       </div>
       <center>
@@ -134,11 +144,15 @@ const Time = () => {
         </p>
       </center>
       <center>
-        <button className="ok-button" onClick={handleOK}>
+        <button className="ok-button ok-vr" onClick={handleOK}>
           OK
         </button>
       </center>
     </div>
+    <button onClick={handleToggle}><BsListUl /></button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+    </div>
+    </>
   );
 };
 

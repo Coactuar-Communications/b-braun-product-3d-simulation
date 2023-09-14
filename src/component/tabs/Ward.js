@@ -7,6 +7,8 @@ import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import drugsData from '../../data/drugsData';
 import Sidebar from "../sidebar/Sidebar";
 import { NextButton } from '../NextButton/nextButton';
+import { BsListUl } from 'react-icons/bs';
+import enterInfusionAudio from '../../assets/voice/Page 10/Enter infusion diameter.mp3';
 
 const Ward = () => {
     // const [activeTab, setActiveTab] = useState(0);
@@ -51,10 +53,17 @@ const Ward = () => {
       }
     };
     return (
-      <div className='container-fluid'>
+      <div className="container-fluid bg-syringe">
+<center>
+      <h3 className="visibility-hidden" >Enter infusion parameters and start the infusion</h3>
+
+      </center>
+      <center>
+        <h4 className="" style={{color: "transparent"}} id='tooltip'>Subsequently select the drug and confirm with OK button</h4>
+      </center>
           {/* <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >.</h3></center>
           <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>.</h4> </center> */}
-      <div className="display display1">
+      <div className="display display1 display1t">
          {/* <img src={display}></img> */}
          <center>  <p className='heading pl-2'>Ward</p></center>
          <ul className="tab-buttons">
@@ -68,6 +77,10 @@ const Ward = () => {
             </li>
           ))}
         </ul>
+
+        <audio className="audio-element" autoPlay>
+          <source src={enterInfusionAudio}></source>
+        </audio>
   
         <div className="tab-content">
           {/* {tabContent.map((content, index) => (
@@ -99,7 +112,7 @@ const Ward = () => {
             <source src={selectType}></source>
           </audio> */}
       </div>
-      <button onClick={handleToggle}>Table Of Content</button>
+      <button onClick={handleToggle}><BsListUl /></button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
         <NextButton url={"ChangeInfusionRate"}></NextButton>
       </div>

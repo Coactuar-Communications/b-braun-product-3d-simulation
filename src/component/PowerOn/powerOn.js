@@ -19,6 +19,7 @@ import powerOnaudio from "../../assets/voice/Page 4/Turn on the power button.mp3
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
 import { NextButton } from "../NextButton/nextButton";
+import { BsListUl } from 'react-icons/bs';
 
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -71,7 +72,7 @@ const PowerOn = () => {
     setBackgroundImage2({ newbg });
   };
   const handleVideoEnded2 = () => {
-    window.location.replace("/Tabs");
+    window.location.replace("/InsertSyringe");
   };
 
   const handleToggle = () => {
@@ -117,10 +118,10 @@ const PowerOn = () => {
       onClick={handleToggle}
   
     >
-      Table Of Content
+      <BsListUl />
     </button>
     <NextButton
-      url={"Tabs"}
+      url={"InsertSyringe"}
       // style={{
       //   // position: 'absolute',
       //   top: '10px',
@@ -152,10 +153,10 @@ const PowerOn = () => {
       onClick={handleToggle}
      
     >
-      Table Of Content
+      <BsListUl />
     </button>
     <NextButton
-      url={"Tabs"}
+      url={"InsertSyringe"}
       // style={{
       //   // position: 'absolute',
       //   top: '10px',
@@ -189,10 +190,10 @@ const PowerOn = () => {
       onClick={handleToggle}
       
     >
-      Table Of Content
+      <BsListUl />
     </button>
     <NextButton
-      url={"Tabs"}
+      url={"InsertSyringe"}
       // style={{
       //   // position: 'absolute',
       //   top: '10px',
@@ -337,51 +338,6 @@ const PowerOn = () => {
           >
             Ok1
           </button>
-          <button
-            onClick={() => handleButtonClick(7)}
-            disabled={disabledButtons.includes(7)}
-            className={`mt-6 image-button ${
-              activeButton === 7 ? "active" : ""
-            }`}
-            style={{
-              position: "absolute",
-              left: "4%",
-              top: "60%",
-
-              width: "25%",
-              height:"9%",
-              borderRadius: "50%",
-              display: disabledButtons.includes(7) ? "none" : "block",
-            }}
-          >
-            <a
-              onClick={() => handleButtonClick("video")}
-              disabled={disabledButtons.includes("video")}
-              className={`media-button ${
-                activeButton === "video" ? "active" : ""
-              }`}
-              // style={{ display: disabledButtons.includes('video') ? 'none' : 'block' }}
-              // className={`image-button ${activeButton === 3 ? 'active' : ''}`}
-              style={{
-                position: "absolute",
-                left: "4%",
-                top: "-17%",
-
-                // 'backgroundColor': 'transparent',
-                // 'color': 'transparent',
-                // 'border':'0',
-                // 'width': '3%',
-                textDecoration: "none",
-                color: "black",
-                padding: "10px",
-                border: "2px dashed black",
-                display: disabledButtons.includes("video") ? "none" : "block",
-              }}
-            >
-              <b>Insert Syringe</b>
-              {/* Switch Video */}
-            </a>
-          </button>
 
           {/* {activeButton === 4 &&
       <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>
@@ -411,7 +367,7 @@ const PowerOn = () => {
           </center>
         )}
 
-        {/* <button onClick={handleToggle}>Table Of Content</button> */}
+        {/* <button onClick={handleToggle}><BsListUl /></button> */}
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
         {/* <NextButton url={"InsertSyringe"}></NextButton> */}
       </div>

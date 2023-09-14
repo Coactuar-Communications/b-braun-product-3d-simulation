@@ -16,7 +16,7 @@ import beepaudio from "../../assets/images/Device Sound .mp3";
 import "./bolus.css";
 import volumeBolus from "../../assets/images/Volume Bolus.mp4";
 import manualBolus from "../../assets/images/Manual Bolus.mp4";
-
+import { BsListUl } from 'react-icons/bs';
 import { Link } from "react-router-dom";
 // import powerOnaudio from "../../assets/voice/Page 4/Turn on the power button.mp3";
 import RotateScreen from "../RotateScreen";
@@ -24,6 +24,7 @@ import Sidebar from "../sidebar/Sidebar";
 import infusionVideo from "../../assets/images/video.mp4";
 import bolusImage from "../../assets/images/BOLUS.png";
 import { NextButton } from "../NextButton/nextButton";
+import selectBolusAudio from '../../assets/voice/Page 12/Select the bolus.mp3';
 
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -87,7 +88,15 @@ const Bolus = () => {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid bg-syringe">
+      {activeButton !== 2 && <center>
+        <h3 className="visibility-hidden" style={{color: "transparent"}}>reerte</h3>
+      </center>}
+      <center>
+      </center>
+      {activeButton === 2 && <center>
+      <h3 className="visibility-hidden" >Select a Bolus</h3>
+      </center>}
         <RotateScreen></RotateScreen>
         {activeButton === 7 && (
            <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
@@ -109,7 +118,7 @@ const Bolus = () => {
       onClick={handleToggle}
      
     >
-      Table Of Content
+      <BsListUl />
     </button>
     <NextButton
       url={"ChangeSyringe"}
@@ -144,7 +153,7 @@ const Bolus = () => {
       onClick={handleToggle}
      
     >
-      Table Of Content
+      <BsListUl />
     </button>
     <NextButton
       url={"ChangeSyringe"}
@@ -174,6 +183,28 @@ const Bolus = () => {
 
           {activeButton === 4 && <img src={syringe} alt="Image 4" />}
           {activeButton === 2 && <img src={bolusImage} />}
+          <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      <BsListUl />
+    </button>
+    <NextButton
+      url={"ChangeSyringe"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
         </div>
         <div className="button-container">
           <button
@@ -181,9 +212,10 @@ const Bolus = () => {
             className={`image-button ${activeButton === 1 ? "active" : ""}`}
             style={{
               position: "absolute",
-              left: "57%",
-              top: "26%",
-              width: "3%",
+              left: "54%",
+              // top: "23%",
+              top: "34%",
+              width: "5%",
               borderRadius: "50%",
               display: activeButton === 1 ? "block" : "none",
             }}
@@ -198,10 +230,8 @@ const Bolus = () => {
             style={{
               position: "absolute",
               left: "27%",
-              top: "10%",
-
+              top: "17%",
               width: "5%",
-
               borderRadius: "50%",
               display: disabledButtons.includes(2) ? "block" : "none",
             }}
@@ -210,19 +240,20 @@ const Bolus = () => {
           </button>
 
           <button
-            className={`mt-6 image-button ${
+            className={` image-button ${
               activeButton === 2 ? "active" : ""
             }`}
             style={{
               position: "absolute",
-              left: "55%",
-              top: "-3%",
+              left: "54%",
+              top: "34%",
 
               width: "8%",
 
               borderRadius: "50%",
               display: activeButton === 2 ? "block" : "none",
             }}
+            onClick={() => handleButtonClick(8)}
           >
             <b>bolus</b>
             {/* Switch Video */}
@@ -235,6 +266,9 @@ const Bolus = () => {
       <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>
     } */}
         </div>
+        {activeButton === 2 && <audio className="audio-element" autoPlay>
+          <source src={selectBolusAudio}></source>
+        </audio>}
         {activeButton === 6 && (
           <center>
             {" "}
@@ -256,7 +290,7 @@ const Bolus = () => {
           </center>
         )}
         <div>
-          {/* <button onClick={handleToggle}>Table Of Content</button> */}
+          {/* <button onClick={handleToggle}><BsListUl /></button> */}
           {toggle && (
             <Sidebar
               close={() => setToggle(false)}
