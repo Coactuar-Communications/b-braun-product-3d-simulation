@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 // import powerOnaudio from "../../assets/voice/Page 4/Turn on the power button.mp3";
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
-import infusionVideo from "../../assets/images/video.mp4";
+import infusionVideo from "../../assets/images/Bolus - Adjust Infusion.mp4";
 import bolusImage from "../../assets/images/BOLUS.png";
 import { NextButton } from "../NextButton/nextButton";
 import selectBolusAudio from '../../assets/voice/Page 12/Select the bolus.mp3';
@@ -178,7 +178,7 @@ const Bolus = () => {
 
         <div className="image-container display-full displayVid-full">
           {activeButton === 1 && (
-            <video src={infusionVideo} autoPlay loop></video>
+            <video src={infusionVideo} autoPlay></video>
           )}
 
           {activeButton === 4 && <img src={syringe} alt="Image 4" />}

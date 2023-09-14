@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import bg from "../../assets/images/Settings.png";
 import on from "../../assets/images/Turn On.png";
-import infusionVideo from "../../assets/images/video.mp4";
+import infusionVideo from "../../assets/images/Standby - Press.mp4";
 import test from "../../assets/images/Test Mode.png";
 import standbyImage from "../../assets/images/Standby Image.png";
 import standbyImageUpdated from "../../assets/images/Standby Image Updated.png";

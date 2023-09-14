@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import syringe from "../../assets/images/Syringe Change.png";
 import newbg from "../../assets/images/bg.png";
 import changeSyringe from "../../assets/images/Change Syringe.mp4";
-import infusionVideo from "../../assets/images/video.mp4";
+import infusionVideo from "../../assets/images/Turn Off - Shutdown.mp4";
 import "./shutdown.css";
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
