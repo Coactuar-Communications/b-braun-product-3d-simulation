@@ -7,7 +7,7 @@ import standbyImage from "../../assets/images/Standby Image.png";
 import standbyImageUpdated from "../../assets/images/Standby Image Updated.png";
 import standbyTimer from "../../assets/images/Standby Timer.mp4";
 import technical from "../../assets/images/Technical.png";
-import syringe from "../../assets/images/Syringe Change.png";
+//import syringe from "../../assets/images/Syringe Change.png";
 import standbyVideo from "../../assets/images/Standby.mp4";
 import newbg from "../../assets/images/bg.png";
 import backvid from "../../assets/images/REVISED SELFTEST.mp4";

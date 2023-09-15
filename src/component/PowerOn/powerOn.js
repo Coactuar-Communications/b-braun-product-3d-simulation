@@ -177,7 +177,7 @@ const PowerOn = () => {
           Your browser does not support the video tag.
         </video>
       )} */}
-          {activeButton === 4 && <img src={syringe} alt="Image 4" />}
+          {/* {activeButton === 4 && <img src={syringe} alt="Image 4" />} */}
           {activeButton === 5 && <img src={technical} alt="Image 5" />}
           {activeButton === 6 && <img src={on} />}
           <span style={{

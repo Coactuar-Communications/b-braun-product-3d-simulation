@@ -7,7 +7,7 @@ import vid1 from "../../assets/images/Self test mp4.mp4";
 import vid2 from "../../assets/images/Syringe Change.mp4";
 import test from "../../assets/images/Test Mode.png";
 import technical from "../../assets/images/Technical.png";
-import syringe from "../../assets/images/Syringe Change.png";
+// //import syringe from "../../assets/images/Syringe Change.png";
 import background from "../../assets/images/REVISED DEVICE.jpg";
 import newbg from "../../assets/images/bg.png";
 import backvid from "../../assets/images/REVISED SELFTEST.mp4";

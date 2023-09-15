@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import syringe from "../../assets/images/Syringe Change.png";
+//import syringe from "../../assets/images/Syringe Change.png";
 import newbg from "../../assets/images/bg.png";
-import changeSyringe from "../../assets/images/Change Syringe.mp4";
-import infusionVideo from "../../assets/images/Change Syringe - Press.mp4";
+import changeSyringemov from "../../assets/images/chnaging the syring.mov";
+import changeSyringemp4 from "../../assets/images/Change Syringe.mp4";
+
+import infusionVideo from "../../assets/images/video.mp4";
 import "./changeSyringe.css";
 import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
@@ -82,14 +84,22 @@ const ChangeSyringe = () => {
         {activeButton === 7 && (
            <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
 
-          <video
+          {/* <video
             src={changeSyringe}
             autoPlay
             onEnded={handleVideoEnded2}
             style={{ width: "100%", overflow: "hidden" }}
           >
             Your browser does not support the video tag.
-          </video>
+          </video> */}
+
+          <video autoplay  playsinline  src={changeSyringemp4}
+            autoPlay
+            onEnded={handleVideoEnded2}
+            style={{ width: "100%", overflow: "hidden" }}>
+        <source src={changeSyringemp4} type="video/mp4"></source>
+        <source src={changeSyringemov} type="video/mov"></source>
+</video>
           <span   style={{
         position: 'absolute',
         // top: '10px',
