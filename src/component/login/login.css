@@ -78,13 +78,13 @@
     margin-bottom: 12%;
   }
   .card {
-    background-color: transparent;
+    background-color: rgba(0, 0, 255, 0);
     border: 1px solid transparent;
     padding: 10%;
   }
   
   .rounded-start {
-    background-color: transparent;
+    background-color: rgba(0, 0, 255, 0);
     padding: 20%;
   }
   

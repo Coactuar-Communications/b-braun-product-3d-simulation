@@ -210,14 +210,9 @@ const ChangeInfusionRate = () => {
             className={` image-button ${
               activeButton === 7 ? "active" : ""
             }`}
-         
+         id="changing-infusion-ok-btn"
               style={{
-                position: "absolute",
-                left: "33%",
-      top: "35%",
-                height:"9%",
-                width: "3%",
-                borderRadius: "50%",
+                
                 display: disabledButtons.includes(7) ? "none" : "block",
          
             }}
@@ -236,7 +231,7 @@ const ChangeInfusionRate = () => {
       top: "35%",
                 height:"9%",
                 width: "3%",
-                borderRadius: "50%",
+                borderRadius: "0%",
                 color:"transparent",
                 display: disabledButtons.includes("video") ? "none" : "block",
               }}

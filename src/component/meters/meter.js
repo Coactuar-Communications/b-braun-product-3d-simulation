@@ -7,6 +7,7 @@ import video from '../../assets/images/video.mp4';
 import Sidebar from "../sidebar/Sidebar";
 import RotateScreen from '../RotateScreen';
 import { BsListUl } from 'react-icons/bs';
+import { NextButton } from '../NextButton/nextButton';
 const Meter = () => {
   const [videoVisible, setVideoVisible] = useState(false);
   // const location = useLocation();
@@ -99,9 +100,38 @@ const Meter = () => {
     <>
     <RotateScreen></RotateScreen>
     <div className="container-fluid bg-syringe ">
-      {videoVisible !== true ? <div>
-     <center> <h3 className="text-dark" id='tooltip'>Press the start button to start the infusion</h3></center>
-        <center><h4 className="text-dark" id='tooltip'>Optional Setting - Press OK button to enter a volume or time preselection</h4> </center>
+      
+      {videoVisible !== true ? <div className='row'>
+    <div className='col-sm-2'>
+    <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      <BsListUl />
+    </button>
+    <NextButton
+      url={"ChangeSyringe"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        </div>
+        <div className='col-sm-10'>
+     <center> <h3 className="text-dark" id='tooltip1'>Press the start button to start the infusion</h3></center>
+        <center><h4 className="text-dark"  id='tooltip' >Optional Setting - Press OK button to enter a volume or time preselection</h4> </center>
+        
+          </div>
         </div> : <div/>}
         {videoVisible ? (
         <div className="image-container display-full displayVid-full">
@@ -120,15 +150,24 @@ const Meter = () => {
     >
       <BsListUl />
     </button>
+    <NextButton
+      url={"ChangeSyringe"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
     </span>
           </div>
         ) :
-        ( <div className="display display3">
+        ( <div className="display_meter">
    
           {/* <img src={display} alt="Display" className="media" /> */}
        
       <center>
-        <p className="headingOverview">Overview</p>
+        <p className="heading_menu">Overview</p>
       </center>
       <ul className="tab-buttons">
         {tabContent.map((tab, index) => (
@@ -157,14 +196,14 @@ const Meter = () => {
       </div>
 
       <div className="tab-navigation">
-        <button className="down-button down-buttonm" onClick={() => handleTabChange('up')}>
+        <button className="down-button " onClick={() => handleTabChange('up')}>
           Down
         </button>
-        <button className="up-button up-buttonm" onClick={() => handleTabChange('down')}>
+        <button className="up-button " onClick={() => handleTabChange('down')}>
           Up
         </button>
         <Link to={tabContent[activeTab].page}>
-          <button className="ok-button ok-buttonm" onClick={handleOK}>
+          <button className="ok-button " onClick={handleOK}>
             OK
           </button>
         </Link>
@@ -179,8 +218,6 @@ const Meter = () => {
       
     </div>
      )}
-           <button onClick={handleToggle}><BsListUl /></button>
-        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
     </div>
     </>
   );

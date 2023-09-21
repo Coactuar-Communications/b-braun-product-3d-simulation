@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './tabs.css';
-import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
+import bgwithsyringe from '../../assets/images/Zoom out with syringe copy.jpg';
 // import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import drugsData from '../../data/drugsData';
 import Sidebar from "../sidebar/Sidebar";
 import { BsListUl } from 'react-icons/bs';
-
+import RotateScreen from '../RotateScreen';
+import { NextButton } from '../NextButton/nextButton';
 const Category = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [selectedSubcategoryIndex, setSelectedSubcategoryIndex] = useState(0);
@@ -54,12 +55,21 @@ const Category = () => {
 
   return (
     <div className="container-fluid bg-syringe">
-
+            <RotateScreen></RotateScreen>
+    <div className='row'>
+    <div className='col-sm-2'>
+    <button onClick={handleToggle}><BsListUl /></button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"changeInfusionRate"}></NextButton>
+    </div>
+    <div className='col-sm-10'>
         {/* <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >Select type of syringe</h3></center>
         <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center> */}
-    <div className="display display1">
+    </div></div>
+    
+    <div className="display_menu">
        {/* <img src={display}></img> */}
-       <center>  <p className='heading'>Category</p></center>
+       <center>  <p className='heading_menu'>Category</p></center>
          <ul className="tab-buttons">
         {[...Array(selectedCategory.subcategories.length)].map((_, index) => (
           <li
@@ -103,14 +113,7 @@ const Category = () => {
           <source src={selectType}></source>
         </audio> */}
     </div>
-    <button onClick={handleToggle}><BsListUl /></button>
-        {toggle && (
-          <Sidebar
-            close={() => setToggle(false)}
-            selectedEntry={selectedEntry}
-            setSelectedEntry={setSelectedEntry}
-          />
-        )}
+   
     </div>
   );
 };

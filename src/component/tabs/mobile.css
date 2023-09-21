@@ -2,6 +2,34 @@
 
 /* Styles for screens with a maximum width of 768px (typical for mobile portrait mode) */
 @media only screen and (min-device-width: 0px) and (max-device-width: 800px) and (orientation: landscape) {
+  #tooltip1{
+    font-size:5vmin !important;
+
+  }
+  #tooltip{
+    font-size:4vmin !important;
+  }
+  #changing-infusion-ok-btn{
+    top: 33% !important;
+    height: 13%;
+  }
+  #on1, #on2{
+    top: 43% !important;
+  }
+  #ok1, #ok2, #ok3{
+    top: 32% !important;
+    width: 4% !important;
+  }
+  .up-button{
+    top: -9%;
+    left: 151%; 
+  }
+
+  .up-button1{
+    top: -38%;
+    /* left: 196%; */
+    left: 146%;
+  }
     /* Adjust the styling of your components for mobile here */
     .container-fluid {
       /* Modify container styles for mobile */
@@ -23,7 +51,42 @@
       /* Center align the tabs horizontally */
       text-align: center;
     }
-  
+    .display_menu{
+      height: 41%; 
+    margin-top: 14.1%;
+    margin-left: 8.6%;
+    width: 16%;
+    max-height: 24%;
+    background-color: #00665b;
+    /* margin-top: 3.52%; */
+    margin-top: 8%;
+    }
+
+    .display_tabs{
+      height: 41%;
+      margin-top: 14.1%;
+      margin-left: 6.6%;
+      width: 17.5%;
+      max-height: 24%;
+      background-color: #00665b;
+      /* margin-top: 3.52%; */
+      margin-top: 6%;
+    }
+    .display_meter {
+      height: 41%; 
+      margin-top: 14.1%;
+      margin-left: 7.6%;
+      width: 16%;
+      max-height: 24%;
+      background-color: #00665b;
+      /* margin-top: 3.52%; */
+      margin-top: 5%;
+    }
+    .display_ddb2{
+      max-height: 25% !important;
+      margin-top: 4.4% !important;
+     
+    }
     .display ul, .tab-content {
         position: absolute;
         /* left: 3%;*/
@@ -69,7 +132,7 @@
   }
 
   .heading1{
-    top: -2% !important;
+    top: 15% !important;
   }
 
   .digits span{
@@ -89,21 +152,20 @@
   width: 13px;
 }
 .meter {
-
-  left: 5%;
-  top: 7%;
+  left: -3%;
+  top: 33%;
   font-size: 2vmin;
   /* line-height: 66px; */
   line-height: 33px;
-
+  /* margin-top: 10px; */
 }
 
 .startinfusion{
-  padding:5px;
+  padding: 5px;
   /* position: relative; */
   /* top: -38px; */
   font-size: 2vmin;
-    /* margin-top: 78%; */
+  margin-top: 23vh;
 }
 .startinfusion span{
   font-size: 2vmin;
@@ -119,6 +181,12 @@
 .down-button1 {
   top: 90%;
   left: 161%;
+}
+
+.ok-button1 {
+
+  left: 153%;
+  
 }
 #lefttime{
     
@@ -145,10 +213,62 @@
 .ok-overv{
   top: 1%;
 }
+.ok-button {
+  
+  top: 28%;
+}
+#bolus-left-btn{
+  top: 20% !important;
+}
+#standby-left{
+  left: 28% !important;
+  top: 33% !important;
+}
+
+.start-button1{
+  left: 357%;
+  top: -10%
+}
 }
 
 
-  @media only screen and (min-device-width: 801px) and (max-device-width:1181px) and (orientation: landscape) {
+  @media only screen and (min-device-width: 801px) and (max-device-width:1000px) and (orientation: landscape) {
+    #tooltip1{
+      font-size:4vmin !important;
+  
+    }
+    #tooltip{
+      font-size:3.5vmin !important;
+    }
+    #on1, #on2{
+      top: 47% !important;
+    }
+
+    #ok1, #ok2, #ok3{
+      top: 36% !important;
+    }
+    .display_menu{
+
+    /* margin-top: 14.1%; */
+    max-height: 29%;
+    margin-top: 9.52%;
+    }
+
+    .display_tabs{
+
+      /* margin-top: 14.1%; */
+      max-height: 29%;
+      margin-top: 8.52%;
+
+      }
+  
+
+    .display_ddb2{
+
+      /* margin-top: 14.1%; */
+      max-height: 29%;
+      margin-top: 7.52% !important;
+      }
     .display1t {
       margin-top: 7.5% !important;
   }
@@ -171,12 +291,12 @@
 }
 
 .shiftright{
-  left: 194%;
-  top: 3%;
+  left: 181%;
+    top: 3%;
 }
 .left{
   top: 1%;
-  left: 125%;
+    left: 116%;
 }
   .heading{
       left: 27%;
@@ -198,12 +318,12 @@
 }
 .meter {
 
-  left: 5%;
-  /* top: 14%; */
-  top: 18%;
-  font-size: 2vmin;
-  /* line-height: 66px; */
-  line-height: 46px;
+  left: -1%;
+    /* top: 14%; */
+    top: 33%;
+    font-size: 2vmin;
+    /* line-height: 66px; */
+    line-height: 35px;
 
 }
 .heading2{
@@ -219,24 +339,28 @@
 
     line-height: 0px;
     position: absolute;
-    top: 9%;
+    top: 20%;
 }
 .startinfusion{
-  padding:5px;
-  position: relative;
-  top: -38px;
-  font-size: 3vmin;
-    margin-top: 78%;
+  padding: 3px;
+    position: relative;
+    top: -36px;
+    font-size: 2.5vmin;
+    margin-top: 86%;
 }
-
+.start {
+  border-radius: 50%;
+  padding: 4px 1px 4px 1px;
+  font-size: 2.5vmin;
+}
 .up-button1 {
   top: -87%;
   /* left: 196%; */
-  left: 159%;
+  left: 147%;
 }
 .down-button1 {
-  top: 90%;
-  left: 161%;
+  top: 77%;
+  left: 149%;
 }
 .ok-vr{
   top:13%
@@ -255,13 +379,115 @@
 }
 
 #down-buttontime{
-  top: 92%;
-  left: 191%;
+  top: 92% !important;
+  left: 191% !important;
 }
 
 #shiftrighttime{
-  left: 229%;
-  top: 7%;
+  left: 229% !important;
+  top: 7% !important;
+}
+#bolus-left-btn{
+  top: 20% !important;
+}
+#standby-left{
+  left: 28% !important;
+  top: 38% !important;
+}
+
+.start-button1{
+  left: 357%;
+  top: 2%;
 }
   }
+
+  @media only screen and (min-device-width: 1001px) and (max-device-width:1368px) and (orientation: landscape) {
+    #tooltip1{
+      font-size:5vmin !important;
+  
+    }
+    #tooltip{
+      font-size:3vmin !important;
+    }
+    #changing-infusion-ok-btn{
+      top: 21% !important;
+    }
+    #on1, #on2{
+      top: 31% !important;
+    }
+
+    #ok1, #ok2, #ok3{
+      top: 23% !important;
+    }
+    .down-button, .up-button, .ok-button{
+      left: 123% !important;
+      width: 45% !important;
+    }
+    #bolus-left-btn{
+      top: 10% !important;
+    }
+    #bolus-btn, #bolus-btn2{
+      top: 18% !important;
+    }
+    .display_menu {
+      position: relative;
+    height: 62%;
+    margin-top: 14.1%;
+    margin-left: 11.6%;
+    width: 21%;
+    max-height: 25%;
+    margin-top: 10.52%;
+   
+  }
+
+  .display_tabs {
+    position: relative;
+  height: 62%;
+  margin-top: 14.1%;
+  margin-left: 11.6%;
+  width: 21%;
+  max-height: 25%;
+  margin-top: 10.52%;
+ 
+}
+  .display_meter{
+    position: relative;
+    height: 62%;
+    margin-top: 14.1%;
+    margin-left: 8.6%;
+    width: 21%;
+    max-height: 25%;
+    margin-top: 9.52%;
+  }
+  .display_ddb2{
+    position: relative;
+    height: 62%;
+    width: 21% !important;
+    max-height: 25% !important;
+    margin-left: 11.6% !important;
+    margin-top: 7.52% !important;
+  }
+
+  #drug-db1 {
+    
+    top: 12% !important;
+  }
+
+  #standby-left{
+    left: 27% !important;
+    top: 24% !important;
+  }
+
+  .startinfusion {
+    padding: 5px;
+    position: relative;
+    top: -80px;
+    margin-top: 88%;
+}
+.start-button1{
+left: 326%;
+
+top: 5%;
+}
+}
   

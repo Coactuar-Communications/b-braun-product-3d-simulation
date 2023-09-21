@@ -132,12 +132,9 @@ const DrugDatabase1 = () => {
           <button
             onClick={() => {navigate('/DrugDatabase2')}}
             className={`image-button ${activeButton === 1 ? "active" : ""}`}
+            id="drug-db1"
             style={{
-              position: "absolute",
-              left: "42%",
-              top: "23%",
-              width: "5%",
-              borderRadius: "50%",
+              
               display: activeButton === 1 ? "block" : "none",
             }}
           >

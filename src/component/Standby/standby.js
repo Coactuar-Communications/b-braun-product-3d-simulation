@@ -211,13 +211,9 @@ const Standby = () => {
             onClick={() => handleButtonClick(3)}
             disabled={disabledButtons.includes(3)}
             className={`image-button ${activeButton === 3 ? "active" : ""}`}
+            id="on2"
             style={{
-              position: "absolute",
-              left: "4%",
-              top: "43%",
-              width: "5%",
-              height:"11%",
-              borderRadius: "50%",
+             
               display: disabledButtons.includes(3) ? "none" : "block",
             }}
           >
@@ -229,40 +225,27 @@ const Standby = () => {
               }`}
               // style={{ display: disabledButtons.includes('video') ? 'none' : 'block' }}
               // className={`image-button ${activeButton === 3 ? 'active' : ''}`}
+             
               style={{
-                position: "absolute",
-                left: "4%",
-                top: "53%",
-                backgroundColor: "transparent",
-                color: "transparent",
-                border: "0",
-                fontSize: "2vmin",
-                // 'width': '3%',
-                borderRadius: "50%",
+               
                 display: disabledButtons.includes("video") ? "none" : "block",
               }}
             >
               {/* Switch Video */}
             </a>
-            Switch Image 3
+           OK
           </button>
           <button
             onClick={() => handleButtonClick(5)}
             disabled={disabledButtons.includes(5)}
             className={`image-button ${activeButton === 5 ? "active" : ""}`}
+            id="standby-left"
             style={{
-              position: "absolute",
-              left: "27%",
-    top: "42%",
-    height:"11%",
-
-              height:"9%",
-              width: "3%",
-              borderRadius: "50%",
+              
               display: disabledButtons.includes(5) ? "none" : "block",
             }}
           >
-            Switch Image 5
+            left
           </button>
           {/* {activeButton === 4 &&
       <center > <h3 className="text-dark pt-2" id='tooltip'>Press Power Button</h3> </center>

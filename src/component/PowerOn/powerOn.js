@@ -208,13 +208,9 @@ const PowerOn = () => {
             onClick={() => handleButtonClick(1)}
             disabled={disabledButtons.includes(1)}
             className={`image-button ${activeButton === 1 ? "active" : ""}`}
+            id="on1"
             style={{
-              position: "absolute",
-              left: "4%",
-              top: "43%",
-              width: "5%",
-              height:"11%",
-              borderRadius: "50%",
+             
               display: disabledButtons.includes(1) ? "none" : "block",
             }}
           >
@@ -230,7 +226,7 @@ const PowerOn = () => {
               top: "26%",
               width: "3%",
               height:"9%",
-              borderRadius: "50%",
+              borderRadius: "0%",
               display: disabledButtons.includes(2) ? "none" : "block",
             }}
           >
@@ -244,15 +240,9 @@ const PowerOn = () => {
             onClick={() => handleButtonClick(3)}
             disabled={disabledButtons.includes(3)}
             className={`image-button ${activeButton === 3 ? "active" : ""}`}
+            id="on2"
             style={{
-              position: "absolute",
-              // left: "4%",
-              // top: "53%",
-              left: "4%",
-              top: "43%",
-              width: "5%",
-              height:"11%",
-              borderRadius: "50%",
+             
               display: disabledButtons.includes(3) ? "none" : "block",
             }}
           >
@@ -269,7 +259,7 @@ const PowerOn = () => {
                 // left: "4%",
                 // top: "44%",
                 left: "4%",
-              top: "44%",
+                top: "45%",
                 width: "5%",
               height:"11%",
                 backgroundColor: "transparent",
@@ -277,7 +267,7 @@ const PowerOn = () => {
                 border: "0",
                 fontSize: "2vmin",
                 // 'width': '3%',
-                borderRadius: "50%",
+                borderRadius: "0%",
                 display: disabledButtons.includes("video") ? "none" : "block",
               }}
             >
@@ -289,31 +279,22 @@ const PowerOn = () => {
             onClick={() => handleButtonClick(4)}
             disabled={disabledButtons.includes(4)}
             className={`image-button ${activeButton === 4 ? "active" : ""}`}
+            id="ok3"
             style={{
-              position: "absolute",
-              left: "33%",
-    top: "35%",
-              height:"9%",
-              width: "3%",
-              borderRadius: "50%",
+             
               display: disabledButtons.includes(4) ? "none" : "block",
             }}
           >
             Ok3
+            
           </button>
           <button
             onClick={() => handleButtonClick(5)}
             disabled={disabledButtons.includes(5)}
             className={`image-button ${activeButton === 5 ? "active" : ""}`}
+            id="ok2"
             style={{
-              position: "absolute",
-              // left: "32%",
-              // top: "38%",
-              left: "33%",
-              top: "35%",
-              width: "3%",
-              height:"9%",
-              borderRadius: "50%",
+            
               display: disabledButtons.includes(5) ? "none" : "block",
             }}
           >
@@ -324,15 +305,9 @@ const PowerOn = () => {
             onClick={() => handleButtonClick(6)}
             disabled={disabledButtons.includes(6)}
             className={`image-button ${activeButton === 5 ? "active" : ""}`}
+            id="ok1"
             style={{
-              position: "absolute",
-              // left: "32%",
-              // top: "38%",
-              left: "33%",
-              top: "35%",
-              width: "3%",
-              height:"9%",
-              borderRadius: "50%",
+            
               display: disabledButtons.includes(6) ? "none" : "block",
             }}
           >

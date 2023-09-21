@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './tabs.css';
-import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
+import bgwithsyringe from '../../assets/images/Zoom out with syringe copy.jpg';
 // import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import RotateScreen from '../RotateScreen';
@@ -34,36 +34,25 @@ const Tabs = () => {
   };
 
   return (
-    <>
+    <div className="container-fluid bg-syringe">
     <RotateScreen></RotateScreen>
-    <div className='container-fluid bg-syringe'>
-    <span style={{
-        position: 'absolute',
-        // top: '10px',
-        left: '10px',
-        zIndex: 1,
-      }}>
-          <button
-      onClick={handleToggle}
-     
-    >
-      <BsListUl />
-    </button>
-    <NextButton
-      url={"Menu2"}
-      // style={{
-      //   // position: 'absolute',
-      //   top: '10px',
-      //   left: '110px', // Adjust the left position as needed
-      //   // zIndex: 1,
-      // }}
-    />
-    </span>
-        <center> <h3 className="text-dark" id='tooltip'>Select type of syringe</h3></center>
-        <center><h4 className="text-dark" id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center>
-    <div className="display display1t">
+    <div className='row'>
+    <div className='col-sm-2'>
+    <button onClick={handleToggle}><BsListUl /></button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"menu2"}></NextButton>
+    </div>
+    <div className='col-sm-10'>
+        <center> <h4 className="text-dark" id="tooltip" >Select type of syringe</h4></center>
+        <center><h4 className="text-dark"  style={{fontSize:"2.5vmin"}}>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center>
+
+</div>
+</div>
+
+       
+    <div className="display_tabs">
        {/* <img src={display}></img> */}
-       <center>  <p className='heading'>Select Syringe</p></center>
+       <center>  <p className='heading_menu'>Select Syringe</p></center>
          <ul className="tab-buttons">
         {[...Array(totalTabs)].map((_, index) => (
           <li
@@ -96,13 +85,12 @@ const Tabs = () => {
       <audio className="audio-element" autoPlay>
           <source src={selectType}></source>
         </audio>
+        
     </div>
-    {/* <button onClick={handleToggle}><BsListUl /></button> */}
-        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
-        {/* <NextButton url={"menu"}></NextButton> */}
+   
     </div>
   
-    </>
+
   );
 };
 

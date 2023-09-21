@@ -5,6 +5,7 @@ import display from '../../assets/images/Revised Screen with buttons.png';
 import RotateScreen from '../RotateScreen';
 import Sidebar from "../sidebar/Sidebar";
 import { BsListUl } from 'react-icons/bs';
+import { NextButton } from '../NextButton/nextButton';
 const Time = () => {
   const [value1, setValue1] = useState([0, 0, '.', 0,0,'h']);
   const [activeDigit1, setActiveDigit1] = useState(3);
@@ -105,15 +106,46 @@ const Time = () => {
 
   return (
     <>
-    <RotateScreen></RotateScreen>
+    {/* <RotateScreen></RotateScreen> */}
     <div className="container-fluid bg-syringe">
+    <RotateScreen></RotateScreen>
+    <div className='row'>
+    <div className='col-sm-3'>
+    <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      <BsListUl />
+    </button>
+    <NextButton
+      url={"menu2"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        {/* <NextButton url={"ward"}></NextButton> */}
+    </div>
+    <div className='col-sm-9'>
+
     <center> <h3 className="text-dark" id='tooltip'>Enter the time  </h3></center>
     <center> <h4 className="text-dark" id='tooltip'>Use the arrow buttons to enter the required time </h4></center>
-    <div className="display display2">
+    </div></div>
+    <div className="display_meter">
       {/* <img src={display} alt="Display" /> */}
 
       <center>
-        <p className="heading2">Time</p>
+        <p className="heading_menu">Time</p>
       </center>
       <center>
         <p className='heading1' style={{left:"7%"}}>{selectedNumber1}</p>
@@ -144,13 +176,13 @@ const Time = () => {
         </p>
       </center>
       <center>
-        <button className="ok-button ok-vr" onClick={handleOK}>
+        <button className="ok-button" onClick={handleOK}>
           OK
         </button>
       </center>
     </div>
-    <button onClick={handleToggle}><BsListUl /></button>
-        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+    {/* <button onClick={handleToggle}><BsListUl /></button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />} */}
     </div>
     </>
   );

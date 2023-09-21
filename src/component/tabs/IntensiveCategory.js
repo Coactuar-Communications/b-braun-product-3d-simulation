@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './tabs.css';
-import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
+import bgwithsyringe from '../../assets/images/Zoom out with syringe copy.jpg';
 // import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 // import React, { useState, useRef } from 'react';

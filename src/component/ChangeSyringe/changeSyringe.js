@@ -168,14 +168,9 @@ const ChangeSyringe = () => {
             className={`mt-6 image-button ${
               activeButton === 7 ? "active" : ""
             }`}
+            id="change-syringe"
             style={{
-              position: "absolute",
-              left: "4%",
-              top: "60%",
-
-              width: "8%",
-              height: "9%",
-              borderRadius: "50%",
+             
               display: disabledButtons.includes(7) ? "none" : "block",
             }}
           >
@@ -185,6 +180,8 @@ const ChangeSyringe = () => {
               className={`media-button ${
                 activeButton === "video" ? "active" : ""
               }`}
+
+              
               // style={{ display: disabledButtons.includes('video') ? 'none' : 'block' }}
               // className={`image-button ${activeButton === 3 ? 'active' : ''}`}
               style={{
@@ -247,7 +244,7 @@ const ChangeSyringe = () => {
 
 {/* <button onClick={handleToggle}><BsListUl /></button> */}
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
-        <NextButton url={"PreAlarm"}></NextButton>
+        {/* <NextButton url={"PreAlarm"}></NextButton> */}
       </div>
     </>
   );

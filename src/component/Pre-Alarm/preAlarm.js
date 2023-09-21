@@ -164,10 +164,10 @@ const PreAlarm = () => {
           />
         )} */}
 
-<button onClick={handleToggle}><BsListUl /></button>
+{/* <button onClick={handleToggle}><BsListUl /></button> */}
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
       </div>
-      <NextButton url={"OperatingAlarm"}></NextButton>
+      {/* <NextButton url={"OperatingAlarm"}></NextButton> */}
     </>
   );
 };

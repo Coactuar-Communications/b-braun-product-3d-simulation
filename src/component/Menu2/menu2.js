@@ -91,7 +91,14 @@ const Menu2 = () => {
   return (
     <>
       <div className="container-fluid bg-syringe">
+      
+        <div class="row">
+          
+      
+  
+
         <RotateScreen></RotateScreen>
+       
         <center>
           {" "}
           <h3
@@ -132,12 +139,9 @@ const Menu2 = () => {
           <button
             onClick={() => {navigate('/menu')}}
             className={`image-button ${activeButton === 1 ? "active" : ""}`}
+            id="drug-db1"
             style={{
-              position: "absolute",
-              left: "42%",
-              top: "23%",
-              width: "5%",
-              borderRadius: "50%",
+             
               display: activeButton === 1 ? "block" : "none",
             }}
           >
@@ -182,6 +186,7 @@ const Menu2 = () => {
           )}
         {/* <NextButton url={"ChangeSyringe"}></NextButton> */}
 
+        </div>
         </div>
       </div>
     </>

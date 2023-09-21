@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './tabs.css';
-import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
+import bgwithsyringe from '../../assets/images/Zoom out with syringe copy.jpg';
 // import display from '../../assets/images/Group 2.png';
 import selectType from '../../assets/voice/Page 7/Select type.mp3';
 import drugsData from '../../data/drugsData';
 import RotateScreen from '../RotateScreen';
 import Sidebar from '../sidebar/Sidebar';
 import { BsListUl } from 'react-icons/bs';
-
+import { NextButton } from '../NextButton/nextButton';
 const Overview = () => {
   const [activeTab, setActiveTab] = useState(0);
   const totalTabs = 4; // Total number of tabs
@@ -58,29 +58,28 @@ const Overview = () => {
   };
   return (
     <>
-     <div className="container-fluid bg-syringe">
-     <span style={{
-        position: 'absolute',
-        // top: '10px',
-        left: '10px',
-        zIndex: 1,
-      }}>
-          <button
-      onClick={handleToggle}
-     
-    >
-      <BsListUl />
-    </button>
-    </span>
-    <RotateScreen></RotateScreen>
-     <center> <h3 className="text-dark" id='tooltip'></h3></center>
-     <center> <h4 className="text-dark" id='tooltip'> </h4></center>
-    <div className='container-fluid'>
-        {/* <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >Select type of syringe</h3></center> */}
-         {/*   <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center> */}
-    <div className="display display1">
+      <div className="container-fluid bg-syringe">
+         <RotateScreen></RotateScreen>
+    <div className='row'>
+    <div className='col-sm-2'>
+    <button onClick={handleToggle}><BsListUl /></button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"category"}></NextButton>
+    </div>
+    <div className='col-sm-10'>
+       {/* <center> <h3 className=" visibility-hidden" style={{color:'transparent'}}  >Select type of syringe</h3></center>
+          <center><h4 className="" style={{color:'transparent'}}  id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4> </center> */}
+          </div></div>
+        {toggle && (
+          <Sidebar
+            close={() => setToggle(false)}
+            selectedEntry={selectedEntry}
+            setSelectedEntry={setSelectedEntry}
+          />
+        )}
+    <div className="display_menu">
        {/* <img src={display}></img> */}
-       <center>  <p className='heading2'>Overview</p></center>
+       <center>  <p className='heading_menu'>Overview</p></center>
          <ul className="tab-buttons">
         {[...Array(totalTabs)].map((_, index) => (
           <li
@@ -102,25 +101,28 @@ const Overview = () => {
             {content}
           </div>
         ))}
+      
       </div>
 
       <div className="tab-navigation">
         <button className='down-button' onClick={() => handleTabChange('up')}>Down</button>
         <button className="up-button" onClick={() => handleTabChange('down')}>Up</button>
-        <Link to="/Rate"> <button className='ok-button ok-overv'>Ok</button></Link>
-        <center>
+        <Link to="/Rate"> <button className='ok-button ok-overv' >Ok</button></Link>
+        
+      </div>
+      <center>
         <p className="bg-warning text-dark startinfusion">
-          <span className="bg-light text-success start  border-success"> Ok </span> Confirm
+          <span className="bg-light text-success start  border-success" style={{fontSize:"2vmin",
+      padding:"3px 2px 3px 2px", border:"0px"}}> Ok </span> Confirm
         </p>
       </center>
-      </div>
       {/* <audio className="audio-element" autoPlay>
           <source src={selectType}></source>
         </audio> */}
     </div>
-    </div>
-    <button onClick={handleToggle}><BsListUl /></button>
-        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+   
+    {/* <button onClick={handleToggle}><BsListUl /></button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />} */}
 </div>
 
 </>

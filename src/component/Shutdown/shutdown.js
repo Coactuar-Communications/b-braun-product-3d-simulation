@@ -155,7 +155,7 @@ const Shutdown = () => {
 
               width: "8%",
               height: "9%",
-              borderRadius: "50%",
+              borderRadius: "0%",
               zIndex:2,
               display: disabledButtons.includes(7) ? "none" : "block",
             }}

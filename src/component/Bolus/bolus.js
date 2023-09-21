@@ -210,13 +210,9 @@ const Bolus = () => {
           <button
             onClick={() => handleButtonClick(2)}
             className={`image-button ${activeButton === 1 ? "active" : ""}`}
+            id="bolus-btn2"
             style={{
-              position: "absolute",
-              left: "54%",
-              // top: "23%",
-              top: "34%",
-              width: "5%",
-              borderRadius: "50%",
+             
               display: activeButton === 1 ? "block" : "none",
             }}
           >
@@ -224,15 +220,12 @@ const Bolus = () => {
           </button>
           <button
             onClick={() => handleButtonClick(7)}
+            id="bolus-left-btn"
             className={`mt-6 image-button ${
               activeButton === 2 ? "active" : ""
             }`}
             style={{
-              position: "absolute",
-              left: "27%",
-              top: "17%",
-              width: "5%",
-              borderRadius: "50%",
+             
               display: disabledButtons.includes(2) ? "block" : "none",
             }}
           >
@@ -240,17 +233,13 @@ const Bolus = () => {
           </button>
 
           <button
+
+          id="bolus-btn"
             className={` image-button ${
               activeButton === 2 ? "active" : ""
-            }`}
+            }` }
             style={{
-              position: "absolute",
-              left: "54%",
-              top: "34%",
-
-              width: "8%",
-
-              borderRadius: "50%",
+              
               display: activeButton === 2 ? "block" : "none",
             }}
             onClick={() => handleButtonClick(8)}

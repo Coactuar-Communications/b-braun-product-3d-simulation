@@ -164,10 +164,12 @@ const OperatingAlarm = () => {
           />
         )} */}
 
-<button onClick={handleToggle}><BsListUl /></button>
+{/* <button onClick={handleToggle}><BsListUl /></button> */}
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        {/* <NextButton url={"OperatingAlarm"}></NextButton> */}
+     
       </div>
-      <NextButton url={"OperatingAlarm"}></NextButton>
+     
     </>
   );
 };

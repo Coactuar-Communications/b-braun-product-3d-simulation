@@ -205,7 +205,7 @@ display:none;
 
 .tab-content .tab-pane.active {
   /* Styles for active tab content */
-  color:blue;
+  color:transparent;
   background: #D9D9D9;
   border-radius: 6px;
   color:#000000;
@@ -216,7 +216,7 @@ display:none;
 }
 
 .tab-content1 .tab-pane1.active{
-  color:blue;
+  color:transparent;
   background: #D9D9D9;
   border-radius: 6px;
   color:#000000;
@@ -282,7 +282,7 @@ display:none;
 }
 
 .digits span.active {
-  color:blue;
+  color:transparent;
   background: #D9D9D9;
   border-radius: 6px;
   color:#000000;
@@ -302,7 +302,7 @@ display:none;
   top: 18%;
   left: 235%;
   padding: 6%;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 #mobile-portrait {
   position: fixed;
@@ -324,7 +324,7 @@ display:none;
   max-height: 250px;
 }
 
-@media only screen and (min-device-width: 0px) and (max-device-width: 815px) and (orientation: portrait) {
+@media only screen and (min-device-width: 0px) and (max-device-width: 912px) and (orientation: portrait) {
   #mobile-portrait {
       display: block !important;
   }

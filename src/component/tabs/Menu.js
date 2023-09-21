@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './tabs.css';
-import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
+import bgwithsyringe from '../../assets/images/Zoom out with syringe copy.jpg';
 // import display from '../../assets/images/Group 2.png';
 import selectSetting from '../../assets/voice/Page 9/Select setting and confirm.mp3';
 import Sidebar from "../sidebar/Sidebar";
@@ -50,18 +50,25 @@ const Menu = ({ showDrugDatabaseText }) => {
   return (
     <div className="container-fluid bg-syringe">
     <RotateScreen></RotateScreen>
-
-      <center>
-      <h3 className="visibility-hidden" >Select setting and confirm with OK</h3>
+    <div className='row'>
+    <div className='col-sm-3'>
+    <button onClick={handleToggle}><BsListUl /></button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"ward"}></NextButton>
+    </div>
+    <div className='col-sm-9'>
+    <center>
+      <h4 className="visibility-hidden" >Select setting and confirm with OK</h4>
 
       </center>
-      <center>
+      </div></div>
+      {/* <center>
         <h4 className="" style={{ color: 'transparent' }} id='tooltip'>Select the correct type of syringe by using the up/down arrows and confirm with OK button</h4>
-      </center>
-      <div className="display display1 display1t">
+      </center> */}
+      <div className="display_menu">
         {/* <img src={display} alt="Display" /> */}
         <center>
-          <p className='heading'>Main Menu</p>
+          <p className='heading_menu'>Main Menu</p>
         </center>
         <ul className="tab-buttons">
           {[...Array(totalTabs)].map((_, index) => (
@@ -97,9 +104,7 @@ const Menu = ({ showDrugDatabaseText }) => {
       <audio className="audio-element" autoPlay>
           <source src={selectSetting}></source>
         </audio>
-      <button onClick={handleToggle}><BsListUl /></button>
-        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
-        <NextButton url={"ward"}></NextButton>
+    
     </div>
   );
 };

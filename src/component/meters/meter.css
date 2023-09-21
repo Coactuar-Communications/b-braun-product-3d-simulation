@@ -131,7 +131,26 @@ margin-top: 13.9% !important;
     color: #fff;
 }
 
-
+.display_meter {
+    position: relative;
+    width: 18%;
+    height: 62%;
+    /* left: 10.1%; */
+    margin-top: 14.1%;
+    /* left: 9.1%; */
+    margin-left: 8.6%;
+    width: 16%;
+    max-height: 28%;
+    background-color: #00665b;
+    /* left: 9.1%; */
+    margin-top: 8.52%;
+    /* margin-top: 14.1%; */
+    /* background-image: url(./assets/images/Group\ 2.png); */
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    border: 4px solid white;
+    border-radius: 4px;
+}
 
 /* .tab-buttons {
   display: flex;
@@ -188,10 +207,8 @@ margin-top: 13.9% !important;
     display: flex;
     align-items: center;
     position: absolute;
-    /* left: 13%;
-    top: 27%; */
     left: 10%;
-    top: 21%;
+    top: 26%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -233,7 +250,7 @@ margin-top: 13.9% !important;
     padding:5px;
     position: relative;
     top: -38px;
-    margin-top: 76%;
+    margin-top: 78%;
     /* border-left:4px solid white;
     border-right:4px solid white; */
 }
@@ -267,7 +284,7 @@ margin-top: 13.9% !important;
 }
 
 .digits span.active {
-    color: blue;
+    color:transparent;
     background: #D9D9D9;
     border-radius: 6px;
     color: #000000;
@@ -282,54 +299,40 @@ margin-top: 13.9% !important;
     font-size: 16px;
 }
 
-.down-button1, .up-button1, .ok-button1,.left, .shiftright{
+.down-button1, .up-button1, .ok-button1, .left, .shiftright {
     position: absolute;
-    
     /* border-radius: 50%; */
     height: 53%;
     width: 30%;
-    background-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0);
+    background-color:transparent;
+    color:transparent;
     border: 0px;
 }
-.down-button1{ 
-    /* top: 69%;
-    left: 186%; */
-    /* top: 90%;
-    left: 162%; */
-    top: 77%;
-    left: 174%;
+.down-button1 {
+    top: 108%;
+    left: 166%;
 }
 
-.up-button1{   
-    top: -87%;
+.up-button1 {
+    top: -42%;
     /* left: 196%; */
-    left: 177%;
-   
+    left: 166%;
 }
 
 .ok-button1{
-    top: 32%; 
-    left: 162%;
+    top: 32%;
+    left: 142%;
+    height: 32%;
 }
 
-.left{
-    /* top: -12%;
-    left: 147%; */
-    /* top: 1%;
-    left: 154%; */
-    top: 1%;
-    left: 136%;
+.left {
+    top: 34%;
+    left: 130%;
 }
 
-.shiftright{
-    /* left: 224%;
-    top: -13%; */
-    /* left: 235%;
-    top: 3%; */
-    left: 210%;
-    top: 3%;
-
+.shiftright {
+    left: 201%;
+    top: 34%;
 }
 
 .vid1{
@@ -345,13 +348,13 @@ margin-top: 13.9% !important;
     /* left: 349%;
     top: 12%; */
     
-    background-color: initial;
+    background-color: transparent;
     border: 0;
-    color: rgba(0, 0, 0, 0);
-    left: 336%;
+    color:transparent;
+    left: 352%;
     padding: 19px;
     position: absolute;
-    top: 5%;
+    top: 12%;
 }
 .headingOverview{
     position: absolute;

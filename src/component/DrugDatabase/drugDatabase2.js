@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import bgwithsyringe from '../../assets/images/REVISED DEVICE with Syringe 0011.jpg';
+import bgwithsyringe from '../../assets/images/Zoom out with syringe copy.jpg';
 // import display from '../../assets/images/Group 2.png';
 import selectSetting from '../../assets/voice/Page 9/Select setting and confirm.mp3';
 import Sidebar from "../sidebar/Sidebar";
@@ -22,7 +22,6 @@ const DrugDatabase2 = () => {
     "Reset Therapy",
     "Settings..."
   ];
-
   const handleTabChange = (direction) => {
     if (direction === 'up') {
       setActiveTab((prevTab) => (prevTab + 1) % totalTabs);
@@ -50,17 +49,29 @@ const DrugDatabase2 = () => {
   return (
     <div className="container-fluid bg-syringe">
     <RotateScreen></RotateScreen>
-      <center>
-      <h3 className="visibility-hidden" >Select Drug Database in the Main Menu</h3>
+    <div className='row'>
+    <div className='col-sm-2'>
+    <button onClick={handleToggle}><BsListUl /></button>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        <NextButton url={"ward"}></NextButton>
+    </div>
+    <div className='col-sm-10'>
+    <center>
+      <h3 className="visibility-hidden" id="tooltip1">Select Drug Database in the Main Menu</h3>
 
       </center>
       <center>
-        <h4 className="" id='tooltip'>Subsequently select the drug and confirm with OK button</h4>
+        <h6 className="h4" id='tooltip'>Subsequently select the drug and confirm with OK button</h6>
       </center>
-      <div className="display display1 display1t">
+    </div>
+    </div>
+   
+      
+    
+      <div className="display_ddb2">
         {/* <img src={display} alt="Display" /> */}
         <center>
-          <p className='heading'>Main Menu</p>
+          <p className='heading_ddb2'>Main Menu</p>
         </center>
         <ul className="tab-buttons">
           {[...Array(totalTabs)].map((_, index) => (
@@ -96,9 +107,9 @@ const DrugDatabase2 = () => {
       <audio className="audio-element" autoPlay>
           <source src={selectDrugDatabaseAudio}></source>
         </audio>
-      <button onClick={handleToggle}><BsListUl /></button>
+      {/* <button onClick={handleToggle}><BsListUl /></button>
         {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
-        <NextButton url={"ward"}></NextButton>
+        <NextButton url={"ward"}></NextButton> */}
     </div>
   );
 };

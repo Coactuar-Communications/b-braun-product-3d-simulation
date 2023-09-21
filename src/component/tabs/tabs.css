@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@300&family=Lato:ital@1&family=Lobster+Two&family=Montserrat&family=Nunito:wght@400;500&family=Open+Sans&family=Poppins&family=Rajdhani:wght@400;700&family=Roboto&family=Saira+Extra+Condensed:wght@500;600;700&family=Secular+One&family=Source+Serif+Pro:ital,wght@0,200;1,400&display=swap');
 body {
-    background-image: url('../../assets/images/REVISED DEVICE with Syringe 0011.jpg');
+    background-image: url('../../assets/images/Zoom out with syringe copy.jpg');
     background-repeat: no-repeat;
     overflow: hidden;
 }
 .bg-syringe{
-    background-image: url('../../assets/images/REVISED DEVICE with Syringe 0011.jpg');
+    background-image: url('../../assets/images/Zoom out with syringe copy.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -66,8 +66,8 @@ svg{
     width: 80%;
 }
 
-.heading {
-    position: absolute;
+.heading_menu {
+    position:initial;
     /* width: 99px;
   height: 17px; */
     left: 31%;
@@ -76,7 +76,7 @@ svg{
     font-style: normal;
     font-weight: 600;
         font-size: 2.2vmin;
-
+        background-color: #8bceab;
 
     line-height: 126%;
     color: #000000;
@@ -98,6 +98,47 @@ svg{
     line-height: 5%;
     color: #000000;
   
+}
+.display_menu {
+    position: relative;
+    width: 18%;
+    height: 62%;
+    /* left: 10.1%; */
+    margin-top: 14.1%;
+    /* left: 9.1%; */
+    margin-left: 8.6%;
+    width: 16%;
+    max-height: 28%;
+    background-color: #00665b;
+    /* left: 9.1%; */
+    margin-top: 9.52%;
+    /* margin-top: 14.1%; */
+    /* background-image: url(./assets/images/Group\ 2.png); */
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    border: 4px solid white;
+    border-radius: 4px;
+}
+
+.display_tabs {
+    position: relative;
+    width: 18%;
+    height: 62%;
+    /* left: 10.1%; */
+    margin-top: 14.1%;
+    /* left: 9.1%; */
+    margin-left: 8.6%;
+    width: 16%;
+    max-height: 28%;
+    background-color: #00665b;
+    /* left: 9.1%; */
+    margin-top: 9.52%;
+    /* margin-top: 14.1%; */
+    /* background-image: url(./assets/images/Group\ 2.png); */
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    border: 4px solid white;
+    border-radius: 4px;
 }
 
 .heading1 {
@@ -123,12 +164,12 @@ svg{
   flex-direction: row;
 } */
 
-.display ul li {
+.display_menu ul li {
     list-style-type: none;
     padding-left: 10px;
 }
 
-.display ul,
+.display_menu ul,
 .tab-content {
     position: absolute;
     left: 3%;
@@ -147,7 +188,7 @@ svg{
     flex-direction: row;
 }
 
-.display ul .first {
+.display_menu ul .first {
     background: #D9D9D9;
     border-radius: 6px;
     color: #000000;
@@ -187,7 +228,7 @@ svg{
 
 .tab-content .tab-pane.active {
     /* Styles for active tab content */
-    color: blue;
+    color:transparent;
     background: #D9D9D9;
     border-radius: 6px;
     color: #000000;
@@ -197,7 +238,7 @@ svg{
 }
 
 .tab-content1 .tab-pane1.active {
-    color: blue;
+    color:transparent;
     background: #D9D9D9;
     border-radius: 6px;
     color: #000000;
@@ -208,7 +249,7 @@ svg{
     border-left: 1px solid #000;
 }
 
-.display ul,
+.display_menu ul,
 .tab-content1 {
     position: absolute;
     left: 3%;
@@ -258,7 +299,7 @@ svg{
 }
 
 .digits span.active {
-    color: blue;
+    color:transparent;
     background: #D9D9D9;
     border-radius: 6px;
     color: #000000;
@@ -273,34 +314,35 @@ svg{
 .down-button, .up-button, .ok-button{
     position: absolute;
     left: 148%;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     height: 24% !important;
-    width: 20% !important;
-    background-color: transparent;
-    color: transparent;
+    /* width: 20% !important; */
+    background-color:transparent;
+    color:transparent;
     border: 0px;
+}
+
+/* h3{
+    font-size: 5vmin !important;
+}
+
+h4{
+    font-size: 4vmin !important; 
+} */
+.up-button{   
+    top: 1%;
 }
 
 .ok-button{
     height: 29%;
-    width: 20%;
+    /* width: 20%; */
+    
+    top: 36%;
+
 }
+
 .down-button{ 
-    top: 49%; 
-}
-
-
-
-.up-button{   
-    top: -8%;
-}
-
-.ok-button{
-    top: 21%;
-}
-
-.down-buttonm{ 
-    top: 46%;
+    top: 68%;
 }
 
 
@@ -347,7 +389,7 @@ svg{
     opacity: 0.5;
     color:#00655a;
     background-color: white !important;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     padding:0px 9px;
   }
   .special-tab::before {
@@ -360,7 +402,7 @@ svg{
   }
   
   .tab-content .special-tab.active{
-    background-color: transparent !important;
+    background-color:transparent !important;
     border: 1px solid #D9D9D9 !important;
   }
 

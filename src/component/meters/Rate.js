@@ -6,6 +6,7 @@ import buttons from '../../assets/voice/Page 8/Use the buttons.mp3';
 import Sidebar from "../sidebar/Sidebar";
 import RotateScreen from '../RotateScreen';
 import { BsListUl } from 'react-icons/bs';
+import { NextButton } from '../NextButton/nextButton';
 const Rate = () => {
   const [value, setValue] = useState([0, 0, 0, 0, '.', 0, 0]);
   const [activeDigit, setActiveDigit] = useState(3);
@@ -98,18 +99,48 @@ const Rate = () => {
   return (
     <>
 
+<div className="container-fluid bg-syringe">
     <RotateScreen></RotateScreen>
-    <div className="container-fluid bg-syringe">
+    <div className='row'>
+    <div className='col-sm-3'>
+    <span style={{
+        position: 'absolute',
+        // top: '10px',
+        left: '10px',
+        zIndex: 1,
+      }}>
+          <button
+      onClick={handleToggle}
+     
+    >
+      <BsListUl />
+    </button>
+    <NextButton
+      url={"menu2"}
+      // style={{
+      //   // position: 'absolute',
+      //   top: '10px',
+      //   left: '110px', // Adjust the left position as needed
+      //   // zIndex: 1,
+      // }}
+    />
+    </span>
+        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+        {/* <NextButton url={"ward"}></NextButton> */}
+    </div>
+    <div className='col-sm-9'>
+
      <center> <h3 className="text-dark" id='tooltip'>Enter the delivery rate  </h3></center>
      <center> <h4 className="text-dark" id='tooltip'>Use the arrow buttons to enter the required rate </h4></center>
+     </div></div>
      <audio className="audio-element" autoPlay>
      <source src={buttons}></source>
    </audio>  
-    <div className="display display2">
+    <div className="display_meter">
       {/* <img src={display} alt="Display" /> */}
 
       <center>
-        <p className="heading2">Rate</p>
+        <p className="heading_menu">Rate</p>
       </center>
       <center>
         {/* <p className='heading11'>{selectedNumber}</p> */}
@@ -139,7 +170,7 @@ const Rate = () => {
         </p>
       </center>
       <center>
-        <button className="ok-button ok-vr" onClick={handleOK}>
+        <button className="ok-button1" style={{width: "25%"}} onClick={handleOK}>
           OK
         </button>
         <button className="back-button" onClick={handleGoBack}>
@@ -148,8 +179,7 @@ const Rate = () => {
       </center>
      
     </div>
-    <button onClick={handleToggle}><BsListUl /></button>
-        {toggle && <Sidebar close={() => setToggle(false)} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry} />}
+ 
    </div>
     </>
   );

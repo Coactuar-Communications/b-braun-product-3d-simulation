@@ -140,15 +140,12 @@ const InsertSyringe = () => {
             disabled={disabledButtons.includes(7)}
             className={`mt-6 image-button ${
               activeButton === 7 ? "active" : ""
-            }`}
-            style={{
-              position: "absolute",
-              left: "4%",
-              top: "60%",
 
-              width: "25%",
-              height:"9%",
-              borderRadius: "50%",
+            }`}
+
+            id="insert-syringe"
+            style={{
+             
               display: disabledButtons.includes(7) ? "none" : "block",
             }}
           >
