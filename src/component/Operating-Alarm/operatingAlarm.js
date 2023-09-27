@@ -120,6 +120,7 @@ const OperatingAlarm = () => {
             <video
               src={operatingAlarmVideo}
               autoPlay
+              // controls
               style={{ width: "100%", overflow: "hidden" }}
             >
               Your browser does not support the video tag.

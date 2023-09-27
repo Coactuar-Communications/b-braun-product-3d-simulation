@@ -4,6 +4,7 @@ import './meter.css';
 // import display from '../../assets/images/Group 2.png';
 import startInfusion from '../../assets/voice/Page 8/Press okay Button.mp3';
 import video from '../../assets/images/video.mp4';
+import infusion from '../../assets/images/Pragramming an infusion 01.mp4';
 import Sidebar from "../sidebar/Sidebar";
 import RotateScreen from '../RotateScreen';
 import { BsListUl } from 'react-icons/bs';
@@ -59,6 +60,7 @@ const Meter = () => {
     // Navigate to the selected page
     // You can replace this line with the appropriate navigation logic in your application
     console.log(`Navigating to ${page}`);
+    window.location.replace("/Meter2");
   };
 
   const handleGoBack = () => {
@@ -151,7 +153,7 @@ const Meter = () => {
       <BsListUl />
     </button>
     <NextButton
-      url={"ChangeSyringe"}
+      url={"menu2"}
       // style={{
       //   // position: 'absolute',
       //   top: '10px',

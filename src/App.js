@@ -31,6 +31,7 @@ import PreAlarm from "./component/Pre-Alarm/preAlarm";
 import OperatingAlarm from "./component/Operating-Alarm/operatingAlarm";
 import DrugDatabase1 from "./component/DrugDatabase/drugDatabase1";
 import DrugDatabase2 from "./component/DrugDatabase/drugDatabase2";
+import Meter2 from "./component/meters/meter2";
 
 function App() {
   return (
@@ -42,6 +43,8 @@ function App() {
 
         <Route path="/PowerOn" element={<PowerOn />} />
         <Route path="/Meter" element={<Meter />} />
+        <Route path="/Meter2" element={<Meter2 />} />
+
         <Route path="/Rate" element={<Rate />} />
         <Route path="/Volume" element={<Volume />} />
         <Route path="/Time" element={<Time />} />

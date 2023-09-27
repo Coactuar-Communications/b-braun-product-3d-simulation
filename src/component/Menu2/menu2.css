@@ -357,6 +357,19 @@ a:hover{
     position: absolute;
     left: 1em;
     top: 1em;
+    width:90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sidebar div a{
+    /* margin-right: 10%; */
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    text-decoration: none;
+    /* cursor: pointer; */
   }
   
   button{

@@ -1,6 +1,6 @@
-import { IoMdCloseCircle } from "react-icons/io";
+import { IoMdCloseCircle, IoMdLogOut } from "react-icons/io";
 import './Sidebar.css';
-
+import {FiLogOut} from "react-icons/fi"
 const Sidebar = ({ close, selectedEntry, setSelectedEntry }) => {
   const tableOfContentsEntries = [
     { title: "Power On", url: "/PowerOn" },
@@ -27,7 +27,9 @@ const Sidebar = ({ close, selectedEntry, setSelectedEntry }) => {
     <aside className="sidebar">
       <div onClick={() => close()}>
         <IoMdCloseCircle color="#097159" size={50} />
+         <a href="/" style={{color:"red", fontWeight:"bolder"}}> logout &nbsp; <FiLogOut></FiLogOut> </a>
       </div>
+     
       <div style={{ marginTop: "12vmin" }}>
         <ul>
           {tableOfContentsEntries.map((entry, index) => (

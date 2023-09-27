@@ -20,7 +20,7 @@ import RotateScreen from "../RotateScreen";
 import Sidebar from "../sidebar/Sidebar";
 import { NextButton } from "../NextButton/nextButton";
 import { BsListUl } from 'react-icons/bs';
-
+import { useHistory } from "react-router-dom";
 // import pressOk from '../../assets/voice/Page 8/Press okay Button.mp3';
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 
@@ -72,6 +72,7 @@ const PowerOn = () => {
     setBackgroundImage2({ newbg });
   };
   const handleVideoEnded2 = () => {
+    // window.location.replace("/InsertSyringe");
     window.location.replace("/InsertSyringe");
   };
 
@@ -276,7 +277,10 @@ const PowerOn = () => {
             On2
           </button>
           <button
-            onClick={() => handleButtonClick(4)}
+           onClick={() => {
+            handleButtonClick(4);
+            handleVideoEnded2(); // Call handleVideoEnded2 when the button is clicked
+          }}
             disabled={disabledButtons.includes(4)}
             className={`image-button ${activeButton === 4 ? "active" : ""}`}
             id="ok3"
@@ -285,8 +289,11 @@ const PowerOn = () => {
               display: disabledButtons.includes(4) ? "none" : "block",
             }}
           >
+            <a
+            style={{color:"transparent"}}
+            href="./InsertSyringe/">
             Ok3
-            
+            </a>
           </button>
           <button
             onClick={() => handleButtonClick(5)}
