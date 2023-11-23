@@ -4,6 +4,7 @@
    top: 10px;
     left: 211px;
 }
+
 @media only screen and (min-device-width: 0px) and (max-device-width: 920px) and (orientation: landscape) {
     .nextButton{
         position: absolute;

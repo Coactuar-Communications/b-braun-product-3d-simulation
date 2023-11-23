@@ -79,9 +79,6 @@ const ChangeInfusionRate = () => {
 
   return (
     <>
-   
-       
-
       <div className="container-fluid">
         <RotateScreen></RotateScreen>
         

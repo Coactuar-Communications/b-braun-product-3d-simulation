@@ -1,7 +1,6 @@
 import "./assets/images/Device.bmp";
 import Tabs from "./component/tabs/tabs";
 import Rate from "./component/meters/Rate";
-
 import Login from "./component/login/Login";
 import Select from "./component/select/select";
 import Meter from "./component/meters/meter";
