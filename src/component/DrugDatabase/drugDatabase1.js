@@ -118,7 +118,7 @@ const DrugDatabase1 = () => {
       <BsListUl />
     </button>
     <NextButton
-      url={"ChangeSyringe"}
+      url={"ChangeInfusionRate"}
       // style={{
       //   // position: 'absolute',
       //   top: '10px',

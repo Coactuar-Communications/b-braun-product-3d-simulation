@@ -125,7 +125,7 @@ const Menu2 = () => {
       <BsListUl />
     </button>
     <NextButton
-      url={"ChangeSyringe"}
+      url={"DrugDatabase1"}
       // style={{
       //   // position: 'absolute',
       //   top: '10px',

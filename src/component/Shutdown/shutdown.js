@@ -122,7 +122,7 @@ const Shutdown = () => {
       <BsListUl />
     </button>
     <NextButton
-      url={"ChangeSyringe"}
+      url={"PowerOn"}
       // style={{
       //   // position: 'absolute',
       //   top: '10px',

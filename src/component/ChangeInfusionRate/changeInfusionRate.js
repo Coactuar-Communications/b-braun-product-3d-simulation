@@ -119,7 +119,7 @@ const ChangeInfusionRate = () => {
       <BsListUl />
     </button>
     <NextButton
-      url={"Tabs"}
+      url={"bolus"}
       // style={{
       //   // position: 'absolute',
       //   top: '10px',
