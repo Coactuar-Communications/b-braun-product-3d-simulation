@@ -223,10 +223,10 @@ const PowerOn = () => {
             className={`image-button ${activeButton === 2 ? "active" : ""}`}
             style={{
               position: "absolute",
-              left: "44%",
-              top: "26%",
-              width: "3%",
-              height:"9%",
+              left: "47vw",
+              top: "24vh",
+              width: "7vmin",
+              height:"9vmin",
               borderRadius: "0%",
               display: disabledButtons.includes(2) ? "none" : "block",
             }}
@@ -263,8 +263,8 @@ const PowerOn = () => {
                 top: "45%",
                 width: "5%",
               height:"11%",
-                backgroundColor: "transparent",
-                color: "transparent",
+                backgroundColor: "black",
+                color: "black",
                 border: "0",
                 fontSize: "2vmin",
                 // 'width': '3%',
@@ -290,7 +290,7 @@ const PowerOn = () => {
             }}
           >
             <a
-            style={{color:"transparent"}}
+            style={{color:"black"}}
             href="./InsertSyringe/">
             Ok3
             </a>

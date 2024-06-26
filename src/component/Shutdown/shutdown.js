@@ -150,11 +150,11 @@ const Shutdown = () => {
             }`}
             style={{
               position: "absolute",
-              left: "4%",
-              top: "60%",
+              left: "5vw",
+              top: "56vh",
 
-              width: "8%",
-              height: "9%",
+              width: "17vmin",
+              height: "10vmin",
               borderRadius: "0%",
               zIndex:2,
               display: disabledButtons.includes(7) ? "none" : "block",

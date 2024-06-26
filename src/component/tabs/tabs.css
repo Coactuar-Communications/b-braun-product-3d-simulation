@@ -313,12 +313,12 @@ svg{
 }
 .down-button, .up-button, .ok-button{
     position: absolute;
-    left: 148%;
+    left: 21vw;
     /* border-radius: 50%; */
-    height: 24% !important;
+    height: 8vmin !important;
     /* width: 20% !important; */
-    background-color:transparent;
-    color:transparent;
+    background-color: transparent;
+    color: transparent;
     border: 0px;
 }
 
@@ -330,7 +330,9 @@ h4{
     font-size: 4vmin !important; 
 } */
 .up-button{   
-    top: 1%;
+    /* top: 1%; */
+    top: 0vh;
+
 }
 
 .ok-button{

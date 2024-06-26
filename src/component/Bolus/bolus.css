@@ -1,17 +1,26 @@
 #bolus-btn,#bolus-btn2{
-    position: absolute;
+    /* position: absolute;
               left: 54%;
               top: 31%;
               height: 15%;
-              width: 8%;
+              width: 8%; */
+              position: absolute;
+    left: 53vw;
+    top: 29vh;
+    height: 18vmin;
+    width: 18vmin;
 
              
 }
 
 #bolus-left-btn{
-    position: absolute;
+    /* position: absolute;
     left: 27%;
     top: 15%;
-    width: 5%;
+    width: 5%; */
+    position: absolute;
+    left: 27vw;
+    top: 15vh;
+    width: 11vmin;
 
 }

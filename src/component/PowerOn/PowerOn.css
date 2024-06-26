@@ -25,19 +25,19 @@
 
 #on1, #on2{
     position: absolute;
-    left: 4%;
-    top: 45%;
-    width: 5%;
-    height:22%;
+    left: 4.5vw;
+    top: 43vh;
+    width: 10vmin;
+    height: 21vmin;
    
 }
 
 #ok1,#ok2,#ok3{
     position: absolute;
-    left: 32%;
+    left: 32vw;
     top: 32%;
     width: 5%;
-    height: 15%;
+    height: 13vmin;
    
 }
 

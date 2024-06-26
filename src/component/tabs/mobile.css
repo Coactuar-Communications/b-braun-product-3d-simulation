@@ -1,5 +1,9 @@
 /* mobile.css */
-
+/* @media only screen and (min-device-width: 658px) and (max-device-width: 740px) and (orientation: landscape) {
+  .ok-button {
+    top: 10vh !important;
+}
+} */
 /* Styles for screens with a maximum width of 768px (typical for mobile portrait mode) */
 @media only screen and (min-device-width: 0px) and (max-device-width: 800px) and (orientation: landscape) {
   #tooltip1{
@@ -14,19 +18,24 @@
     height: 13%;
   }
   #ddb-ok-btn{
-    top: 28% !important;
+    /* top: 28% !important; */
+    top: 28vh !important;
     height: 13%;
   }
   #on1, #on2{
     top: 43% !important;
   }
   #ok1, #ok2, #ok3{
-    top: 29% !important;
-    width: 6% !important;
+    top: 32vh !important;
+    width: 10vmin !important;
   }
   .up-button{
-    top: -9%;
-    left: 151%; 
+    /* top: -9%;
+    left: 151%;  */
+    /* top: 0vh;
+        left: 23vw; */
+        top: -4vh;
+        left: 23vw;
   }
 
   .up-button1{
@@ -40,15 +49,20 @@
       padding: 10px;
     }
     .shiftright{
-      left: 194%;
-      top: 3%;
+      /* left: 194%;
+      top: 3%; */
+      left: 27vw;
+        top: 2vh;
     }
+ 
     .ok-vr{
       top:3%
     }
     .left{
-      top: 1%;
-      left: 130%;
+      /* top: 1%;
+      left: 130%; */
+      top: 2vh;
+        left: 18vw;
     }
     /* Adjust the styles for tab buttons */
     .tab-buttons {
@@ -177,14 +191,19 @@
 
 
   .up-button1 {
-    top: -87%;
+    /* top: -87%; */
     /* left: 196%; */
-    left: 159%;
+    /* left: 159%; */
+    top: -7vh;
+        /* left: 196%; */
+        left: 23vw;
 }
 
 .down-button1 {
-  top: 90%;
-  left: 161%;
+  /* top: 90%;
+  left: 161%; */
+  top: 8vh;
+        left: 23vw;
 }
 
 .ok-button1 {
@@ -219,22 +238,25 @@
 }
 .ok-button {
   
-  top: 28%;
+  top: 7vh !important;
 }
 #bolus-left-btn{
-  top: 20% !important;
+  /* top: 20% !important; */
+  top: 22vh !important;
 }
 #standby-left{
-  left: 28% !important;
-  top: 33% !important;
+  /* left: 28% !important;
+  top: 33% !important; */
+  left: 26vw !important;
+        top: 27vh !important;
 }
 
 .start-button1{
   left: 357%;
   top: -10%
 }
-}
 
+}
 
   @media only screen and (min-device-width: 801px) and (max-device-width:1000px) and (orientation: landscape) {
     #tooltip1{
@@ -295,12 +317,16 @@
 }
 
 .shiftright{
-  left: 181%;
-    top: 3%;
+  /* left: 181%;
+    top: 3%; */
+    left: 26vw;
+        top: 1vh;
 }
 .left{
-  top: 1%;
-    left: 116%;
+  /* top: 1%;
+    left: 116%; */
+    top: 1vh;
+        left: 17vw;
 }
   .heading{
       left: 27%;
@@ -358,13 +384,18 @@
   font-size: 2.5vmin;
 }
 .up-button1 {
-  top: -87%;
+  /* top: -87%; */
   /* left: 196%; */
-  left: 147%;
+  /* left: 147%; */
+  top: -8vh;
+  /* left: 196%; */
+  left: 21vw;
 }
 .down-button1 {
-  top: 77%;
-  left: 149%;
+  /* top: 77%;
+  left: 149%; */
+  top: 10vh;
+        left: 21vw;
 }
 .ok-vr{
   top:13%
@@ -395,8 +426,10 @@
   top: 20% !important;
 }
 #standby-left{
-  left: 28% !important;
-  top: 38% !important;
+  /* left: 28% !important;
+  top: 38% !important; */
+  left: 27vw !important;
+  top: 33vh !important;
 }
 
 .start-button1{
